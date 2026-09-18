@@ -1,0 +1,7 @@
+:root { --brightpath-navy: #123364; --brightpath-green: #68c93d; }
+.brightpath-arcade-hud { position: fixed; z-index: 2147483647; top: 14px; right: 14px; display: flex; align-items: center; gap: 8px; padding: 7px 9px 7px 7px; border: 1px solid #d7e8f4; border-radius: 999px; background: #fffffff2; color: var(--brightpath-navy); box-shadow: 0 7px 20px #102b6030; font: 800 12px/1 Nunito, ui-rounded, system-ui, sans-serif; backdrop-filter: blur(8px); }
+.brightpath-arcade-hud__mark { width: 26px; height: 26px; display: grid; place-items: center; border-radius: 50%; background: #effbe9; color: #358a20; font-size: 15px; }
+.brightpath-arcade-hud__back { border: 0; border-radius: 999px; background: #eaf5ff; color: #155c9f; padding: 6px 9px; font: inherit; cursor: pointer; transition: background .18s ease, transform .18s ease; }
+.brightpath-arcade-hud__back:hover { background: #d7edff; transform: translateX(-2px); }
+@media (max-width: 640px) { .brightpath-arcade-hud { top: auto; bottom: 11px; right: 11px; font-size: 11px; } }
+@media (prefers-reduced-motion: reduce) { .brightpath-arcade-hud__back { transition: none; } }

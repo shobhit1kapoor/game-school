@@ -1,0 +1,110 @@
+/* ============================================================
+   Ambient scene effects: particle layers riding above the scene
+   image (inside scene-image-wrap's sibling so they crossfade with
+   the stage) but below hotspots/signs.
+   ============================================================ */
+
+.effect-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 4; /* above both scene layers (2/3), below hotspots (5) */
+}
+
+.particle {
+  position: absolute;
+  pointer-events: none;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+/* Rain: thin streaks falling with a slight slant */
+.particle-rain {
+  top: -8%;
+  width: 2px;
+  height: 26px;
+  border-radius: 2px;
+  background: linear-gradient(rgba(235, 246, 248, 0), rgba(235, 246, 248, 0.75));
+  animation-name: fall-slant;
+}
+
+@keyframes fall-slant {
+  to { transform: translate(-7vw, 115vh); }
+}
+
+/* Snow: drifting flakes */
+.particle-snow {
+  top: -6%;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  animation-name: drift-down;
+}
+
+@keyframes drift-down {
+  25% { transform: translate(2.5vw, 28vh) rotate(60deg); }
+  50% { transform: translate(-2vw, 56vh) rotate(140deg); }
+  75% { transform: translate(2vw, 84vh) rotate(220deg); }
+  to  { transform: translate(-1vw, 112vh) rotate(300deg); }
+}
+
+/* Mist: wide soft blobs sliding sideways */
+.particle-mist {
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(255, 255, 255, 0.22), transparent 70%);
+  animation-name: slide-mist;
+}
+
+@keyframes slide-mist {
+  from { transform: translateX(-30vw); opacity: 0; }
+  20%  { opacity: 1; }
+  80%  { opacity: 1; }
+  to   { transform: translateX(35vw); opacity: 0; }
+}
+
+/* Bubbles: rising rounds with a wobble */
+.particle-bubbles {
+  bottom: -5%;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.12);
+  animation-name: rise-wobble;
+}
+
+@keyframes rise-wobble {
+  25% { transform: translate(8px, -28vh); }
+  50% { transform: translate(-6px, -56vh); }
+  75% { transform: translate(7px, -84vh); }
+  to  { transform: translate(0, -115vh); opacity: 0; }
+}
+
+/* Sparkle: twinkling glints */
+.particle-sparkle {
+  width: 7px;
+  height: 7px;
+  background: rgba(255, 252, 230, 0.95);
+  clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%);
+  animation-name: twinkle;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: scale(0.4); }
+  50%      { opacity: 0.95; transform: scale(1.15); }
+}
+
+/* Storm: periodic lightning flash washing the whole scene */
+.lightning-flash {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 245, 0);
+  animation: flash 7s ease-out infinite;
+}
+
+@keyframes flash {
+  0%, 91%, 96%, 100% { background: rgba(255, 255, 245, 0); }
+  92%  { background: rgba(255, 255, 245, 0.65); }
+  93%  { background: rgba(255, 255, 245, 0.1); }
+  94%  { background: rgba(255, 255, 245, 0.45); }
+}

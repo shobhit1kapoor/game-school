@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 768" preserveAspectRatio="xMidYMid slice">
+  <!-- Rain Falls! — gray cloud upper-left, rain center, town lower-right, green valley -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6f8aa3"/>
+      <stop offset="0.45" stop-color="#93aabb"/>
+      <stop offset="1" stop-color="#c8d6d4"/>
+    </linearGradient>
+    <linearGradient id="hillsFar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7d9b88"/>
+      <stop offset="1" stop-color="#94b09a"/>
+    </linearGradient>
+    <linearGradient id="hillsMid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5d8468"/>
+      <stop offset="1" stop-color="#729676"/>
+    </linearGradient>
+    <linearGradient id="valley" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4a7355"/>
+      <stop offset="1" stop-color="#39603f"/>
+    </linearGradient>
+    <linearGradient id="cloudBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8c9aa6"/>
+      <stop offset="1" stop-color="#5f6f7d"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="0.85" cy="0.12" r="0.5">
+      <stop offset="0" stop-color="#f6e7b2" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#f6e7b2" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1536" height="768" fill="url(#sky)"/>
+  <rect width="1536" height="768" fill="url(#sunGlow)"/>
+
+  <!-- Far hills -->
+  <path d="M0,430 Q180,360 380,410 T760,400 Q980,360 1180,415 T1536,395 V768 H0 Z" fill="url(#hillsFar)" opacity="0.85"/>
+
+  <!-- Mid hills -->
+  <path d="M0,510 Q230,440 470,495 T940,485 Q1180,445 1380,500 T1536,490 V768 H0 Z" fill="url(#hillsMid)"/>
+
+  <!-- Little town, lower right (~82%,72%) -->
+  <g transform="translate(1140,500)">
+    <path d="M0,80 Q120,55 260,75 L260,150 L0,150 Z" fill="#688a63"/>
+    <g fill="#e8dcc3">
+      <rect x="30" y="56" width="34" height="30" rx="2"/>
+      <rect x="84" y="48" width="40" height="38" rx="2"/>
+      <rect x="146" y="58" width="32" height="28" rx="2"/>
+      <rect x="196" y="50" width="38" height="36" rx="2"/>
+    </g>
+    <g fill="#a14e30">
+      <path d="M26,58 L47,38 L68,58 Z"/>
+      <path d="M80,50 L104,28 L128,50 Z"/>
+      <path d="M142,60 L162,42 L182,60 Z"/>
+      <path d="M192,52 L215,32 L238,52 Z"/>
+    </g>
+    <g fill="#5d4a36">
+      <rect x="42" y="68" width="9" height="18" rx="1"/>
+      <rect x="98" y="62" width="10" height="24" rx="1"/>
+      <rect x="206" y="64" width="9" height="22" rx="1"/>
+    </g>
+    <ellipse cx="110" cy="20" rx="6" ry="10" fill="#cfd8da" opacity="0.7"/>
+  </g>
+
+  <!-- Valley foreground -->
+  <path d="M0,600 Q300,560 640,595 T1536,585 V768 H0 Z" fill="url(#valley)"/>
+
+  <!-- Foreground trees -->
+  <g fill="#2c4f39">
+    <ellipse cx="120" cy="610" rx="55" ry="62"/>
+    <ellipse cx="195" cy="635" rx="42" ry="48"/>
+    <ellipse cx="1480" cy="650" rx="60" ry="70"/>
+  </g>
+  <g fill="#3e6b4e">
+    <ellipse cx="105" cy="592" rx="38" ry="42"/>
+    <ellipse cx="1465" cy="630" rx="40" ry="46"/>
+  </g>
+  <g fill="#5d4a36">
+    <rect x="112" y="650" width="14" height="40" rx="4"/>
+    <rect x="1470" y="700" width="15" height="38" rx="4"/>
+  </g>
+
+  <!-- Puddles catching light -->
+  <g fill="#b9d2d4" opacity="0.65">
+    <ellipse cx="430" cy="700" rx="70" ry="12"/>
+    <ellipse cx="760" cy="730" rx="95" ry="14"/>
+    <ellipse cx="1080" cy="705" rx="60" ry="10"/>
+  </g>
+
+  <!-- Big rain cloud upper-left (~22%,18%) -->
+  <g>
+    <ellipse cx="340" cy="160" rx="230" ry="92" fill="url(#cloudBody)"/>
+    <ellipse cx="180" cy="190" rx="120" ry="62" fill="url(#cloudBody)"/>
+    <ellipse cx="470" cy="120" rx="130" ry="70" fill="url(#cloudBody)"/>
+    <ellipse cx="320" cy="105" rx="150" ry="68" fill="#9aa8b3"/>
+    <ellipse cx="430" cy="90" rx="90" ry="48" fill="#aebbc4"/>
+  </g>
+  <!-- Smaller drifting clouds -->
+  <ellipse cx="980" cy="120" rx="130" ry="40" fill="#aebbc4" opacity="0.75"/>
+  <ellipse cx="1240" cy="180" rx="100" ry="30" fill="#bcc8cf" opacity="0.6"/>
+
+  <!-- Rain streaks, center (~60%,45%) -->
+  <g stroke="#dcebee" stroke-width="4" stroke-linecap="round" opacity="0.7">
+    <line x1="300" y1="270" x2="282" y2="330"/>
+    <line x1="380" y1="300" x2="362" y2="368"/>
+    <line x1="460" y1="262" x2="442" y2="326"/>
+    <line x1="540" y1="310" x2="522" y2="380"/>
+    <line x1="620" y1="270" x2="602" y2="340"/>
+    <line x1="700" y1="320" x2="682" y2="392"/>
+    <line x1="780" y1="280" x2="762" y2="350"/>
+    <line x1="860" y1="330" x2="842" y2="400"/>
+    <line x1="940" y1="290" x2="922" y2="356"/>
+    <line x1="500" y1="400" x2="482" y2="466"/>
+    <line x1="640" y1="420" x2="622" y2="488"/>
+    <line x1="760" y1="440" x2="742" y2="508"/>
+    <line x1="360" y1="430" x2="342" y2="494"/>
+    <line x1="880" y1="430" x2="862" y2="498"/>
+  </g>
+
+  <!-- One hero raindrop -->
+  <g transform="translate(905,335)">
+    <path d="M0,-26 C14,-4 22,8 22,20 a22,22 0 1,1 -44,0 C-22,8 -14,-4 0,-26 Z" fill="#9fc6d8"/>
+    <ellipse cx="-7" cy="14" rx="6" ry="9" fill="#d9ecf2" opacity="0.8"/>
+  </g>
+</svg>

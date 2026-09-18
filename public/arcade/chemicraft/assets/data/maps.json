@@ -1,0 +1,546 @@
+{
+  "atomMeadows": {
+    "key": "atomMeadows",
+    "name": "Atom Meadows",
+    "difficulty": 1,
+    "theme": {
+      "groundColor": 9089098,
+      "wallColor": 5917242,
+      "accentColor": 4881612,
+      "bgColor": 3308854,
+      "particles": "pollen",
+      "music": "bgm"
+    },
+    "width": 20,
+    "height": 20,
+    "tileSize": 32,
+    "playerSpawn": { "tileX": 10, "tileY": 14 },
+    "ground": [
+      [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+      [1,0,0,0,0,0,2,2,2,0,0,2,2,2,0,0,0,0,0,1],
+      [1,0,0,0,0,0,2,2,2,0,0,2,2,2,0,0,0,0,0,1],
+      [1,0,0,0,0,0,2,2,2,0,0,2,2,2,0,3,3,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,4,4,4,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,4,4,4,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,5,5,5,5,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,5,5,5,5,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,6,6,0,0,0,0,0,0,0,0,1],
+      [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+    ],
+    "buildings": [
+      {
+        "type": "lab", "name": "Laboratory", "tileX": 8, "tileY": 3, "sceneKey": "LabInteriorScene",
+        "tiles": [[6,1],[7,1],[8,1],[6,2],[7,2],[8,2],[6,3],[7,3],[8,3]]
+      },
+      {
+        "type": "library", "name": "Library", "tileX": 14, "tileY": 4, "sceneKey": "LibraryInteriorScene",
+        "tiles": [[15,3],[16,3],[15,4],[16,4]]
+      },
+      {
+        "type": "shop", "name": "Shop", "tileX": 13, "tileY": 9, "sceneKey": "ShopInteriorScene",
+        "tiles": [[12,7],[13,7],[14,7],[12,8],[13,8],[14,8]]
+      }
+    ],
+    "portals": [
+      { "tileX": 9, "tileY": 18, "targetMap": "recyclingFields", "spawnTileX": 10, "spawnTileY": 3, "unlockCondition": "all_quests" }
+    ],
+    "npcs": [
+      { "npcId": "panting_pete", "tileX": 9, "tileY": 11 },
+      { "npcId": "professor_knowitall", "tileX": 15, "tileY": 5 },
+      { "npcId": "shopkeeper_sal", "tileX": 14, "tileY": 9 },
+      { "npcId": "mayor_molecule", "tileX": 10, "tileY": 17 },
+      { "npcId": "lab_assistant", "tileX": 7, "tileY": 4 },
+      { "npcId": "carbon_researcher", "tileX": 14, "tileY": 15 }
+    ],
+    "decorations": [
+      { "type": "flower", "tileX": 3, "tileY": 5 },
+      { "type": "flower", "tileX": 17, "tileY": 5 },
+      { "type": "flower", "tileX": 12, "tileY": 12 },
+      { "type": "flower", "tileX": 5, "tileY": 16 },
+      { "type": "grass", "tileX": 16, "tileY": 14 },
+      { "type": "grass", "tileX": 2, "tileY": 8 },
+      { "type": "grass", "tileX": 15, "tileY": 17 },
+      { "type": "grass", "tileX": 6, "tileY": 11 },
+      { "type": "tree", "tileX": 2, "tileY": 2 },
+      { "type": "tree", "tileX": 4, "tileY": 2 },
+      { "type": "tree", "tileX": 17, "tileY": 2 },
+      { "type": "tree", "tileX": 2, "tileY": 18 },
+      { "type": "tree", "tileX": 17, "tileY": 18 },
+      { "type": "tree", "tileX": 18, "tileY": 9 },
+      { "type": "tree", "tileX": 3, "tileY": 13 },
+      { "type": "lamp", "tileX": 7, "tileY": 9 },
+      { "type": "lamp", "tileX": 12, "tileY": 9 },
+      { "type": "lamp", "tileX": 10, "tileY": 13 },
+      { "type": "sign", "tileX": 10, "tileY": 7 },
+      { "type": "sign", "tileX": 6, "tileY": 4 },
+      { "type": "sign", "tileX": 16, "tileY": 6 },
+      { "type": "barrel", "tileX": 15, "tileY": 9 },
+      { "type": "barrel", "tileX": 5, "tileY": 4 }
+    ],
+    "resourceNodes": [
+      { "type": "coal", "tileX": 4, "tileY": 15, "maxGathers": 3 },
+      { "type": "water", "tileX": 16, "tileY": 12, "maxGathers": -1 }
+    ]
+  },
+  "recyclingFields": {
+    "key": "recyclingFields",
+    "name": "Recycling Fields",
+    "difficulty": 2,
+    "requiredMap": "atomMeadows",
+    "theme": {
+      "groundColor": 8166494,
+      "wallColor": 5929534,
+      "accentColor": 12886080,
+      "bgColor": 3821102,
+      "particles": "leaves",
+      "music": "bgm"
+    },
+    "width": 20,
+    "height": 20,
+    "tileSize": 32,
+    "playerSpawn": { "tileX": 10, "tileY": 3 },
+    "ground": [
+      [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+      [1,0,0,0,0,0,0,0,0,6,6,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,2,2,2,0,0,2,2,2,0,0,0,0,0,1],
+      [1,0,0,0,0,0,2,2,2,0,0,2,2,2,0,3,3,0,0,1],
+      [1,0,0,0,0,0,2,2,2,0,0,2,2,2,0,3,3,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,4,4,4,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,4,4,4,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,5,5,5,5,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,5,5,5,5,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,6,6,0,0,0,0,0,0,0,0,1],
+      [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+    ],
+    "buildings": [
+      {
+        "type": "lab", "name": "Materials Lab", "tileX": 8, "tileY": 5, "sceneKey": "LabInteriorScene",
+        "tiles": [[6,3],[7,3],[8,3],[6,4],[7,4],[8,4],[6,5],[7,5],[8,5]],
+        "style": { "wallColor": 6982222, "roofColor": 4876846 }
+      },
+      {
+        "type": "library", "name": "Eco Library", "tileX": 14, "tileY": 5, "sceneKey": "LibraryInteriorScene",
+        "tiles": [[15,4],[16,4],[15,5],[16,5]],
+        "style": { "wallColor": 8031574, "roofColor": 5926206 }
+      },
+      {
+        "type": "shop", "name": "Recycling Depot", "tileX": 13, "tileY": 8, "sceneKey": "ShopInteriorScene",
+        "tiles": [[12,7],[13,7],[14,7],[12,8],[13,8],[14,8]],
+        "style": { "wallColor": 9084742, "roofColor": 6979374 }
+      }
+    ],
+    "portals": [
+      { "tileX": 9, "tileY": 1, "targetMap": "atomMeadows", "spawnTileX": 9, "spawnTileY": 17, "unlockCondition": "none" },
+      { "tileX": 9, "tileY": 18, "targetMap": "ecoVille", "spawnTileX": 10, "spawnTileY": 3, "unlockCondition": "all_quests" }
+    ],
+    "npcs": [
+      { "npcId": "waste_manager", "tileX": 9, "tileY": 11 },
+      { "npcId": "materials_scientist", "tileX": 15, "tileY": 10 },
+      { "npcId": "green_dealer", "tileX": 14, "tileY": 9 },
+      { "npcId": "eco_educator", "tileX": 8, "tileY": 14 }
+    ],
+    "decorations": [
+      { "type": "bin", "tileX": 3, "tileY": 14, "color": "yellow" },
+      { "type": "bin", "tileX": 5, "tileY": 8, "color": "green" },
+      { "type": "bin", "tileX": 16, "tileY": 12, "color": "grey" },
+      { "type": "bin", "tileX": 8, "tileY": 5, "color": "blue" },
+      { "type": "bin", "tileX": 4, "tileY": 9, "color": "brown" },
+      { "type": "tree", "tileX": 2, "tileY": 3 },
+      { "type": "tree", "tileX": 4, "tileY": 17 },
+      { "type": "tree", "tileX": 12, "tileY": 17 },
+      { "type": "tree", "tileX": 17, "tileY": 6 },
+      { "type": "tree", "tileX": 18, "tileY": 11 },
+      { "type": "tree", "tileX": 2, "tileY": 10 },
+      { "type": "tree", "tileX": 17, "tileY": 17 },
+      { "type": "tree", "tileX": 2, "tileY": 17 },
+      { "type": "tree", "tileX": 18, "tileY": 3 },
+      { "type": "lamp", "tileX": 6, "tileY": 10 },
+      { "type": "lamp", "tileX": 14, "tileY": 10 },
+      { "type": "lamp", "tileX": 10, "tileY": 5 },
+      { "type": "lamp", "tileX": 3, "tileY": 6 },
+      { "type": "lamp", "tileX": 17, "tileY": 15 },
+      { "type": "lamp", "tileX": 10, "tileY": 14 },
+      { "type": "sign", "tileX": 9, "tileY": 7 },
+      { "type": "sign", "tileX": 15, "tileY": 14 },
+      { "type": "sign", "tileX": 10, "tileY": 2 },
+      { "type": "barrel", "tileX": 5, "tileY": 12 },
+      { "type": "barrel", "tileX": 15, "tileY": 6 },
+      { "type": "barrel", "tileX": 7, "tileY": 15 },
+      { "type": "barrel", "tileX": 17, "tileY": 8 },
+      { "type": "barrel", "tileX": 3, "tileY": 12 },
+      { "type": "conveyor", "tileX": 12, "tileY": 9 },
+      { "type": "conveyor", "tileX": 6, "tileY": 9 },
+      { "type": "conveyor", "tileX": 9, "tileY": 9 },
+      { "type": "pile", "tileX": 4, "tileY": 11 },
+      { "type": "pile", "tileX": 16, "tileY": 8 },
+      { "type": "pile", "tileX": 14, "tileY": 16 },
+      { "type": "pile", "tileX": 2, "tileY": 14 },
+      { "type": "grass", "tileX": 11, "tileY": 13 },
+      { "type": "grass", "tileX": 6, "tileY": 17 },
+      { "type": "grass", "tileX": 16, "tileY": 6 },
+      { "type": "flower", "tileX": 9, "tileY": 17 },
+      { "type": "flower", "tileX": 18, "tileY": 14 },
+      { "type": "flower", "tileX": 2, "tileY": 7 }
+    ],
+    "resourceNodes": [
+      { "type": "plastic_pile", "tileX": 6, "tileY": 8, "maxGathers": 3 },
+      { "type": "glass_pile", "tileX": 14, "tileY": 12, "maxGathers": 3 },
+      { "type": "metal_pile", "tileX": 12, "tileY": 14, "maxGathers": 3 },
+      { "type": "paper_pile", "tileX": 8, "tileY": 16, "maxGathers": 3 },
+      { "type": "compost_heap", "tileX": 4, "tileY": 16, "maxGathers": 3 }
+    ]
+  },
+  "ecoVille": {
+    "key": "ecoVille",
+    "name": "EcoVille",
+    "difficulty": 3,
+    "requiredMap": "recyclingFields",
+    "theme": {
+      "groundColor": 4885568,
+      "wallColor": 3035176,
+      "accentColor": 16769154,
+      "bgColor": 1789226,
+      "particles": "wind",
+      "music": "bgm"
+    },
+    "width": 20,
+    "height": 20,
+    "tileSize": 32,
+    "playerSpawn": { "tileX": 10, "tileY": 3 },
+    "ground": [
+      [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+      [1,0,0,0,0,0,0,0,0,6,6,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,2,2,2,0,0,2,2,2,0,0,0,0,0,1],
+      [1,0,0,0,0,0,2,2,2,0,0,2,2,2,0,3,3,0,0,1],
+      [1,0,0,0,0,0,2,2,2,0,0,2,2,2,0,3,3,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,4,4,4,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,4,4,4,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,5,5,5,5,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,5,5,5,5,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,6,6,0,0,0,0,0,0,0,0,1],
+      [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+    ],
+    "buildings": [
+      {
+        "type": "lab", "name": "Climate Lab", "tileX": 8, "tileY": 5, "sceneKey": "LabInteriorScene",
+        "tiles": [[6,3],[7,3],[8,3],[6,4],[7,4],[8,4],[6,5],[7,5],[8,5]],
+        "style": { "wallColor": 4889284, "roofColor": 2783838 }
+      },
+      {
+        "type": "library", "name": "Eco Library", "tileX": 14, "tileY": 5, "sceneKey": "LibraryInteriorScene",
+        "tiles": [[15,4],[16,4],[15,5],[16,5]],
+        "style": { "wallColor": 5938502, "roofColor": 3833056 }
+      },
+      {
+        "type": "shop", "name": "Green Shop", "tileX": 13, "tileY": 8, "sceneKey": "ShopInteriorScene",
+        "tiles": [[12,7],[13,7],[14,7],[12,8],[13,8],[14,8]],
+        "style": { "wallColor": 6987720, "roofColor": 4882274 }
+      }
+    ],
+    "portals": [
+      { "tileX": 9, "tileY": 1, "targetMap": "recyclingFields", "spawnTileX": 9, "spawnTileY": 17, "unlockCondition": "none" },
+      { "tileX": 9, "tileY": 18, "targetMap": "prismHeights", "spawnTileX": 10, "spawnTileY": 3, "unlockCondition": "all_quests" }
+    ],
+    "npcs": [
+      { "npcId": "climate_scientist", "tileX": 9, "tileY": 11 },
+      { "npcId": "green_mayor", "tileX": 10, "tileY": 17 },
+      { "npcId": "energy_engineer", "tileX": 8, "tileY": 14 },
+      { "npcId": "eco_activist", "tileX": 15, "tileY": 12 }
+    ],
+    "decorations": [
+      { "type": "solar_panel", "tileX": 5, "tileY": 14 },
+      { "type": "solar_panel", "tileX": 6, "tileY": 14 },
+      { "type": "solar_panel", "tileX": 7, "tileY": 14 },
+      { "type": "solar_panel", "tileX": 5, "tileY": 13 },
+      { "type": "solar_panel", "tileX": 6, "tileY": 13 },
+      { "type": "solar_panel", "tileX": 16, "tileY": 7 },
+      { "type": "solar_panel", "tileX": 17, "tileY": 7 },
+      { "type": "solar_panel", "tileX": 3, "tileY": 16 },
+      { "type": "solar_panel", "tileX": 4, "tileY": 16 },
+      { "type": "tree", "tileX": 12, "tileY": 16 },
+      { "type": "tree", "tileX": 2, "tileY": 2 },
+      { "type": "tree", "tileX": 4, "tileY": 2 },
+      { "type": "tree", "tileX": 17, "tileY": 2 },
+      { "type": "tree", "tileX": 18, "tileY": 5 },
+      { "type": "tree", "tileX": 18, "tileY": 12 },
+      { "type": "tree", "tileX": 2, "tileY": 10 },
+      { "type": "tree", "tileX": 2, "tileY": 15 },
+      { "type": "tree", "tileX": 17, "tileY": 15 },
+      { "type": "tree", "tileX": 11, "tileY": 16 },
+      { "type": "tree", "tileX": 13, "tileY": 16 },
+      { "type": "tree", "tileX": 2, "tileY": 6 },
+      { "type": "flower", "tileX": 3, "tileY": 9 },
+      { "type": "flower", "tileX": 11, "tileY": 7 },
+      { "type": "flower", "tileX": 17, "tileY": 10 },
+      { "type": "flower", "tileX": 10, "tileY": 13 },
+      { "type": "flower", "tileX": 4, "tileY": 17 },
+      { "type": "flower", "tileX": 16, "tileY": 17 },
+      { "type": "flower", "tileX": 6, "tileY": 10 },
+      { "type": "grass", "tileX": 2, "tileY": 13 },
+      { "type": "grass", "tileX": 9, "tileY": 16 },
+      { "type": "grass", "tileX": 16, "tileY": 13 },
+      { "type": "grass", "tileX": 11, "tileY": 9 },
+      { "type": "grass", "tileX": 3, "tileY": 5 },
+      { "type": "lamp", "tileX": 6, "tileY": 10 },
+      { "type": "lamp", "tileX": 14, "tileY": 10 },
+      { "type": "lamp", "tileX": 10, "tileY": 7 },
+      { "type": "lamp", "tileX": 3, "tileY": 13 },
+      { "type": "lamp", "tileX": 17, "tileY": 13 },
+      { "type": "lamp", "tileX": 10, "tileY": 15 },
+      { "type": "sign", "tileX": 9, "tileY": 6 },
+      { "type": "sign", "tileX": 15, "tileY": 14 },
+      { "type": "sign", "tileX": 3, "tileY": 7 },
+      { "type": "barrel", "tileX": 5, "tileY": 6 },
+      { "type": "barrel", "tileX": 15, "tileY": 7 },
+      { "type": "barrel", "tileX": 3, "tileY": 17 }
+    ],
+    "resourceNodes": [
+      { "type": "pollution_vent", "tileX": 5, "tileY": 7, "maxGathers": 3 },
+      { "type": "clean_water_spring", "tileX": 15, "tileY": 10, "maxGathers": -1 },
+      { "type": "biomass_pile", "tileX": 7, "tileY": 16, "maxGathers": 3 }
+    ]
+  },
+  "prismHeights": {
+    "key": "prismHeights",
+    "name": "Prism Heights",
+    "difficulty": 4,
+    "requiredMap": "ecoVille",
+    "theme": {
+      "groundColor": 9542570,
+      "wallColor": 6053029,
+      "accentColor": 16777164,
+      "bgColor": 2105376,
+      "particles": "sparkles",
+      "music": "bgm"
+    },
+    "width": 20,
+    "height": 20,
+    "tileSize": 32,
+    "playerSpawn": { "tileX": 10, "tileY": 3 },
+    "ground": [
+      [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+      [1,0,0,0,0,0,0,0,0,6,6,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,2,2,2,0,0,2,2,2,0,0,0,0,0,1],
+      [1,0,0,0,0,0,2,2,2,0,0,2,2,2,0,3,3,0,0,1],
+      [1,0,0,0,0,0,2,2,2,0,0,2,2,2,0,3,3,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,4,4,4,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,4,4,4,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,5,5,5,5,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,5,5,5,5,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,6,6,0,0,0,0,0,0,0,0,1],
+      [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+    ],
+    "buildings": [
+      {
+        "type": "lab", "name": "Light Lab", "tileX": 8, "tileY": 5, "sceneKey": "LabInteriorScene",
+        "tiles": [[6,3],[7,3],[8,3],[6,4],[7,4],[8,4],[6,5],[7,5],[8,5]],
+        "style": { "wallColor": 11571408, "roofColor": 9075396 }
+      },
+      {
+        "type": "library", "name": "Optics Library", "tileX": 14, "tileY": 5, "sceneKey": "LibraryInteriorScene",
+        "tiles": [[15,4],[16,4],[15,5],[16,5]],
+        "style": { "wallColor": 12620626, "roofColor": 10124614 }
+      },
+      {
+        "type": "shop", "name": "Prism Shop", "tileX": 13, "tileY": 8, "sceneKey": "ShopInteriorScene",
+        "tiles": [[12,7],[13,7],[14,7],[12,8],[13,8],[14,8]],
+        "style": { "wallColor": 13669844, "roofColor": 11173832 }
+      }
+    ],
+    "portals": [
+      { "tileX": 9, "tileY": 1, "targetMap": "ecoVille", "spawnTileX": 9, "spawnTileY": 17, "unlockCondition": "none" },
+      { "tileX": 9, "tileY": 18, "targetMap": "magnetCore", "spawnTileX": 10, "spawnTileY": 3, "unlockCondition": "all_quests" }
+    ],
+    "npcs": [
+      { "npcId": "optician", "tileX": 9, "tileY": 11 },
+      { "npcId": "light_researcher", "tileX": 10, "tileY": 17 },
+      { "npcId": "color_artist", "tileX": 8, "tileY": 14 },
+      { "npcId": "lens_crafter", "tileX": 14, "tileY": 12 }
+    ],
+    "decorations": [
+      { "type": "prism", "tileX": 5, "tileY": 14 },
+      { "type": "prism", "tileX": 3, "tileY": 7 },
+      { "type": "prism", "tileX": 17, "tileY": 9 },
+      { "type": "prism", "tileX": 11, "tileY": 16 },
+      { "type": "prism", "tileX": 16, "tileY": 15 },
+      { "type": "prism", "tileX": 4, "tileY": 17 },
+      { "type": "prism", "tileX": 9, "tileY": 13 },
+      { "type": "lamp", "tileX": 12, "tileY": 16 },
+      { "type": "lamp", "tileX": 6, "tileY": 10 },
+      { "type": "lamp", "tileX": 14, "tileY": 10 },
+      { "type": "lamp", "tileX": 3, "tileY": 13 },
+      { "type": "lamp", "tileX": 17, "tileY": 13 },
+      { "type": "lamp", "tileX": 10, "tileY": 7 },
+      { "type": "lamp", "tileX": 3, "tileY": 17 },
+      { "type": "lamp", "tileX": 17, "tileY": 17 },
+      { "type": "sign", "tileX": 9, "tileY": 6 },
+      { "type": "sign", "tileX": 15, "tileY": 14 },
+      { "type": "sign", "tileX": 3, "tileY": 10 },
+      { "type": "barrel", "tileX": 4, "tileY": 6 },
+      { "type": "barrel", "tileX": 16, "tileY": 6 },
+      { "type": "barrel", "tileX": 5, "tileY": 16 },
+      { "type": "barrel", "tileX": 16, "tileY": 16 },
+      { "type": "barrel", "tileX": 11, "tileY": 13 },
+      { "type": "grass", "tileX": 2, "tileY": 9 },
+      { "type": "grass", "tileX": 18, "tileY": 12 },
+      { "type": "grass", "tileX": 11, "tileY": 9 },
+      { "type": "grass", "tileX": 3, "tileY": 16 },
+      { "type": "grass", "tileX": 16, "tileY": 3 },
+      { "type": "flower", "tileX": 2, "tileY": 6 },
+      { "type": "flower", "tileX": 17, "tileY": 5 },
+      { "type": "flower", "tileX": 2, "tileY": 14 },
+      { "type": "flower", "tileX": 18, "tileY": 16 },
+      { "type": "flower", "tileX": 10, "tileY": 15 },
+      { "type": "flower", "tileX": 6, "tileY": 7 }
+    ],
+    "resourceNodes": [
+      { "type": "crystal_cluster", "tileX": 6, "tileY": 6, "maxGathers": 3 },
+      { "type": "light_well", "tileX": 16, "tileY": 14, "maxGathers": -1 },
+      { "type": "prism_shard", "tileX": 7, "tileY": 15, "maxGathers": 3 }
+    ]
+  },
+  "magnetCore": {
+    "key": "magnetCore",
+    "name": "Magnet Core",
+    "difficulty": 5,
+    "requiredMap": "prismHeights",
+    "theme": {
+      "groundColor": 4473924,
+      "wallColor": 2108430,
+      "accentColor": 16737792,
+      "bgColor": 1052688,
+      "particles": "embers",
+      "music": "bgm"
+    },
+    "width": 20,
+    "height": 20,
+    "tileSize": 32,
+    "playerSpawn": { "tileX": 10, "tileY": 3 },
+    "ground": [
+      [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+      [1,0,0,0,0,0,0,0,0,6,6,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,2,2,2,0,0,2,2,2,0,0,0,0,0,1],
+      [1,0,0,0,0,0,2,2,2,0,0,2,2,2,0,3,3,0,0,1],
+      [1,0,0,0,0,0,2,2,2,0,0,2,2,2,0,3,3,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,4,4,4,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,4,4,4,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,5,5,5,5,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,5,5,5,5,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,6,6,0,0,0,0,0,0,0,0,1],
+      [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+    ],
+    "buildings": [
+      {
+        "type": "lab", "name": "Physics Lab", "tileX": 8, "tileY": 5, "sceneKey": "LabInteriorScene",
+        "tiles": [[6,3],[7,3],[8,3],[6,4],[7,4],[8,4],[6,5],[7,5],[8,5]],
+        "style": { "wallColor": 11571408, "roofColor": 9075396 }
+      },
+      {
+        "type": "library", "name": "Eng Library", "tileX": 14, "tileY": 5, "sceneKey": "LibraryInteriorScene",
+        "tiles": [[15,4],[16,4],[15,5],[16,5]],
+        "style": { "wallColor": 12620626, "roofColor": 10124614 }
+      },
+      {
+        "type": "shop", "name": "Core Shop", "tileX": 13, "tileY": 8, "sceneKey": "ShopInteriorScene",
+        "tiles": [[12,7],[13,7],[14,7],[12,8],[13,8],[14,8]],
+        "style": { "wallColor": 13669844, "roofColor": 11173832 }
+      }
+    ],
+    "portals": [
+      { "tileX": 9, "tileY": 1, "targetMap": "prismHeights", "spawnTileX": 9, "spawnTileY": 17, "unlockCondition": "none" },
+      { "tileX": 9, "tileY": 18, "targetMap": "atomMeadows", "spawnTileX": 10, "spawnTileY": 14, "unlockCondition": "all_quests" }
+    ],
+    "npcs": [
+      { "npcId": "physicist", "tileX": 9, "tileY": 11 },
+      { "npcId": "rocket_engineer", "tileX": 10, "tileY": 17 },
+      { "npcId": "magnetic_artist", "tileX": 8, "tileY": 14 },
+      { "npcId": "core_guardian", "tileX": 15, "tileY": 12 }
+    ],
+    "decorations": [
+      { "type": "magnet", "tileX": 5, "tileY": 14 },
+      { "type": "magnet", "tileX": 5, "tileY": 10 },
+      { "type": "magnet", "tileX": 15, "tileY": 13 },
+      { "type": "magnet", "tileX": 15, "tileY": 9 },
+      { "type": "magnet", "tileX": 10, "tileY": 14 },
+      { "type": "magnet", "tileX": 3, "tileY": 6 },
+      { "type": "magnet", "tileX": 17, "tileY": 6 },
+      { "type": "lamp", "tileX": 12, "tileY": 16 },
+      { "type": "lamp", "tileX": 6, "tileY": 10 },
+      { "type": "lamp", "tileX": 14, "tileY": 10 },
+      { "type": "lamp", "tileX": 3, "tileY": 13 },
+      { "type": "lamp", "tileX": 17, "tileY": 13 },
+      { "type": "lamp", "tileX": 10, "tileY": 7 },
+      { "type": "barrel", "tileX": 4, "tileY": 6 },
+      { "type": "barrel", "tileX": 16, "tileY": 6 },
+      { "type": "barrel", "tileX": 3, "tileY": 17 },
+      { "type": "barrel", "tileX": 17, "tileY": 17 },
+      { "type": "barrel", "tileX": 11, "tileY": 13 },
+      { "type": "barrel", "tileX": 5, "tileY": 16 },
+      { "type": "pile", "tileX": 2, "tileY": 7 },
+      { "type": "pile", "tileX": 18, "tileY": 10 },
+      { "type": "pile", "tileX": 2, "tileY": 15 },
+      { "type": "pile", "tileX": 16, "tileY": 16 },
+      { "type": "pile", "tileX": 11, "tileY": 9 },
+      { "type": "pile", "tileX": 4, "tileY": 12 },
+      { "type": "conveyor", "tileX": 9, "tileY": 9 },
+      { "type": "conveyor", "tileX": 6, "tileY": 9 },
+      { "type": "conveyor", "tileX": 12, "tileY": 9 },
+      { "type": "conveyor", "tileX": 9, "tileY": 13 },
+      { "type": "sign", "tileX": 9, "tileY": 6 },
+      { "type": "sign", "tileX": 3, "tileY": 10 },
+      { "type": "sign", "tileX": 15, "tileY": 15 }
+    ],
+    "resourceNodes": [
+      { "type": "iron_vein", "tileX": 5, "tileY": 5, "maxGathers": 3 },
+      { "type": "magnetic_crystal", "tileX": 16, "tileY": 14, "maxGathers": 3 },
+      { "type": "copper_wire_spool", "tileX": 6, "tileY": 16, "maxGathers": 3 },
+      { "type": "energy_geyser", "tileX": 10, "tileY": 16, "maxGathers": -1 }
+    ]
+  }
+}

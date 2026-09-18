@@ -1,0 +1,258 @@
+/* ============================================================
+   Scene stage: full-bleed illustration, hotspots, fact cards,
+   and the blur-crossfade transition between scenes.
+   ============================================================ */
+
+.stage {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: var(--ink);
+}
+
+/* Two stacked image layers: the new scene crossfades in OVER the old
+   one (which stays visible, melting into a blur underneath), so the
+   transition is an interpolation of the two paintings — never black. */
+.scene-layer {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  z-index: 1;
+  filter: blur(0) brightness(1);
+  transform: scale(1);
+  transition: opacity 0.8s ease, filter 0.8s ease, transform 0.8s ease;
+}
+
+.scene-layer.front {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* Incoming layer's starting pose: invisible, dreamy, stacked on top */
+.scene-layer.entering {
+  opacity: 0;
+  filter: blur(16px) brightness(1.1);
+  transform: scale(1.05);
+  z-index: 3;
+  transition: none;
+}
+
+/* Keeps the incoming layer above the outgoing one while both animate */
+.scene-layer.rising { z-index: 3; }
+
+/* Outgoing layer melts while the new scene fades in over it */
+.scene-layer.melting {
+  filter: blur(14px) brightness(1.05);
+  transform: scale(0.98);
+}
+
+.scene-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Gentle vignette so panels read against any image */
+.scene-layer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to top, rgba(20, 28, 18, 0.55), transparent 38%),
+    linear-gradient(to bottom, rgba(20, 28, 18, 0.30), transparent 22%);
+}
+
+/* Hotspots + nav signs ride above both image layers and dip out
+   during a transition */
+.overlay-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  transition: opacity 0.3s ease;
+}
+.overlay-layer.overlay-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ---------- Hotspots ---------- */
+
+.hotspot-layer {
+  position: absolute;
+  inset: 0;
+}
+
+.hotspot {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  transform: translate(-50%, -50%);
+  width: clamp(46px, 3.6vw, 70px);
+  height: clamp(46px, 3.6vw, 70px);
+  border-radius: 50%;
+  background: rgba(247, 239, 220, 0.25);
+  border: 3px solid rgba(247, 239, 220, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35), inset 0 0 12px rgba(255, 255, 255, 0.5);
+  display: grid;
+  place-items: center;
+  font-size: clamp(19px, 1.5vw, 29px);
+  color: #fff7ea;
+  font-family: var(--font-display);
+  font-weight: 800;
+  animation: hotspot-pulse 2.2s ease-in-out infinite;
+  transition: transform 0.15s ease, background 0.15s ease;
+  z-index: 3;
+}
+.hotspot:hover, .hotspot:focus-visible {
+  transform: translate(-50%, -50%) scale(1.18);
+  background: rgba(240, 176, 58, 0.55);
+  animation-play-state: paused;
+}
+.hotspot.seen {
+  border-style: dashed;
+  animation: none;
+  background: rgba(62, 107, 78, 0.45);
+}
+
+@keyframes hotspot-pulse {
+  0%, 100% { box-shadow: 0 2px 10px rgba(0,0,0,0.35), 0 0 0 0 rgba(247, 239, 220, 0.65); }
+  50%      { box-shadow: 0 2px 10px rgba(0,0,0,0.35), 0 0 0 14px rgba(247, 239, 220, 0); }
+}
+
+/* Tiny label that rides along under each hotspot */
+.hotspot-tag {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(13px, 1vw, 18px);
+  color: #fff7ea;
+  background: rgba(46, 58, 44, 0.78);
+  padding: 3px 10px;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+/* ---------- Trail signs (navigation choices, planted in the scene) ---------- */
+
+.nav-sign {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  border-radius: 999px;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(20, 28, 18, 0.45);
+  transition: transform 0.15s ease, filter 0.15s ease;
+  z-index: 4;
+}
+.nav-sign:hover, .nav-sign:focus-visible {
+  transform: translate(-50%, -50%) scale(1.08);
+  filter: brightness(1.07);
+  animation-play-state: paused;
+}
+.nav-sign:active { transform: translate(-50%, -52%) scale(1.04); }
+
+/* Little pointer stake under each sign */
+.nav-sign::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 7px solid transparent;
+}
+
+.nav-sign-next {
+  background: var(--river);
+  color: #fff7ea;
+  border: 2px solid #fff7ea;
+  font-size: clamp(16px, 1.25vw, 23px);
+  padding: clamp(9px, 0.7vw, 13px) clamp(18px, 1.4vw, 26px);
+  animation: sign-glow 2.6s ease-in-out infinite;
+}
+.nav-sign-next::before { content: "→"; font-size: 17px; }
+.nav-sign-next::after { border-top-color: var(--river); }
+
+.nav-sign-back {
+  background: var(--paper) var(--grain);
+  color: var(--pine-deep);
+  border: 2px solid var(--paper-edge);
+  font-size: clamp(13.5px, 1.05vw, 19px);
+  padding: clamp(6px, 0.5vw, 9px) clamp(13px, 1vw, 19px);
+  opacity: 0.92;
+}
+.nav-sign-back::before { content: "↩"; font-size: 14px; }
+.nav-sign-back::after { border-top-color: var(--paper-edge); }
+
+@keyframes sign-glow {
+  0%, 100% { box-shadow: 0 4px 14px rgba(20, 28, 18, 0.45), 0 0 0 0 rgba(255, 247, 234, 0.55); }
+  50%      { box-shadow: 0 4px 14px rgba(20, 28, 18, 0.45), 0 0 0 12px rgba(255, 247, 234, 0); }
+}
+
+/* ---------- Fact card popover ---------- */
+
+.fact-card {
+  position: fixed;
+  z-index: 40;
+  width: min(clamp(340px, 30vw, 600px), calc(100vw - 32px));
+  background: var(--paper) var(--grain);
+  border: 2px solid var(--paper-edge);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: clamp(18px, 1.6vw, 30px) clamp(20px, 1.8vw, 34px) clamp(20px, 1.8vw, 32px);
+  animation: fact-pop 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.fact-card[hidden] { display: none; }
+
+@keyframes fact-pop {
+  from { opacity: 0; transform: scale(0.85) translateY(8px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.fact-eyebrow {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(12px, 0.95vw, 16px);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--clay);
+}
+
+.fact-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(21px, 1.8vw, 34px);
+  margin: 4px 0 6px;
+  color: var(--pine-deep);
+}
+
+.fact-body {
+  margin: 0;
+  font-size: clamp(15.5px, 1.3vw, 23px);
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.fact-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: clamp(15px, 1.1vw, 20px);
+  font-weight: 700;
+  color: var(--ink-soft);
+  padding: 4px 6px;
+}
+.fact-close:hover { color: var(--clay); }

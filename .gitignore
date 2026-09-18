@@ -1,0 +1,11 @@
+node_modules/
+dist/
+outputs/
+work/
+*.log
+*.tsbuildinfo
+.DS_Store
+public/arcade/**/.git/
+public/arcade/escape-run/.git/
+/public/arcade/escape-run/
+public/arcade/**/*.map

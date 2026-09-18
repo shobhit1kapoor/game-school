@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 768" preserveAspectRatio="xMidYMid slice">
+  <!-- Trees Drink Too — misty morning forest with sunbeams -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e8d8a8"/>
+      <stop offset="0.4" stop-color="#dbe2c4"/>
+      <stop offset="1" stop-color="#b9cdb0"/>
+    </linearGradient>
+    <linearGradient id="forestFar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7d9b88"/>
+      <stop offset="1" stop-color="#5d8a64"/>
+    </linearGradient>
+    <linearGradient id="forestMid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3e6b4e"/>
+      <stop offset="1" stop-color="#2c4f39"/>
+    </linearGradient>
+    <linearGradient id="forestFloor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5d7a4a"/>
+      <stop offset="1" stop-color="#3e5538"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="0.88" cy="0.08" r="0.6">
+      <stop offset="0" stop-color="#f6e7b2" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#f6e7b2" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Sky and golden morning glow -->
+  <rect width="1536" height="768" fill="url(#sky)"/>
+  <rect width="1536" height="768" fill="url(#sunGlow)"/>
+
+  <!-- Far forest silhouette -->
+  <path d="M0,360 Q150,300 280,335 Q380,290 480,320 Q600,275 720,315 Q840,285 960,320 Q1080,275 1200,310 Q1320,280 1440,318 Q1500,310 1536,320 V768 H0 Z" fill="url(#forestFar)" opacity="0.7"/>
+
+  <!-- Mid forest band, denser silhouette of trees -->
+  <path d="M0,440 Q120,380 220,420 Q300,360 380,410 Q460,355 540,405 Q620,360 700,410 Q800,355 880,410 Q960,365 1040,410 Q1120,370 1200,415 Q1280,370 1360,420 Q1450,380 1536,415 V768 H0 Z" fill="url(#forestMid)"/>
+
+  <!-- Diagonal sunbeam wedges from upper-right -->
+  <g fill="#f6e7b2" opacity="0.18">
+    <polygon points="1536,0 1536,160 600,768 480,768"/>
+    <polygon points="1536,120 1536,260 800,768 680,768"/>
+    <polygon points="1536,280 1536,400 1000,768 880,768"/>
+  </g>
+  <g fill="#fff2c4" opacity="0.12">
+    <polygon points="1450,0 1536,0 900,768 800,768"/>
+    <polygon points="1536,200 1536,300 1080,768 980,768"/>
+  </g>
+
+  <!-- Forest floor -->
+  <path d="M0,600 Q300,570 640,595 T1280,590 Q1420,595 1536,585 V768 H0 Z" fill="url(#forestFloor)"/>
+
+  <!-- Grand central tree around (768,307): trunk + layered canopy -->
+  <g>
+    <!-- trunk -->
+    <path d="M748,600 Q742,500 750,400 Q758,360 768,340 Q778,360 786,400 Q794,500 788,600 Z" fill="#5d4a36"/>
+    <path d="M748,600 Q742,500 750,400 Q758,360 768,340 L768,600 Z" fill="#4a3a28"/>
+    <!-- trunk texture -->
+    <g stroke="#3d3022" stroke-width="2" stroke-linecap="round" opacity="0.6" fill="none">
+      <path d="M756,420 Q758,470 756,540"/>
+      <path d="M774,430 Q776,490 778,550"/>
+    </g>
+    <!-- back canopy layer (darkest) -->
+    <ellipse cx="700" cy="280" rx="135" ry="120" fill="#2c4f39"/>
+    <ellipse cx="840" cy="290" rx="140" ry="125" fill="#2c4f39"/>
+    <ellipse cx="768" cy="220" rx="120" ry="100" fill="#2c4f39"/>
+    <!-- mid canopy layer -->
+    <ellipse cx="720" cy="310" rx="110" ry="95" fill="#3e6b4e"/>
+    <ellipse cx="820" cy="320" rx="115" ry="100" fill="#3e6b4e"/>
+    <ellipse cx="770" cy="260" rx="100" ry="80" fill="#3e6b4e"/>
+    <!-- front canopy highlights -->
+    <ellipse cx="740" cy="340" rx="80" ry="65" fill="#5d8a64"/>
+    <ellipse cx="800" cy="345" rx="78" ry="62" fill="#5d8a64"/>
+    <ellipse cx="775" cy="295" rx="70" ry="55" fill="#5d8a64"/>
+    <!-- top sun-kissed highlight -->
+    <ellipse cx="810" cy="245" rx="50" ry="32" fill="#84ab7a" opacity="0.85"/>
+    <ellipse cx="845" cy="280" rx="40" ry="28" fill="#84ab7a" opacity="0.7"/>
+  </g>
+
+  <!-- Side trees, smaller -->
+  <g>
+    <!-- left side tree -->
+    <path d="M180,600 Q176,540 184,470 Q192,455 200,470 Q208,540 204,600 Z" fill="#5d4a36"/>
+    <ellipse cx="190" cy="450" rx="80" ry="90" fill="#2c4f39"/>
+    <ellipse cx="170" cy="470" rx="55" ry="65" fill="#3e6b4e"/>
+    <ellipse cx="210" cy="440" rx="50" ry="58" fill="#5d8a64" opacity="0.9"/>
+  </g>
+  <g>
+    <!-- right side tree -->
+    <path d="M1340,610 Q1336,550 1344,480 Q1352,465 1360,480 Q1368,550 1364,610 Z" fill="#5d4a36"/>
+    <ellipse cx="1350" cy="460" rx="85" ry="95" fill="#2c4f39"/>
+    <ellipse cx="1330" cy="480" rx="58" ry="68" fill="#3e6b4e"/>
+    <ellipse cx="1370" cy="450" rx="52" ry="60" fill="#5d8a64" opacity="0.9"/>
+  </g>
+
+  <!-- Distant slim trunks for depth -->
+  <g fill="#3d3022" opacity="0.5">
+    <rect x="380" y="400" width="6" height="200"/>
+    <rect x="450" y="420" width="5" height="180"/>
+    <rect x="560" y="410" width="6" height="195"/>
+    <rect x="980" y="415" width="5" height="190"/>
+    <rect x="1080" y="405" width="6" height="200"/>
+    <rect x="1180" y="420" width="5" height="180"/>
+  </g>
+
+  <!-- Soft rising morning mist drifting around (307,269) and treetops -->
+  <g fill="#ffffff">
+    <ellipse cx="307" cy="269" rx="220" ry="22" opacity="0.5"/>
+    <ellipse cx="280" cy="290" rx="180" ry="16" opacity="0.4"/>
+    <ellipse cx="340" cy="250" rx="160" ry="14" opacity="0.35"/>
+    <ellipse cx="230" cy="310" rx="140" ry="12" opacity="0.3"/>
+    <ellipse cx="380" cy="305" rx="120" ry="14" opacity="0.3"/>
+  </g>
+  <g fill="#ffffff">
+    <!-- mist among other treetops -->
+    <ellipse cx="700" cy="380" rx="260" ry="18" opacity="0.32"/>
+    <ellipse cx="900" cy="400" rx="220" ry="14" opacity="0.28"/>
+    <ellipse cx="1200" cy="380" rx="200" ry="16" opacity="0.3"/>
+    <ellipse cx="500" cy="420" rx="200" ry="14" opacity="0.28"/>
+    <ellipse cx="1050" cy="440" rx="240" ry="14" opacity="0.25"/>
+    <!-- low floor mist -->
+    <ellipse cx="400" cy="560" rx="240" ry="12" opacity="0.3"/>
+    <ellipse cx="900" cy="570" rx="280" ry="14" opacity="0.28"/>
+    <ellipse cx="1300" cy="555" rx="200" ry="12" opacity="0.25"/>
+  </g>
+
+  <!-- Two deer silhouettes in clearing lower-right around (1152,576) -->
+  <g fill="#8d6b4a">
+    <!-- deer 1 (foreground, larger) at ~(1152,576) -->
+    <ellipse cx="1152" cy="600" rx="48" ry="22"/>
+    <!-- neck -->
+    <path d="M1190,590 Q1198,565 1208,545 Q1216,540 1220,548 Q1216,575 1208,600 Z"/>
+    <!-- head -->
+    <ellipse cx="1218" cy="540" rx="14" ry="10"/>
+    <!-- ears -->
+    <path d="M1212,530 Q1210,520 1216,522 Z"/>
+    <path d="M1224,530 Q1226,520 1220,522 Z"/>
+    <!-- legs -->
+    <rect x="1122" y="615" width="6" height="34" rx="2"/>
+    <rect x="1140" y="618" width="6" height="32" rx="2"/>
+    <rect x="1168" y="618" width="6" height="32" rx="2"/>
+    <rect x="1184" y="615" width="6" height="34" rx="2"/>
+    <!-- small tail -->
+    <ellipse cx="1108" cy="592" rx="6" ry="4"/>
+  </g>
+  <g fill="#7a5c3f">
+    <!-- deer 2 (smaller, slightly behind) -->
+    <ellipse cx="1240" cy="612" rx="38" ry="18"/>
+    <path d="M1272,604 Q1278,584 1286,568 Q1292,564 1295,571 Q1292,594 1286,614 Z"/>
+    <ellipse cx="1292" cy="564" rx="11" ry="8"/>
+    <path d="M1287,556 Q1285,548 1290,550 Z"/>
+    <path d="M1297,556 Q1299,548 1294,550 Z"/>
+    <rect x="1216" y="624" width="5" height="28" rx="2"/>
+    <rect x="1230" y="626" width="5" height="26" rx="2"/>
+    <rect x="1252" y="626" width="5" height="26" rx="2"/>
+    <rect x="1266" y="624" width="5" height="28" rx="2"/>
+  </g>
+
+  <!-- Forest floor details: small ferns and grass tufts -->
+  <g stroke="#2c4f39" stroke-width="2" stroke-linecap="round" opacity="0.7">
+    <line x1="220" y1="650" x2="218" y2="628"/>
+    <line x1="232" y1="652" x2="236" y2="628"/>
+    <line x1="380" y1="680" x2="382" y2="655"/>
+    <line x1="500" y1="700" x2="498" y2="675"/>
+    <line x1="640" y1="690" x2="642" y2="665"/>
+    <line x1="900" y1="700" x2="902" y2="675"/>
+    <line x1="1050" y1="710" x2="1048" y2="685"/>
+    <line x1="1400" y1="700" x2="1402" y2="675"/>
+  </g>
+
+  <!-- Soft light specks dancing in the beams -->
+  <g fill="#fff2c4" opacity="0.6">
+    <circle cx="1180" cy="220" r="3"/>
+    <circle cx="1050" cy="320" r="2.5"/>
+    <circle cx="980" cy="420" r="2.5"/>
+    <circle cx="900" cy="500" r="2"/>
+    <circle cx="1300" cy="380" r="3"/>
+    <circle cx="1100" cy="500" r="2"/>
+  </g>
+</svg>

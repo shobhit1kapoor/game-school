@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 768" preserveAspectRatio="xMidYMid slice">
+  <!-- Rivers of Ice — blue glacier center-left with crevasses, teal water with icebergs lower-right, gray peaks -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a8c4d2"/>
+      <stop offset="0.6" stop-color="#c4dde6"/>
+      <stop offset="1" stop-color="#d6e9ef"/>
+    </linearGradient>
+    <linearGradient id="farRock" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8d99a6"/>
+      <stop offset="1" stop-color="#a4afba"/>
+    </linearGradient>
+    <linearGradient id="midRock" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6b7280"/>
+      <stop offset="1" stop-color="#838f9c"/>
+    </linearGradient>
+    <linearGradient id="iceBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c8e3ed"/>
+      <stop offset="0.55" stop-color="#a8d4e3"/>
+      <stop offset="1" stop-color="#6fb3cc"/>
+    </linearGradient>
+    <linearGradient id="iceDeep" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6fb3cc"/>
+      <stop offset="1" stop-color="#2e6e8c"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a7388"/>
+      <stop offset="1" stop-color="#1d5b6e"/>
+    </linearGradient>
+    <radialGradient id="coldGlow" cx="0.5" cy="0.25" r="0.6">
+      <stop offset="0" stop-color="#e8f3f7" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#e8f3f7" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1536" height="768" fill="url(#sky)"/>
+  <rect width="1536" height="768" fill="url(#coldGlow)"/>
+
+  <!-- Distant snow-dusted rocky peaks framing background -->
+  <path d="M0,330 L120,220 L260,300 L400,170 L560,280 L720,200 L880,290 L1040,180 L1200,275 L1360,210 L1536,290 V768 H0 Z" fill="url(#farRock)" opacity="0.9"/>
+  <g fill="#dde7ef" opacity="0.9">
+    <path d="M120,220 L98,260 L142,260 Z"/>
+    <path d="M400,170 L372,215 L428,215 Z"/>
+    <path d="M720,200 L692,245 L748,245 Z"/>
+    <path d="M1040,180 L1012,225 L1068,225 Z"/>
+    <path d="M1360,210 L1332,255 L1388,255 Z"/>
+  </g>
+
+  <!-- Mid rocky peaks (framing the glacier) -->
+  <!-- left frame -->
+  <path d="M0,500 L60,360 L180,440 L280,300 L380,420 L460,360 L520,460 V768 H0 Z" fill="url(#midRock)"/>
+  <g fill="#f4f7fa" opacity="0.85">
+    <path d="M60,360 L40,400 L80,400 Z"/>
+    <path d="M280,300 L255,348 L305,348 Z"/>
+    <path d="M460,360 L438,400 L482,400 Z"/>
+  </g>
+  <!-- right frame -->
+  <path d="M980,520 L1060,370 L1180,460 L1280,310 L1400,440 L1536,360 V768 H980 Z" fill="url(#midRock)"/>
+  <g fill="#f4f7fa" opacity="0.85">
+    <path d="M1060,370 L1038,412 L1082,412 Z"/>
+    <path d="M1280,310 L1255,358 L1305,358 Z"/>
+    <path d="M1400,440 L1378,478 L1422,478 Z"/>
+  </g>
+
+  <!-- Massive glowing blue glacier flowing center-left (centered ~614,269), down through middle to sea -->
+  <g>
+    <!-- glacier base body / valley fill -->
+    <path d="M260,500 Q360,420 480,360 Q580,290 700,260 Q820,235 940,250 Q1000,260 1050,340 Q1080,420 1040,520 Q980,610 880,650 Q760,690 640,680 Q500,665 380,620 Q280,580 260,500 Z" fill="url(#iceBody)"/>
+    <!-- upper bright ice highlight -->
+    <path d="M460,360 Q570,300 700,275 Q820,255 920,275 Q970,290 990,340 Q960,330 900,330 Q800,330 700,360 Q580,395 480,420 Q420,430 400,410 Q420,385 460,360 Z" fill="#c8e3ed" opacity="0.85"/>
+    <!-- glacial sheen on top -->
+    <ellipse cx="614" cy="269" rx="220" ry="50" fill="#e8f3f7" opacity="0.55"/>
+    <ellipse cx="700" cy="285" rx="140" ry="22" fill="#ffffff" opacity="0.5"/>
+
+    <!-- Deep crevasse cracks (concentrated around 230,384 — left side of glacier tongue) -->
+    <g fill="url(#iceDeep)" opacity="0.9">
+      <path d="M210,360 L228,400 L240,398 L222,358 Z"/>
+      <path d="M250,380 L268,425 L280,422 L262,378 Z"/>
+      <path d="M290,395 L308,445 L320,442 L302,392 Z"/>
+      <path d="M180,400 L196,438 L208,435 L192,398 Z"/>
+      <path d="M225,432 L242,475 L254,472 L237,430 Z"/>
+    </g>
+    <g stroke="#2e6e8c" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.75">
+      <path d="M215,365 Q220,390 230,415"/>
+      <path d="M258,388 Q263,415 274,440"/>
+      <path d="M300,402 Q305,430 316,455"/>
+      <path d="M188,408 Q193,425 202,445"/>
+      <path d="M232,438 Q237,460 248,480"/>
+    </g>
+    <!-- additional curving crevasse hints across glacier body -->
+    <g stroke="#4a8ba4" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6">
+      <path d="M380,470 Q470,440 580,440"/>
+      <path d="M450,520 Q560,490 680,500"/>
+      <path d="M540,580 Q660,560 780,575"/>
+      <path d="M720,420 Q820,415 900,440"/>
+      <path d="M800,510 Q880,510 960,530"/>
+    </g>
+
+    <!-- glacier terminus (calving front) toward water -->
+    <path d="M880,650 Q940,640 980,610 Q1010,560 1020,510 L1050,540 Q1040,610 1000,660 Q940,700 880,690 Z" fill="#6fb3cc"/>
+    <path d="M880,690 L920,720 L1000,712 L1040,690 Q1000,700 960,698 Q920,696 880,690 Z" fill="#2e6e8c" opacity="0.7"/>
+  </g>
+
+  <!-- Dark teal water lower-right -->
+  <path d="M820,690 Q950,670 1100,680 Q1280,690 1536,675 V768 H820 Z" fill="url(#water)"/>
+  <!-- subtle water highlights -->
+  <g stroke="#a8d4e3" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.5">
+    <path d="M880,710 Q960,705 1040,710"/>
+    <path d="M1100,725 Q1220,720 1340,728"/>
+    <path d="M940,740 Q1080,735 1220,742"/>
+    <path d="M1280,705 Q1380,702 1480,710"/>
+  </g>
+
+  <!-- Floating icebergs around (1075,538)... they float on water surface ~690+ -->
+  <g>
+    <!-- hero iceberg near hotspot, sitting in water -->
+    <g transform="translate(1075,690)">
+      <path d="M-70,0 L-55,-40 L-30,-58 L0,-62 L30,-55 L55,-38 L72,0 Z" fill="#e8f3f7"/>
+      <path d="M-55,-40 L-30,-58 L0,-62 L8,-40 L-20,-32 Z" fill="#ffffff"/>
+      <path d="M-70,0 L72,0 L80,16 L-78,16 Z" fill="#a8d4e3" opacity="0.85"/>
+      <!-- waterline reflection -->
+      <ellipse cx="0" cy="22" rx="85" ry="6" fill="#1d5b6e" opacity="0.55"/>
+    </g>
+    <!-- secondary icebergs -->
+    <g transform="translate(1240,700)">
+      <path d="M-44,0 L-30,-26 L-10,-36 L12,-32 L30,-20 L44,0 Z" fill="#e8f3f7"/>
+      <path d="M-30,-26 L-10,-36 L12,-32 L4,-22 L-18,-18 Z" fill="#ffffff"/>
+      <path d="M-44,0 L44,0 L50,10 L-50,10 Z" fill="#a8d4e3" opacity="0.85"/>
+      <ellipse cx="0" cy="14" rx="52" ry="4" fill="#1d5b6e" opacity="0.55"/>
+    </g>
+    <g transform="translate(940,712)">
+      <path d="M-30,0 L-20,-18 L-4,-26 L12,-22 L24,-12 L34,0 Z" fill="#e8f3f7"/>
+      <path d="M-20,-18 L-4,-26 L12,-22 L4,-14 Z" fill="#ffffff"/>
+      <path d="M-30,0 L34,0 L40,8 L-36,8 Z" fill="#a8d4e3" opacity="0.85"/>
+    </g>
+    <g transform="translate(1400,720)">
+      <path d="M-26,0 L-16,-14 L0,-20 L14,-16 L24,-6 L30,0 Z" fill="#e8f3f7"/>
+      <path d="M-26,0 L30,0 L34,7 L-30,7 Z" fill="#a8d4e3" opacity="0.85"/>
+    </g>
+    <!-- small bergy bits -->
+    <ellipse cx="1160" cy="730" rx="14" ry="4" fill="#e8f3f7"/>
+    <ellipse cx="1340" cy="745" rx="10" ry="3" fill="#e8f3f7"/>
+    <ellipse cx="1020" cy="735" rx="8" ry="2.5" fill="#e8f3f7"/>
+    <ellipse cx="1480" cy="740" rx="12" ry="3.5" fill="#e8f3f7"/>
+  </g>
+</svg>

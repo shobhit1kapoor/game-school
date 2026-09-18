@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 768" preserveAspectRatio="xMidYMid slice">
+  <!-- Snow on the Mountains — drifting flakes center, snowy pines lower-left, snowpack slope right -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8fa8c4"/>
+      <stop offset="0.55" stop-color="#b8cbdd"/>
+      <stop offset="1" stop-color="#dde7ef"/>
+    </linearGradient>
+    <linearGradient id="farPeaks" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a8b8cb"/>
+      <stop offset="1" stop-color="#c2cfdc"/>
+    </linearGradient>
+    <linearGradient id="midPeaks" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7d92aa"/>
+      <stop offset="1" stop-color="#a3b6c8"/>
+    </linearGradient>
+    <linearGradient id="snowCap" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4f7fa"/>
+      <stop offset="1" stop-color="#dde7ef"/>
+    </linearGradient>
+    <linearGradient id="snowpack" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4f7fa"/>
+      <stop offset="0.6" stop-color="#e3ecf3"/>
+      <stop offset="1" stop-color="#c5d3df"/>
+    </linearGradient>
+    <radialGradient id="winterGlow" cx="0.5" cy="0.2" r="0.6">
+      <stop offset="0" stop-color="#f4f7fa" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#f4f7fa" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1536" height="768" fill="url(#sky)"/>
+  <rect width="1536" height="768" fill="url(#winterGlow)"/>
+
+  <!-- Distant peaks behind -->
+  <path d="M0,360 L140,250 L260,330 L380,210 L520,320 L660,240 L800,310 L940,220 L1080,300 L1220,235 L1360,310 L1536,250 V768 H0 Z" fill="url(#farPeaks)" opacity="0.85"/>
+  <!-- Snow caps on far peaks -->
+  <g fill="#f4f7fa" opacity="0.9">
+    <path d="M140,250 L120,278 L160,278 Z"/>
+    <path d="M380,210 L355,245 L405,245 Z"/>
+    <path d="M660,240 L635,275 L685,275 Z"/>
+    <path d="M940,220 L915,255 L965,255 Z"/>
+    <path d="M1220,235 L1195,270 L1245,270 Z"/>
+  </g>
+
+  <!-- Mid peaks -->
+  <path d="M0,470 L180,330 L340,440 L500,300 L680,430 L860,320 L1040,420 L1220,310 L1380,425 L1536,340 V768 H0 Z" fill="url(#midPeaks)"/>
+  <!-- Snow caps on mid peaks -->
+  <g fill="url(#snowCap)">
+    <path d="M180,330 L150,378 L210,378 Z"/>
+    <path d="M500,300 L465,355 L535,355 Z"/>
+    <path d="M860,320 L825,375 L895,375 Z"/>
+    <path d="M1220,310 L1185,365 L1255,365 Z"/>
+  </g>
+
+  <!-- Deep smooth snowpack slope on right (~75%,50%) -->
+  <g>
+    <path d="M700,560 Q900,470 1100,420 Q1280,390 1536,440 V768 H700 Z" fill="url(#snowpack)"/>
+    <!-- snow ridges/shading -->
+    <path d="M820,540 Q1000,470 1180,440 Q1330,425 1500,460" stroke="#c5d3df" stroke-width="3" fill="none" opacity="0.55"/>
+    <path d="M900,580 Q1080,520 1260,490 Q1380,475 1520,500" stroke="#c5d3df" stroke-width="2" fill="none" opacity="0.5"/>
+    <ellipse cx="1152" cy="384" rx="14" ry="6" fill="#ffffff" opacity="0.9"/>
+  </g>
+
+  <!-- Foreground snow ground -->
+  <path d="M0,640 Q280,600 560,625 T1100,615 Q1300,605 1536,625 V768 H0 Z" fill="url(#snowpack)"/>
+
+  <!-- Snow-laden pine trees lower-left (~25%,65%) -->
+  <g>
+    <!-- back row -->
+    <g fill="#2c4f39">
+      <path d="M280,540 L240,640 L320,640 Z"/>
+      <path d="M280,490 L246,560 L314,560 Z"/>
+      <path d="M280,450 L252,510 L308,510 Z"/>
+    </g>
+    <g fill="#f4f7fa">
+      <path d="M280,450 L262,492 L298,492 Z" opacity="0.9"/>
+      <path d="M270,500 L246,540 L262,540 L272,520 Z" opacity="0.85"/>
+      <path d="M290,500 L314,540 L298,540 L288,520 Z" opacity="0.85"/>
+    </g>
+    <rect x="274" y="638" width="12" height="22" fill="#5d4a36"/>
+
+    <!-- hero tree (centered on 384,499) -->
+    <g fill="#2c4f39">
+      <path d="M384,580 L325,710 L443,710 Z"/>
+      <path d="M384,510 L335,605 L433,605 Z"/>
+      <path d="M384,450 L345,530 L423,530 Z"/>
+      <path d="M384,400 L355,455 L413,455 Z"/>
+    </g>
+    <g fill="#3e6b4e">
+      <path d="M384,500 L350,555 L418,555 Z" opacity="0.9"/>
+    </g>
+    <g fill="#f4f7fa">
+      <path d="M384,400 L364,440 L404,440 Z"/>
+      <path d="M370,455 L345,495 L362,495 L375,470 Z"/>
+      <path d="M398,455 L423,495 L406,495 L393,470 Z"/>
+      <path d="M362,520 L335,555 L355,555 L368,535 Z"/>
+      <path d="M406,520 L433,555 L413,555 L400,535 Z"/>
+      <path d="M352,590 L325,625 L348,625 L362,605 Z"/>
+      <path d="M416,590 L443,625 L420,625 L406,605 Z"/>
+    </g>
+    <rect x="377" y="708" width="14" height="32" fill="#5d4a36" rx="2"/>
+
+    <!-- right row -->
+    <g fill="#2c4f39">
+      <path d="M480,560 L440,650 L520,650 Z"/>
+      <path d="M480,510 L446,580 L514,580 Z"/>
+      <path d="M480,470 L452,530 L508,530 Z"/>
+    </g>
+    <g fill="#f4f7fa">
+      <path d="M480,470 L462,510 L498,510 Z" opacity="0.9"/>
+      <path d="M468,520 L446,560 L462,560 L472,540 Z" opacity="0.85"/>
+      <path d="M492,520 L514,560 L498,560 L488,540 Z" opacity="0.85"/>
+    </g>
+    <rect x="474" y="648" width="12" height="22" fill="#5d4a36"/>
+  </g>
+
+  <!-- Drifting snowflakes — concentrated around (768,192), scattered everywhere -->
+  <g fill="#ffffff">
+    <!-- dense cluster around hotspot -->
+    <circle cx="768" cy="192" r="5" opacity="0.95"/>
+    <circle cx="740" cy="180" r="3" opacity="0.85"/>
+    <circle cx="795" cy="205" r="4" opacity="0.9"/>
+    <circle cx="755" cy="220" r="3.5" opacity="0.8"/>
+    <circle cx="790" cy="165" r="3" opacity="0.85"/>
+    <circle cx="720" cy="210" r="2.5" opacity="0.75"/>
+    <circle cx="815" cy="180" r="2.5" opacity="0.8"/>
+    <circle cx="745" cy="155" r="2" opacity="0.7"/>
+    <circle cx="775" cy="240" r="3" opacity="0.85"/>
+    <circle cx="810" cy="225" r="2" opacity="0.7"/>
+    <!-- scattered across sky -->
+    <circle cx="120" cy="120" r="3" opacity="0.85"/>
+    <circle cx="220" cy="80" r="2" opacity="0.7"/>
+    <circle cx="340" cy="160" r="3.5" opacity="0.9"/>
+    <circle cx="450" cy="100" r="2.5" opacity="0.8"/>
+    <circle cx="560" cy="140" r="3" opacity="0.85"/>
+    <circle cx="640" cy="60" r="2" opacity="0.7"/>
+    <circle cx="900" cy="100" r="3" opacity="0.85"/>
+    <circle cx="1020" cy="160" r="2.5" opacity="0.8"/>
+    <circle cx="1120" cy="90" r="3" opacity="0.85"/>
+    <circle cx="1250" cy="140" r="2" opacity="0.7"/>
+    <circle cx="1380" cy="100" r="3" opacity="0.85"/>
+    <circle cx="1460" cy="180" r="2.5" opacity="0.8"/>
+    <circle cx="80" cy="260" r="2" opacity="0.7"/>
+    <circle cx="200" cy="310" r="2.5" opacity="0.75"/>
+    <circle cx="600" cy="290" r="2" opacity="0.65"/>
+    <circle cx="950" cy="280" r="2.5" opacity="0.75"/>
+    <circle cx="1300" cy="260" r="2" opacity="0.7"/>
+    <circle cx="1480" cy="320" r="2" opacity="0.65"/>
+  </g>
+  <!-- A few six-pointed star flakes -->
+  <g stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" opacity="0.85" fill="none">
+    <g transform="translate(768,192)">
+      <line x1="0" y1="-12" x2="0" y2="12"/>
+      <line x1="-10" y1="-6" x2="10" y2="6"/>
+      <line x1="-10" y1="6" x2="10" y2="-6"/>
+    </g>
+    <g transform="translate(720,260)">
+      <line x1="0" y1="-8" x2="0" y2="8"/>
+      <line x1="-7" y1="-4" x2="7" y2="4"/>
+      <line x1="-7" y1="4" x2="7" y2="-4"/>
+    </g>
+    <g transform="translate(1100,220)">
+      <line x1="0" y1="-9" x2="0" y2="9"/>
+      <line x1="-8" y1="-4.5" x2="8" y2="4.5"/>
+      <line x1="-8" y1="4.5" x2="8" y2="-4.5"/>
+    </g>
+    <g transform="translate(420,240)">
+      <line x1="0" y1="-7" x2="0" y2="7"/>
+      <line x1="-6" y1="-3.5" x2="6" y2="3.5"/>
+      <line x1="-6" y1="3.5" x2="6" y2="-3.5"/>
+    </g>
+  </g>
+</svg>

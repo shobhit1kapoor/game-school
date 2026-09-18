@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 768" preserveAspectRatio="xMidYMid slice">
+  <!-- Up, Up, Up! — radiant sun lifting vapor off sparkling sea -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#dff0f4"/>
+      <stop offset="0.5" stop-color="#e9f3f4"/>
+      <stop offset="1" stop-color="#f5ecd6"/>
+    </linearGradient>
+    <linearGradient id="seaFar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7fc4d4"/>
+      <stop offset="1" stop-color="#2a93b8"/>
+    </linearGradient>
+    <linearGradient id="seaNear" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a93b8"/>
+      <stop offset="1" stop-color="#1d7a99"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="0.5" cy="0.2" r="0.7">
+      <stop offset="0" stop-color="#f6d77a" stop-opacity="0.85"/>
+      <stop offset="0.4" stop-color="#f6d77a" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#f6d77a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sunCore" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#fff4c8"/>
+      <stop offset="0.5" stop-color="#f6d77a"/>
+      <stop offset="1" stop-color="#f0b03a"/>
+    </radialGradient>
+    <linearGradient id="reflect" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff4c8" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#fff4c8" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1536" height="768" fill="url(#sky)"/>
+  <!-- Wide sun glow filling much of sky -->
+  <rect width="1536" height="768" fill="url(#sunGlow)"/>
+
+  <!-- Sun rays — soft pale beams -->
+  <g fill="#fceaa6" opacity="0.35">
+    <path d="M768,154 L420,420 L380,400 Z"/>
+    <path d="M768,154 L580,460 L540,440 Z"/>
+    <path d="M768,154 L780,500 L760,500 Z"/>
+    <path d="M768,154 L960,460 L1000,440 Z"/>
+    <path d="M768,154 L1120,420 L1160,400 Z"/>
+    <path d="M768,154 L260,360 L240,330 Z"/>
+    <path d="M768,154 L1280,360 L1300,330 Z"/>
+  </g>
+
+  <!-- Sun at (768, 154) — layered radiant circles -->
+  <g transform="translate(768,154)">
+    <circle r="160" fill="#f6d77a" opacity="0.25"/>
+    <circle r="120" fill="#f6d77a" opacity="0.35"/>
+    <circle r="90" fill="#f0b03a" opacity="0.55"/>
+    <circle r="72" fill="url(#sunCore)"/>
+    <circle r="50" fill="#fff4c8" opacity="0.85"/>
+    <circle r="28" fill="#ffffff" opacity="0.85"/>
+  </g>
+
+  <!-- Distant horizon haze -->
+  <rect x="0" y="430" width="1536" height="10" fill="#ffffff" opacity="0.4"/>
+
+  <!-- Sea -->
+  <rect x="0" y="440" width="1536" height="120" fill="url(#seaFar)"/>
+  <rect x="0" y="560" width="1536" height="208" fill="url(#seaNear)"/>
+
+  <!-- Sun reflection column on water -->
+  <path d="M700,440 L836,440 L900,768 L636,768 Z" fill="url(#reflect)"/>
+
+  <!-- Horizontal water bands -->
+  <g fill="#ffffff" opacity="0.3">
+    <rect x="0" y="470" width="1536" height="1.5"/>
+    <rect x="0" y="500" width="1536" height="1.5"/>
+    <rect x="0" y="535" width="1536" height="1.2"/>
+    <rect x="0" y="580" width="1536" height="1.2"/>
+    <rect x="0" y="630" width="1536" height="1.2"/>
+    <rect x="0" y="690" width="1536" height="1.5"/>
+  </g>
+
+  <!-- Sparkle field on sea around (614, 499) -->
+  <g fill="#ffffff">
+    <!-- diamond sparkles -->
+    <path d="M614,495 L617,499 L614,503 L611,499 Z"/>
+    <path d="M560,510 L562,513 L560,516 L558,513 Z"/>
+    <path d="M680,485 L683,489 L680,493 L677,489 Z"/>
+    <path d="M520,540 L522,543 L520,546 L518,543 Z"/>
+    <path d="M740,520 L743,524 L740,528 L737,524 Z"/>
+    <path d="M460,480 L462,483 L460,486 L458,483 Z"/>
+    <path d="M820,510 L823,514 L820,518 L817,514 Z"/>
+    <path d="M580,560 L582,563 L580,566 L578,563 Z"/>
+    <path d="M660,540 L663,544 L660,548 L657,544 Z"/>
+    <path d="M380,520 L382,523 L380,526 L378,523 Z"/>
+    <path d="M860,485 L863,489 L860,493 L857,489 Z"/>
+    <path d="M420,470 L422,473 L420,476 L418,473 Z"/>
+    <path d="M720,475 L722,478 L720,481 L718,478 Z"/>
+  </g>
+  <!-- plus sparkles -->
+  <g stroke="#ffffff" stroke-width="1.5" stroke-linecap="round">
+    <path d="M614,488 L614,510 M603,499 L625,499"/>
+    <path d="M520,500 L520,512 M514,506 L526,506"/>
+    <path d="M700,530 L700,542 M694,536 L706,536"/>
+    <path d="M780,490 L780,500 M775,495 L785,495"/>
+    <path d="M620,560 L620,570 M615,565 L625,565"/>
+    <path d="M480,520 L480,530 M475,525 L485,525"/>
+    <path d="M820,540 L820,550 M815,545 L825,545"/>
+  </g>
+  <!-- tiny dot sparkles -->
+  <g fill="#ffffff" opacity="0.85">
+    <circle cx="500" cy="475" r="1.5"/>
+    <circle cx="540" cy="495" r="1.5"/>
+    <circle cx="600" cy="525" r="1.5"/>
+    <circle cx="640" cy="495" r="1.5"/>
+    <circle cx="680" cy="510" r="1.5"/>
+    <circle cx="720" cy="555" r="1.5"/>
+    <circle cx="760" cy="495" r="1.5"/>
+    <circle cx="440" cy="500" r="1.5"/>
+    <circle cx="800" cy="475" r="1.5"/>
+    <circle cx="320" cy="540" r="1.5"/>
+    <circle cx="900" cy="510" r="1.5"/>
+  </g>
+
+  <!-- Foam ripples on near water -->
+  <g fill="#ffffff" opacity="0.55">
+    <ellipse cx="240" cy="640" rx="100" ry="4"/>
+    <ellipse cx="640" cy="680" rx="140" ry="5"/>
+    <ellipse cx="1100" cy="660" rx="120" ry="4"/>
+    <ellipse cx="380" cy="720" rx="160" ry="5"/>
+  </g>
+
+  <!-- Rising vapor wisps at (1152, 307) — wavy translucent paths fading upward -->
+  <g stroke="#ffffff" fill="none" stroke-linecap="round" stroke-width="6">
+    <path d="M1100,440 Q1090,400 1110,360 Q1130,320 1115,280 Q1100,240 1120,200" opacity="0.55"/>
+    <path d="M1150,440 Q1162,400 1148,360 Q1134,320 1158,280 Q1175,240 1160,200" opacity="0.7"/>
+    <path d="M1200,440 Q1212,400 1196,360 Q1182,320 1208,280 Q1224,240 1210,200" opacity="0.6"/>
+    <path d="M1250,440 Q1262,400 1248,360 Q1234,320 1258,280" opacity="0.5"/>
+    <path d="M1060,440 Q1052,400 1066,360 Q1080,320 1062,280" opacity="0.45"/>
+    <path d="M1300,440 Q1310,400 1296,360" opacity="0.4"/>
+  </g>
+  <!-- thinner inner highlights -->
+  <g stroke="#ffffff" fill="none" stroke-linecap="round" stroke-width="2.5" opacity="0.85">
+    <path d="M1150,438 Q1160,402 1150,365 Q1138,322 1158,282"/>
+    <path d="M1200,438 Q1208,400 1196,362 Q1186,322 1206,282"/>
+    <path d="M1100,438 Q1094,402 1108,362 Q1126,322 1116,282"/>
+  </g>
+  <!-- vapor puffs at top -->
+  <g fill="#ffffff" opacity="0.55">
+    <ellipse cx="1118" cy="195" rx="18" ry="10"/>
+    <ellipse cx="1160" cy="195" rx="20" ry="11"/>
+    <ellipse cx="1210" cy="195" rx="18" ry="10"/>
+    <ellipse cx="1140" cy="180" rx="14" ry="8"/>
+    <ellipse cx="1190" cy="182" rx="14" ry="8"/>
+  </g>
+</svg>

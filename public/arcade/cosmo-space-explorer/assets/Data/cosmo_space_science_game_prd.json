@@ -1,0 +1,943 @@
+{
+  "project": {
+    "title": "우주탐험대 코스모: 밤하늘 관찰 미션",
+    "subject": "초등 과학 밤하늘 관찰",
+    "target": "학년 구분 없이 활용 가능한 학생용 심화 수준, 태블릿 가로형 16:9, 전자칠판 수업",
+    "core": "2D 횡스크롤 우주 탐험 + 3D 천체 조작 + 행성 도감 + 북극성 찾기 + 최종 기록장",
+    "tone": "귀여운 3D 우주 탐험, 파스텔 네온, 프리미엄 초등 과학 콘텐츠",
+    "rules": [
+      "상업 게임 리소스와 캐릭터를 복제하지 않는다.",
+      "백엔드, 로그인, 데이터베이스 없이 localStorage만 사용한다.",
+      "각 화면 핵심 에셋은 10개 이하로 유지한다.",
+      "UI 버튼과 단순 애니메이션은 CSS로 처리한다.",
+      "문제는 학생이 이해하기 쉬운 심화 수준으로 구성한다.",
+      "북극성을 가장 밝은 별로 설명하지 않는다.",
+      "태양계 행성은 8개로 다룬다."
+    ]
+  },
+  "curriculum_flow": [
+    {
+      "step": 1,
+      "concept": "달의 모양과 표면",
+      "stage": "1단계 달 기지 탐사",
+      "focus": [
+        "둥근 공 모양",
+        "충돌 구덩이",
+        "달의 바다",
+        "달과 지구 비교"
+      ]
+    },
+    {
+      "step": 2,
+      "concept": "여러 날 동안 보이는 달의 모양 변화",
+      "stage": "2단계 달 모양 타임로드",
+      "focus": [
+        "초승달",
+        "상현달",
+        "보름달",
+        "하현달",
+        "그믐달",
+        "약 30일 주기"
+      ]
+    },
+    {
+      "step": 3,
+      "concept": "태양·지구·달 위치 관계",
+      "stage": "3단계 우주 실험실",
+      "focus": [
+        "태양빛",
+        "달은 스스로 빛나지 않음",
+        "보는 방향에 따른 달 모양 변화"
+      ]
+    },
+    {
+      "step": 4,
+      "concept": "태양계 구성원과 행성 특징",
+      "stage": "4단계 행성 기지 탐험",
+      "focus": [
+        "태양계",
+        "8개 행성",
+        "행성 순서",
+        "암석 행성",
+        "기체 행성",
+        "행성 특징 비교"
+      ]
+    },
+    {
+      "step": 5,
+      "concept": "북극성 주변 별자리",
+      "stage": "5단계 귀환 미션",
+      "focus": [
+        "북두칠성",
+        "카시오페이아자리",
+        "북극성",
+        "5배 거리 자"
+      ]
+    }
+  ],
+  "game_flow": {
+    "core_loop": [
+      "스테이지 입장",
+      "탐험 또는 조작 활동",
+      "학습 카드 수집",
+      "오개념 몬스터 또는 잠금 장치 해결",
+      "심화 문제 풀이",
+      "기록장 자동 작성",
+      "배지 획득",
+      "다음 스테이지 해금"
+    ],
+    "input": {
+      "keyboard": {
+        "left_right": "이동",
+        "space": "점프",
+        "z": "조사/상호작용",
+        "x": "정화/해결",
+        "esc": "일시정지"
+      },
+      "touch": {
+        "left_pad": "이동",
+        "right_buttons": [
+          "점프",
+          "조사",
+          "정화"
+        ],
+        "drag": [
+          "달 위치 조작",
+          "행성 카드 배치",
+          "별 연결"
+        ]
+      }
+    },
+    "rewards": [
+      {
+        "id": "moon_surface",
+        "name": "달 탐사 배지"
+      },
+      {
+        "id": "moon_phase",
+        "name": "달 관찰 배지"
+      },
+      {
+        "id": "orbit_lab",
+        "name": "우주 실험 배지"
+      },
+      {
+        "id": "planet_explorer",
+        "name": "행성 탐험 배지"
+      },
+      {
+        "id": "star_navigator",
+        "name": "별자리 항해사 배지"
+      }
+    ]
+  },
+  "pages": [
+    {
+      "id": "page_01_main",
+      "name": "메인 화면",
+      "title": "우주탐험대 코스모",
+      "purpose": "단원 전체 미션을 소개하고 탐험 몰입을 만든다.",
+      "scenario": "별이 빛나는 우주와 우주기지 앞에서 우주인과 로봇 코스모가 등장한다. 코스모는 밤하늘에서 보이는 달, 행성, 별자리는 관찰하면 규칙을 찾을 수 있다고 안내한다.",
+      "visible_text": [
+        "우주탐험대 코스모",
+        "밤하늘 관찰 미션",
+        "달 · 태양계 · 북극성을 탐험하자!",
+        "탐험 시작",
+        "나의 기록장",
+        "설정"
+      ],
+      "learning_question": "밤하늘에서 보이는 달과 별, 행성은 어떤 규칙을 가지고 있을까?",
+      "assets_max_10": [
+        "astronaut_boy",
+        "astronaut_girl",
+        "cosmo_robot",
+        "moon_mascot",
+        "jupiter_planet",
+        "space_base",
+        "rocket_icon",
+        "science_book_icon",
+        "record_notebook_icon",
+        "gear_icon"
+      ],
+      "interactions": [
+        {
+          "action": "탐험 시작",
+          "result": "인트로 영상 또는 캐릭터 선택으로 이동"
+        },
+        {
+          "action": "나의 기록장",
+          "result": "저장된 기록장 열기"
+        },
+        {
+          "action": "설정",
+          "result": "소리, 인트로 다시 보기 설정"
+        }
+      ],
+      "implementation": [
+        "별 반짝임은 CSS",
+        "버튼은 CSS",
+        "소리 있는 영상은 사용자 클릭 후 재생"
+      ]
+    },
+    {
+      "id": "page_02_character_select",
+      "name": "캐릭터 선택",
+      "title": "나의 우주탐험대원 고르기",
+      "purpose": "학생이 탐험가를 선택하고 몰입하게 한다.",
+      "scenario": "우주정거장 내부에서 탐험가 지오와 탐험가 별이 중 한 명을 선택한다. 코스모는 정답을 빨리 고르는 것보다 관찰하고 비교하는 힘이 중요하다고 안내한다.",
+      "visible_text": [
+        "캐릭터 선택",
+        "탐험가 지오",
+        "탐험가 별이",
+        "마음에 드는 우주인을 골라 보세요!",
+        "선택 완료"
+      ],
+      "learning_question": "탐험에서는 어떤 태도가 중요할까?",
+      "assets_max_10": [
+        "astronaut_boy_fullbody",
+        "astronaut_girl_fullbody",
+        "cosmo_robot",
+        "blue_character_card",
+        "purple_character_card",
+        "station_panel"
+      ],
+      "interactions": [
+        {
+          "action": "캐릭터 선택",
+          "result": "선택 강조"
+        },
+        {
+          "action": "선택 완료",
+          "result": "스페이스 스테이션으로 이동"
+        }
+      ],
+      "implementation": [
+        "캐릭터 능력치 차이는 두지 않음",
+        "선택 캐릭터는 localStorage에 저장",
+        "최종 수료증에 선택 캐릭터 표시"
+      ]
+    },
+    {
+      "id": "page_03_station",
+      "name": "스페이스 스테이션",
+      "title": "5개 미션 선택 허브",
+      "purpose": "단원 흐름과 현재 진행 상태를 보여준다.",
+      "scenario": "우주정거장에 5개 포털이 있다. 코스모는 달 표면 관찰, 달 모양 변화, 위치 관계 실험, 행성 탐험, 북극성 귀환 순서로 미션을 안내한다.",
+      "visible_text": [
+        "스페이스 스테이션",
+        "1 달 기지",
+        "2 달빛 터널",
+        "3 실험실",
+        "4 행성 포털",
+        "5 귀환 미션",
+        "현재 미션 보기"
+      ],
+      "learning_question": "탐구는 어떤 순서로 진행될 때 더 잘 이해될까?",
+      "assets_max_10": [
+        "space_station_large",
+        "blue_portal",
+        "purple_portal",
+        "hologram_console",
+        "solar_system_hologram",
+        "mission_signpost",
+        "energy_generator",
+        "storage_crates",
+        "landing_platform",
+        "direction_sign"
+      ],
+      "interactions": [
+        {
+          "action": "열린 포털 선택",
+          "result": "스테이지 이동"
+        },
+        {
+          "action": "잠긴 포털 선택",
+          "result": "이전 미션 완료 안내"
+        }
+      ],
+      "implementation": [
+        "포털 잠금은 progress.unlockedStages로 관리",
+        "포털 빛 효과는 CSS 또는 canvas particle",
+        "교사용 전체 열기 버튼은 기본 UI에서 숨김"
+      ]
+    },
+    {
+      "id": "page_04_stage1",
+      "name": "1단계 달 기지 탐사",
+      "title": "충돌 구덩이와 달의 바다를 찾아라",
+      "purpose": "달 표면 특징을 관찰하고 오개념을 수정한다.",
+      "scenario": "우주인이 달 기지에 착륙한다. 충돌 구덩이와 달의 바다를 조사하고, 달의 바다가 실제 물바다가 아니라는 오개념을 바로잡는다.",
+      "visible_text": [
+        "1단계 달 기지 탐사",
+        "미션: 충돌 구덩이와 달의 바다를 찾아라",
+        "충돌 구덩이",
+        "달의 바다",
+        "조사",
+        "점프",
+        "정화"
+      ],
+      "learning_question": "달의 표면에는 어떤 특징이 있으며, 이름 때문에 생길 수 있는 오개념은 무엇일까?",
+      "assets_max_10": [
+        "moon_base",
+        "moon_surface_platform",
+        "large_crater",
+        "dark_lunar_mare_tile",
+        "moon_rocks",
+        "moon_flag",
+        "moon_scanner_console",
+        "sample_capsule_rock",
+        "misconception_dust_monster",
+        "moon_badge_icon"
+      ],
+      "gameplay": [
+        "달 표면 이동",
+        "충돌 구덩이 조사",
+        "달의 바다 조사",
+        "오개념 먼지 정화",
+        "달 표면 기록 카드 완성"
+      ],
+      "advanced_questions": [
+        {
+          "question": "달 표면의 충돌 구덩이가 많이 남아 있는 까닭으로 가장 적절한 것은?",
+          "choices": [
+            "달에는 바람과 비가 지구처럼 활발하지 않아 흔적이 오래 남는다.",
+            "달에는 바다가 많아서 구덩이가 물속에 보존된다.",
+            "달은 스스로 빛을 내기 때문에 구덩이가 잘 보인다.",
+            "달은 태양보다 뜨겁기 때문에 구덩이가 생긴다."
+          ],
+          "answer": "달에는 바람과 비가 지구처럼 활발하지 않아 흔적이 오래 남는다."
+        },
+        {
+          "question": "달의 바다라는 이름 때문에 생길 수 있는 오개념은?",
+          "choices": [
+            "실제 물이 가득한 바다라고 생각하는 것",
+            "달이 둥근 공 모양이라고 생각하는 것",
+            "달 표면에 충돌 구덩이가 있다고 생각하는 것",
+            "달에 밝고 어두운 부분이 있다고 생각하는 것"
+          ],
+          "answer": "실제 물이 가득한 바다라고 생각하는 것"
+        }
+      ],
+      "record_output": "달은 둥근 공 모양이며, 표면에는 충돌 구덩이가 많다. 어둡게 보이는 곳을 달의 바다라고 하지만 실제 물바다는 아니다.",
+      "implementation": [
+        "2D 횡스크롤",
+        "충돌 박스는 이미지 전체가 아니라 바닥 기준",
+        "캐릭터 원점은 발바닥 기준"
+      ]
+    },
+    {
+      "id": "page_05_stage2",
+      "name": "2단계 달 모양 타임로드",
+      "title": "달빛 조각을 모아 순서를 완성하라",
+      "purpose": "달 모양 변화 순서와 약 30일 주기를 이해한다.",
+      "scenario": "학생이 시간 터널을 지나며 음력 날짜별 달 모양 조각을 모은다. 조각을 순서대로 배열해 달 모양 변화의 규칙을 찾는다.",
+      "visible_text": [
+        "2단계 달 모양 타임로드",
+        "미션: 달빛 조각을 모아 순서를 완성하자",
+        "음력 3~4일",
+        "음력 7~8일",
+        "음력 15일",
+        "음력 22~23일",
+        "음력 27~28일",
+        "정답 확인"
+      ],
+      "learning_question": "달 모양 변화가 규칙적이라고 말할 수 있는 근거는 무엇일까?",
+      "assets_max_10": [
+        "moon_time_portal",
+        "crescent_piece",
+        "half_piece",
+        "full_piece",
+        "waning_half_piece",
+        "thin_crescent_piece",
+        "moon_phase_order_panel",
+        "moon_phase_dial",
+        "moon_hologram_projector",
+        "moon_phase_lock"
+      ],
+      "correct_sequence": [
+        "초승달",
+        "상현달",
+        "보름달",
+        "하현달",
+        "그믐달"
+      ],
+      "gameplay": [
+        "달빛 조각 수집",
+        "날짜 발판 확인",
+        "순서판에 드래그 배치",
+        "정답 확인",
+        "달 관찰 배지 획득"
+      ],
+      "advanced_questions": [
+        {
+          "question": "오늘 보름달을 보았다. 약 7일 뒤에 볼 가능성이 큰 달의 모양은?",
+          "choices": [
+            "초승달",
+            "상현달",
+            "하현달",
+            "그믐달"
+          ],
+          "answer": "하현달"
+        },
+        {
+          "question": "달 모양 변화가 규칙적이라고 말할 수 있는 근거는?",
+          "choices": [
+            "매일 달이 같은 곳에 있기 때문",
+            "약 30일 주기로 비슷한 순서가 반복되기 때문",
+            "달이 스스로 빛을 내기 때문",
+            "별자리와 함께 움직이지 않기 때문"
+          ],
+          "answer": "약 30일 주기로 비슷한 순서가 반복되기 때문"
+        }
+      ],
+      "record_output": "달의 모양은 초승달, 상현달, 보름달, 하현달, 그믐달 순서로 변하며 약 30일 주기로 비슷한 변화가 반복된다.",
+      "implementation": [
+        "드래그는 pointer event로 구현",
+        "달 조각은 독립 PNG",
+        "결과는 progress.moonPhaseSequence에 저장"
+      ]
+    },
+    {
+      "id": "page_06_stage3",
+      "name": "3단계 지구·태양·달 3D 실험실",
+      "title": "보름달 위치를 찾아라",
+      "purpose": "달 모양이 위치 관계에 따라 달라 보이는 까닭을 조작으로 이해한다.",
+      "scenario": "태양, 지구, 달 모형이 실험 장치에 나타난다. 학생은 달을 지구 주변으로 움직이며 지구에서 보이는 달의 모양을 확인한다.",
+      "visible_text": [
+        "3단계 우주 실험실",
+        "미션: 보름달 위치를 찾아라",
+        "태양빛",
+        "지구에서 본 달",
+        "달을 드래그하여 공전시켜 보세요",
+        "힌트 보기"
+      ],
+      "learning_question": "달은 실제 모양이 변하는 것일까, 보이는 모습이 달라지는 것일까?",
+      "assets_max_10": [
+        "sun_energy_device",
+        "earth_model",
+        "moon_model_device",
+        "orbit_platform",
+        "sunlight_beam_projector",
+        "moon_preview_console",
+        "orbit_badge",
+        "orbit_control_console",
+        "planet_position_panel",
+        "lab_energy_sphere"
+      ],
+      "gameplay": [
+        "달을 궤도 위에서 드래그",
+        "태양빛 방향 확인",
+        "지구에서 본 달 패널 확인",
+        "보름달 위치 찾기",
+        "실험 기록 저장"
+      ],
+      "advanced_questions": [
+        {
+          "question": "보름달이 보이려면 태양, 지구, 달은 어떤 방향 관계에 가까워야 할까?",
+          "choices": [
+            "태양-지구-달 방향",
+            "지구-달-태양 방향",
+            "지구와 태양이 같은 위치",
+            "달이 태양 안쪽에 있는 위치"
+          ],
+          "answer": "태양-지구-달 방향"
+        },
+        {
+          "question": "달 모양이 바뀌는 것처럼 보이는 직접적인 까닭은?",
+          "choices": [
+            "달의 실제 모양이 변하기 때문",
+            "달이 스스로 빛을 냈다가 꺼지기 때문",
+            "태양빛을 받는 부분을 지구에서 보는 방향이 달라지기 때문",
+            "지구가 밤마다 색을 바꾸기 때문"
+          ],
+          "answer": "태양빛을 받는 부분을 지구에서 보는 방향이 달라지기 때문"
+        }
+      ],
+      "record_output": "달은 스스로 빛을 내는 것이 아니라 태양빛을 받아 밝게 보인다. 지구에서 보는 방향에 따라 달의 밝은 부분이 다르게 보인다.",
+      "implementation": [
+        "Three.js 또는 React Three Fiber",
+        "달 위치는 8개 스냅 포인트",
+        "실제 거리·크기 축척 구현 금지"
+      ]
+    },
+    {
+      "id": "page_07_stage4",
+      "name": "4단계 행성 기지 탐험",
+      "title": "8개 행성 카드를 모아라",
+      "purpose": "태양계 행성의 순서와 특징을 비교·분류한다.",
+      "scenario": "우주탐험대가 행성 기지를 차례로 통과한다. 각 행성의 색깔, 표면 상태, 고리 유무, 태양에서의 순서를 조사하고 행성 카드를 모은다.",
+      "visible_text": [
+        "4단계 행성 기지 탐험",
+        "미션: 8개 행성 도감을 완성하라",
+        "행성 카드 0/8",
+        "조사",
+        "점프",
+        "정화"
+      ],
+      "learning_question": "행성은 어떤 기준으로 비교하고 분류할 수 있을까?",
+      "assets_max_10": [
+        "mars_research_module",
+        "planet_portal_gate",
+        "planet_display_stand",
+        "jupiter_capsule",
+        "saturn_model_stand",
+        "planet_data_pad",
+        "exploration_rover",
+        "planet_comparison_console",
+        "space_misconception_monster",
+        "planet_sample_capsule"
+      ],
+      "planet_order": [
+        "수성",
+        "금성",
+        "지구",
+        "화성",
+        "목성",
+        "토성",
+        "천왕성",
+        "해왕성"
+      ],
+      "planet_groups": {
+        "암석 행성": [
+          "수성",
+          "금성",
+          "지구",
+          "화성"
+        ],
+        "기체 행성": [
+          "목성",
+          "토성",
+          "천왕성",
+          "해왕성"
+        ]
+      },
+      "gameplay": [
+        "포털 방 방식으로 8개 행성 기지 진입",
+        "행성 특징 카드 수집",
+        "오개념 몬스터 정화",
+        "행성 도감 등록",
+        "8개 수집 후 최종 미션 해금"
+      ],
+      "advanced_questions": [
+        {
+          "question": "행성을 조사할 때 과학적인 비교 기준으로 알맞은 것을 모두 고르세요.",
+          "choices": [
+            "색깔",
+            "표면 상태",
+            "고리 유무",
+            "태양에서의 순서",
+            "좋아 보이는 정도"
+          ],
+          "answer": [
+            "색깔",
+            "표면 상태",
+            "고리 유무",
+            "태양에서의 순서"
+          ]
+        },
+        {
+          "question": "수성, 금성, 지구, 화성의 공통점으로 적절한 것은?",
+          "choices": [
+            "모두 고리가 뚜렷하다.",
+            "모두 표면이 단단한 땅으로 이루어진 행성이다.",
+            "모두 태양보다 크다.",
+            "모두 스스로 빛을 낸다."
+          ],
+          "answer": "모두 표면이 단단한 땅으로 이루어진 행성이다."
+        }
+      ],
+      "record_output": "태양계 행성은 색깔, 크기, 표면 상태, 고리 유무, 태양에서의 순서 등을 기준으로 비교할 수 있다.",
+      "implementation": [
+        "한 화면에 8개 행성을 길게 배치하지 말고 포털 방 방식",
+        "행성 데이터는 planets.json",
+        "이미지 크기는 화면용이며 실제 축척이 아님"
+      ]
+    },
+    {
+      "id": "page_08_planet_codex",
+      "name": "태양계 행성 도감",
+      "title": "행성을 비교하여 도감을 완성하라",
+      "purpose": "수집한 행성 정보를 비교 기준에 따라 정리한다.",
+      "scenario": "코스모는 도감이 단순 그림 모음이 아니라 관찰 정보를 정리하는 공간이라고 설명한다. 학생은 행성별 특징을 비교한다.",
+      "visible_text": [
+        "태양계 행성 도감",
+        "진행도",
+        "종류",
+        "태양에서 몇 번째",
+        "특징",
+        "탐험 계속하기"
+      ],
+      "learning_question": "지구와 토성은 어떤 점이 같고 어떤 점이 다를까?",
+      "assets_max_10": [
+        "mercury_icon",
+        "venus_icon",
+        "earth_icon",
+        "mars_icon",
+        "jupiter_icon",
+        "saturn_icon",
+        "uranus_icon",
+        "neptune_icon",
+        "planet_data_pad",
+        "codex_frame"
+      ],
+      "planet_data": [
+        {
+          "id": "mercury",
+          "name": "수성",
+          "order": 1,
+          "type": "암석 행성",
+          "feature": "태양에 가장 가까운 작은 행성"
+        },
+        {
+          "id": "venus",
+          "name": "금성",
+          "order": 2,
+          "type": "암석 행성",
+          "feature": "지구와 크기가 비슷한 행성"
+        },
+        {
+          "id": "earth",
+          "name": "지구",
+          "order": 3,
+          "type": "암석 행성",
+          "feature": "우리가 살고 있는 행성"
+        },
+        {
+          "id": "mars",
+          "name": "화성",
+          "order": 4,
+          "type": "암석 행성",
+          "feature": "붉은빛을 띠는 행성"
+        },
+        {
+          "id": "jupiter",
+          "name": "목성",
+          "order": 5,
+          "type": "기체 행성",
+          "feature": "태양계에서 가장 큰 행성"
+        },
+        {
+          "id": "saturn",
+          "name": "토성",
+          "order": 6,
+          "type": "기체 행성",
+          "feature": "뚜렷한 고리가 있는 행성"
+        },
+        {
+          "id": "uranus",
+          "name": "천왕성",
+          "order": 7,
+          "type": "기체 행성",
+          "feature": "푸른빛을 띠는 행성"
+        },
+        {
+          "id": "neptune",
+          "name": "해왕성",
+          "order": 8,
+          "type": "기체 행성",
+          "feature": "태양에서 가장 멀리 있는 행성"
+        }
+      ],
+      "advanced_questions": [
+        {
+          "question": "지구와 토성을 비교한 설명으로 알맞은 것은?",
+          "choices": [
+            "둘 다 표면이 단단한 땅으로 이루어져 있다.",
+            "지구는 암석 행성이고, 토성은 기체 행성으로 분류할 수 있다.",
+            "토성은 태양에서 세 번째 행성이다.",
+            "지구는 태양계에서 가장 큰 행성이다."
+          ],
+          "answer": "지구는 암석 행성이고, 토성은 기체 행성으로 분류할 수 있다."
+        }
+      ],
+      "record_output": "각 행성은 태양에서의 순서, 표면 상태, 크기, 고리 유무 등을 기준으로 비교하여 도감에 정리한다.",
+      "implementation": [
+        "도감은 progress.collectedPlanets 기반",
+        "없는 행성은 잠김 표시",
+        "결과 기록장에 도감 요약 포함"
+      ]
+    },
+    {
+      "id": "page_09_stage5",
+      "name": "5단계 최종 미션",
+      "title": "태양계 지도를 복구하고 북극성을 찾아라",
+      "purpose": "태양계 행성 순서와 북극성 찾기 절차를 통합한다.",
+      "scenario": "지구로 돌아가려면 태양계 행성의 순서를 복구하고 북두칠성을 이용해 북극성을 찾아야 한다.",
+      "visible_text": [
+        "5단계 귀환 미션",
+        "태양계 지도를 복구하고 북극성을 찾아라",
+        "태양계 순서대로 배치해 보세요",
+        "북두칠성을 따라 북극성을 찾아보세요",
+        "5배 거리 자",
+        "미션 완료하기"
+      ],
+      "learning_question": "북극성은 왜 항해와 방향 찾기에 도움이 될까?",
+      "assets_max_10": [
+        "future_telescope",
+        "hologram_constellation_map",
+        "star_navigation_device",
+        "constellation_tablet",
+        "north_star_badge",
+        "star_compass",
+        "spaceship_return",
+        "star_portal",
+        "navigation_machine",
+        "cute_space_monster_final"
+      ],
+      "correct_planet_sequence": [
+        "수성",
+        "금성",
+        "지구",
+        "화성",
+        "목성",
+        "토성",
+        "천왕성",
+        "해왕성"
+      ],
+      "gameplay": [
+        "행성 칩을 태양에서 가까운 순서대로 배치",
+        "북두칠성 끝 두 별 선택",
+        "5배 거리 자 사용",
+        "북극성 선택",
+        "지구 귀환 연출"
+      ],
+      "advanced_questions": [
+        {
+          "question": "북극성에 대한 설명으로 알맞은 것은?",
+          "choices": [
+            "밤하늘에서 가장 밝은 별이다.",
+            "북쪽 하늘에서 거의 움직이지 않는 별이다.",
+            "달 주위를 도는 별이다.",
+            "태양계 행성 중 하나이다."
+          ],
+          "answer": "북쪽 하늘에서 거의 움직이지 않는 별이다."
+        },
+        {
+          "question": "북두칠성을 이용해 북극성을 찾을 때 사용하는 방법으로 알맞은 것은?",
+          "choices": [
+            "국자 끝 두 별 사이 거리의 약 5배를 이용한다.",
+            "가장 밝은 별을 무조건 고른다.",
+            "달 옆에 있는 별을 찾는다.",
+            "토성의 고리 방향을 따라간다."
+          ],
+          "answer": "국자 끝 두 별 사이 거리의 약 5배를 이용한다."
+        }
+      ],
+      "record_output": "태양계 행성은 태양에서 가까운 순서로 수성, 금성, 지구, 화성, 목성, 토성, 천왕성, 해왕성이다. 북극성은 북쪽 하늘에서 거의 움직이지 않는 별이며 북두칠성을 이용해 찾을 수 있다.",
+      "implementation": [
+        "별자리 연결은 2D Canvas",
+        "북극성을 가장 밝은 별처럼 과장 금지",
+        "별 연결 라인은 SVG 또는 Canvas"
+      ]
+    },
+    {
+      "id": "page_10_result",
+      "name": "최종 결과 화면",
+      "title": "나의 밤하늘 관찰 기록장",
+      "purpose": "게임 완료 결과와 학습 산출물을 보여준다.",
+      "scenario": "모든 미션을 완료하면 코스모가 관찰한 사실을 근거로 설명할 수 있는 탐험가가 되었다고 칭찬한다.",
+      "visible_text": [
+        "우주탐험대 코스모 수료!",
+        "나의 밤하늘 관찰 기록장",
+        "달 탐사",
+        "달 관찰",
+        "우주 실험",
+        "행성 탐험",
+        "별자리 항해사",
+        "기록장 보기",
+        "다시 탐험",
+        "처음으로"
+      ],
+      "learning_question": "내가 관찰하고 설명할 수 있게 된 밤하늘의 규칙은 무엇일까?",
+      "assets_max_10": [
+        "selected_astronaut",
+        "cosmo_robot",
+        "moon_surface_badge",
+        "moon_phase_badge",
+        "orbit_lab_badge",
+        "planet_explorer_badge",
+        "star_navigator_badge",
+        "certificate_panel",
+        "record_notebook_icon",
+        "trophy_icon"
+      ],
+      "final_record_text": [
+        "나는 달 표면에서 충돌 구덩이와 달의 바다를 관찰했다.",
+        "달의 모양은 초승달, 상현달, 보름달, 하현달, 그믐달 순서로 변하며 약 30일 주기로 비슷한 변화가 반복된다.",
+        "달은 스스로 빛을 내는 것이 아니라 태양빛을 받아 밝게 보이고, 지구에서 보는 방향에 따라 모양이 달라 보인다.",
+        "태양계 행성은 태양에서 가까운 순서로 수성, 금성, 지구, 화성, 목성, 토성, 천왕성, 해왕성이다.",
+        "북극성은 북쪽 하늘에서 거의 움직이지 않는 별이며, 북두칠성을 이용해 찾을 수 있다."
+      ],
+      "interactions": [
+        {
+          "action": "기록장 보기",
+          "result": "상세 기록장 열기"
+        },
+        {
+          "action": "다시 탐험",
+          "result": "스테이션으로 이동"
+        },
+        {
+          "action": "처음으로",
+          "result": "메인으로 이동"
+        }
+      ],
+      "implementation": [
+        "수료증은 캡처 가능한 레이아웃",
+        "개인정보 입력 없음",
+        "MVP 출력은 브라우저 인쇄 또는 캡처 안내"
+      ]
+    }
+  ],
+  "data_schemas": {
+    "progress": {
+      "selectedCharacter": "boy | girl",
+      "introSeen": false,
+      "unlockedStages": [
+        1
+      ],
+      "completedStages": [],
+      "badges": [],
+      "stars": 0,
+      "collectedCards": [],
+      "collectedPlanets": [],
+      "moonPhaseSequence": [],
+      "finalRecords": []
+    },
+    "planet": {
+      "id": "string",
+      "name": "string",
+      "orderFromSun": "number",
+      "sizeRank": "number",
+      "type": "암석 행성 | 기체 행성",
+      "hasRing": "boolean",
+      "shortFeature": "string",
+      "cardImage": "string"
+    },
+    "quiz": {
+      "id": "string",
+      "stageId": "string",
+      "question": "string",
+      "choices": [
+        "string"
+      ],
+      "answer": "string | array",
+      "feedbackCorrect": "string",
+      "feedbackWrong": "string"
+    }
+  },
+  "folder_structure": {
+    "public_assets": [
+      "public/assets/images/characters/",
+      "public/assets/images/station/",
+      "public/assets/images/stage1_moon/",
+      "public/assets/images/stage2_phase/",
+      "public/assets/images/stage3_orbit/",
+      "public/assets/images/stage4_planets/",
+      "public/assets/images/stage5_stars/",
+      "public/assets/images/ui/",
+      "public/assets/audio/",
+      "public/assets/video/"
+    ],
+    "src_data": [
+      "src/data/pages.json",
+      "src/data/stages.json",
+      "src/data/planets.json",
+      "src/data/quizzes.json",
+      "src/data/assets.json"
+    ]
+  },
+  "prd": {
+    "goals": [
+      "초등 과학 밤하늘 관찰 주제를 게임형 웹앱으로 구현한다.",
+      "달·태양계·북극성 개념을 조작과 탐험으로 학습하게 한다.",
+      "관찰 근거, 비교, 분류, 위치 관계 이해를 강조한다.",
+      "학습 완료 후 나의 밤하늘 관찰 기록장이 남게 한다."
+    ],
+    "non_goals": [
+      "정밀 천문 시뮬레이터",
+      "실제 천체 거리와 크기의 정확한 축척",
+      "온라인 계정, 랭킹, 서버 저장",
+      "상업 게임 리소스 복제"
+    ],
+    "functional_requirements": [
+      "메인, 캐릭터 선택, 스테이션, 5개 미션, 도감, 결과 화면 구현",
+      "스테이지 잠금/해금",
+      "학습 카드 수집",
+      "퀴즈와 오개념 정화",
+      "달 모양 순서 퍼즐",
+      "태양·지구·달 위치 관계 실험",
+      "행성 도감",
+      "태양계 순서 퍼즐",
+      "북극성 찾기 별자리 연결",
+      "localStorage 진행 저장",
+      "인트로 영상 삽입과 건너뛰기"
+    ],
+    "nonfunctional_requirements": [
+      "16:9 태블릿 가로 화면 대응",
+      "전자칠판에서도 읽기 쉬운 큰 글씨",
+      "에셋 로딩 실패 시 fallback",
+      "버튼 중복 클릭 방지",
+      "이벤트 리스너 누적 방지",
+      "사운드 자동재생 제한 대응",
+      "1년 유지 가능한 단순한 구조"
+    ],
+    "mvp_scope": [
+      "메인",
+      "캐릭터 선택",
+      "스테이션",
+      "1단계 달 표면 탐사",
+      "2단계 달 모양 순서 퍼즐",
+      "3단계 위치 관계 조작 단순 버전",
+      "4단계 행성 도감 수집",
+      "5단계 태양계 순서와 북극성 찾기",
+      "결과 기록장"
+    ]
+  },
+  "claude_code_prompt": {
+    "role": "너는 초등 과학 교육용 웹게임을 제작하는 시니어 프론트엔드·게임 개발자다.",
+    "task": "이 JSON 설계를 기준으로 Vite + React 기반 웹앱 구조를 설계하고 MVP를 구현하라.",
+    "hard_rules": [
+      "상업 게임 리소스나 캐릭터를 복제하지 말 것",
+      "백엔드, 로그인, 데이터베이스 사용 금지",
+      "localStorage만 사용",
+      "이미지 에셋은 public/assets 하위에서 경로 관리",
+      "UI 버튼은 CSS로 구현",
+      "각 화면에서 핵심 이미지 에셋은 10개 이하로 유지",
+      "모든 이미지 로딩 실패에 fallback 처리",
+      "게임 루프 중복 실행 방지",
+      "이벤트 리스너 누적 방지",
+      "학년 구분 없이 활용 가능한 심화 수준으로 문제 수준 유지"
+    ],
+    "implementation_order": [
+      "프로젝트 폴더 구조 생성",
+      "화면 상태 관리 구현",
+      "공통 UI 컴포넌트 구현",
+      "localStorage 진행 저장 Store 구현",
+      "메인·캐릭터 선택·스테이션 구현",
+      "1단계 달 탐사 구현",
+      "2단계 달 모양 퍼즐 구현",
+      "3단계 위치 관계 조작 구현",
+      "4단계 행성 도감 구현",
+      "5단계 태양계 순서·북극성 찾기 구현",
+      "결과 기록장 구현",
+      "안정성 점검 및 리팩터링"
+    ]
+  },
+  "stability_checklist": [
+    "npm install 후 바로 실행되는가",
+    "npm run dev에서 흰 화면이 나오지 않는가",
+    "이미지 파일이 없어도 앱이 중단되지 않는가",
+    "localStorage 값이 깨져도 초기화되는가",
+    "스테이지 이동 시 이전 이벤트가 남지 않는가",
+    "영상 재생 실패 시 스테이션으로 이동하는가",
+    "태블릿 가로 화면에서 버튼이 잘리지 않는가",
+    "전자칠판에서 글씨가 충분히 큰가",
+    "각 화면의 핵심 에셋 수가 10개 이하인가",
+    "문제 수준이 너무 유치하지 않은가",
+    "북극성을 가장 밝은 별처럼 설명하지 않는가",
+    "행성 9개라고 표시하지 않는가",
+    "태양을 행성이라고 표시하지 않는가"
+  ],
+  "created_at": "2026-06-11T12:26:07.850567"
+}

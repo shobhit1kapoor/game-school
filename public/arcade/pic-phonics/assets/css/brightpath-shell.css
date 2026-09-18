@@ -1,0 +1,18 @@
+/* Brightpath launches this imported activity directly into its playable round. */
+body > nav,
+.home-container,
+#ModalCenterInstructions {
+  display: none !important;
+}
+
+#background.background-container {
+  min-height: 100vh;
+  padding-top: 34px;
+}
+
+#game.game-container {
+  max-width: 1120px;
+  margin: 0 auto;
+  border-radius: 28px;
+  box-shadow: 0 18px 44px rgba(18, 55, 91, .2);
+}

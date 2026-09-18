@@ -1,0 +1,201 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 768" preserveAspectRatio="xMidYMid slice">
+  <!-- The Water-Cleaning Factory — clarifier pools left, filter building center, water tower right -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9ec3d6"/>
+      <stop offset="0.55" stop-color="#c4dde6"/>
+      <stop offset="1" stop-color="#e7eddc"/>
+    </linearGradient>
+    <linearGradient id="hillsFar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8aab8e"/>
+      <stop offset="1" stop-color="#a3bea0"/>
+    </linearGradient>
+    <linearGradient id="lawn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7aa46c"/>
+      <stop offset="1" stop-color="#5d8a57"/>
+    </linearGradient>
+    <linearGradient id="river" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5ea3bd"/>
+      <stop offset="1" stop-color="#3d7e98"/>
+    </linearGradient>
+    <linearGradient id="poolWater" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3ea7c4"/>
+      <stop offset="1" stop-color="#2a93b8"/>
+    </linearGradient>
+    <linearGradient id="towerTank" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9bc4d4"/>
+      <stop offset="1" stop-color="#7fb0c4"/>
+    </linearGradient>
+    <linearGradient id="buildingWall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f0e4cb"/>
+      <stop offset="1" stop-color="#e0d3b6"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="0.2" cy="0.15" r="0.55">
+      <stop offset="0" stop-color="#f6e7b2" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#f6e7b2" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1536" height="768" fill="url(#sky)"/>
+  <rect width="1536" height="768" fill="url(#sunGlow)"/>
+
+  <!-- Soft clouds -->
+  <ellipse cx="280" cy="120" rx="140" ry="32" fill="#ffffff" opacity="0.75"/>
+  <ellipse cx="360" cy="100" rx="90" ry="24" fill="#ffffff" opacity="0.7"/>
+  <ellipse cx="1180" cy="150" rx="160" ry="34" fill="#ffffff" opacity="0.7"/>
+  <ellipse cx="1270" cy="130" rx="90" ry="22" fill="#ffffff" opacity="0.65"/>
+
+  <!-- Far hills -->
+  <path d="M0,360 Q220,300 460,340 T960,330 Q1180,290 1380,335 T1536,325 V520 H0 Z" fill="url(#hillsFar)" opacity="0.9"/>
+  <!-- Tree dots on far hills -->
+  <g fill="#6b8d6f" opacity="0.75">
+    <ellipse cx="180" cy="340" rx="20" ry="14"/>
+    <ellipse cx="240" cy="335" rx="16" ry="12"/>
+    <ellipse cx="700" cy="320" rx="18" ry="13"/>
+    <ellipse cx="1280" cy="330" rx="22" ry="15"/>
+  </g>
+
+  <!-- Green lawn ground -->
+  <path d="M0,440 Q380,400 760,430 T1536,425 V690 H0 Z" fill="url(#lawn)"/>
+
+  <!-- Path/road of cream gravel -->
+  <path d="M120,640 Q540,540 998,560 T1450,610 L1450,640 Q998,600 540,580 T120,670 Z" fill="#d8d2c2" opacity="0.85"/>
+
+  <!-- Clarifier pools (around 538,422) — three concentric tanks -->
+  <!-- Back-left pool -->
+  <g transform="translate(360,400)">
+    <ellipse cx="0" cy="0" rx="115" ry="38" fill="#bdb39a"/>
+    <ellipse cx="0" cy="-4" rx="108" ry="34" fill="#d8d2c2"/>
+    <ellipse cx="0" cy="-6" rx="96" ry="29" fill="url(#poolWater)"/>
+    <ellipse cx="0" cy="-12" rx="92" ry="26" fill="#48b5cf" opacity="0.55"/>
+    <!-- radial arm -->
+    <rect x="-90" y="-8" width="180" height="5" rx="2" fill="#8d99a6"/>
+    <circle cx="0" cy="-6" r="9" fill="#6f7e8a"/>
+    <circle cx="0" cy="-6" r="4" fill="#cfd6db"/>
+  </g>
+
+  <!-- Main center pool (538,422) -->
+  <g transform="translate(538,422)">
+    <ellipse cx="0" cy="0" rx="155" ry="50" fill="#bdb39a"/>
+    <ellipse cx="0" cy="-5" rx="146" ry="44" fill="#d8d2c2"/>
+    <ellipse cx="0" cy="-8" rx="130" ry="38" fill="url(#poolWater)"/>
+    <ellipse cx="0" cy="-16" rx="124" ry="32" fill="#48b5cf" opacity="0.5"/>
+    <!-- radial arm -->
+    <rect x="-122" y="-11" width="244" height="6" rx="3" fill="#8d99a6"/>
+    <rect x="-122" y="-11" width="244" height="2" rx="1" fill="#cfd6db"/>
+    <circle cx="0" cy="-8" r="14" fill="#6f7e8a"/>
+    <circle cx="0" cy="-8" r="6" fill="#cfd6db"/>
+    <!-- ripple -->
+    <ellipse cx="-40" cy="-4" rx="22" ry="3" fill="#dff0f4" opacity="0.6"/>
+    <ellipse cx="50" cy="2" rx="28" ry="3" fill="#dff0f4" opacity="0.55"/>
+  </g>
+
+  <!-- Front-right small pool -->
+  <g transform="translate(740,470)">
+    <ellipse cx="0" cy="0" rx="95" ry="30" fill="#bdb39a"/>
+    <ellipse cx="0" cy="-3" rx="88" ry="26" fill="#d8d2c2"/>
+    <ellipse cx="0" cy="-5" rx="78" ry="22" fill="url(#poolWater)"/>
+    <ellipse cx="0" cy="-10" rx="74" ry="18" fill="#48b5cf" opacity="0.55"/>
+    <rect x="-72" y="-7" width="144" height="4" rx="2" fill="#8d99a6"/>
+    <circle cx="0" cy="-5" r="8" fill="#6f7e8a"/>
+  </g>
+
+  <!-- Filter building (998,346) -->
+  <g transform="translate(998,346)">
+    <!-- side wing -->
+    <rect x="-180" y="20" width="120" height="120" rx="6" fill="#e0d3b6"/>
+    <path d="M-184,22 L-120,-18 L-56,22 Z" fill="#a14e30"/>
+    <rect x="-160" y="60" width="28" height="36" rx="3" fill="#7fb0c4"/>
+    <rect x="-118" y="60" width="28" height="36" rx="3" fill="#7fb0c4"/>
+    <!-- main building -->
+    <rect x="-60" y="-10" width="220" height="170" rx="6" fill="url(#buildingWall)"/>
+    <path d="M-66,-8 L50,-90 L166,-8 Z" fill="#a14e30"/>
+    <path d="M-66,-8 L166,-8 L160,4 L-60,4 Z" fill="#7a3a22"/>
+    <!-- door -->
+    <rect x="30" y="84" width="44" height="76" rx="3" fill="#6b4a30"/>
+    <circle cx="64" cy="124" r="2.5" fill="#e8dcc3"/>
+    <!-- windows -->
+    <rect x="-40" y="30" width="36" height="36" rx="3" fill="#7fb0c4"/>
+    <rect x="-40" y="30" width="36" height="36" rx="3" fill="none" stroke="#e8dcc3" stroke-width="3"/>
+    <rect x="100" y="30" width="36" height="36" rx="3" fill="#7fb0c4"/>
+    <rect x="100" y="30" width="36" height="36" rx="3" fill="none" stroke="#e8dcc3" stroke-width="3"/>
+    <!-- pipes entering left -->
+    <rect x="-260" y="100" width="100" height="22" rx="11" fill="#8d99a6"/>
+    <rect x="-260" y="100" width="100" height="6" rx="3" fill="#b6bec6"/>
+    <!-- pipes exiting right -->
+    <rect x="160" y="80" width="140" height="22" rx="11" fill="#8d99a6"/>
+    <rect x="160" y="80" width="140" height="6" rx="3" fill="#b6bec6"/>
+    <rect x="160" y="120" width="120" height="18" rx="9" fill="#8d99a6"/>
+    <!-- little chimney -->
+    <rect x="80" y="-70" width="22" height="40" rx="3" fill="#a14e30"/>
+    <ellipse cx="91" cy="-78" rx="14" ry="8" fill="#cfd8da" opacity="0.7"/>
+  </g>
+
+  <!-- Water tower (1306,499) -->
+  <g transform="translate(1306,499)">
+    <!-- legs -->
+    <g stroke="#5d6973" stroke-width="9" stroke-linecap="round">
+      <line x1="-58" y1="-10" x2="-44" y2="120"/>
+      <line x1="58" y1="-10" x2="44" y2="120"/>
+      <line x1="-20" y1="-10" x2="-14" y2="120"/>
+      <line x1="20" y1="-10" x2="14" y2="120"/>
+    </g>
+    <!-- cross braces -->
+    <line x1="-50" y1="60" x2="50" y2="60" stroke="#5d6973" stroke-width="5"/>
+    <line x1="-44" y1="20" x2="44" y2="20" stroke="#5d6973" stroke-width="5"/>
+    <!-- tank base -->
+    <ellipse cx="0" cy="-10" rx="78" ry="14" fill="#6f7e8a"/>
+    <!-- tank body -->
+    <ellipse cx="0" cy="-72" rx="78" ry="62" fill="url(#towerTank)"/>
+    <ellipse cx="-22" cy="-90" rx="34" ry="22" fill="#b3d3df" opacity="0.7"/>
+    <!-- tank top dome -->
+    <path d="M-78,-72 Q0,-160 78,-72 Z" fill="#6fa0b6"/>
+    <!-- top finial -->
+    <rect x="-3" y="-168" width="6" height="20" fill="#5d6973"/>
+    <circle cx="0" cy="-170" r="6" fill="#a14e30"/>
+    <!-- ladder -->
+    <line x1="0" y1="-10" x2="0" y2="115" stroke="#5d6973" stroke-width="2"/>
+    <g stroke="#5d6973" stroke-width="2">
+      <line x1="-4" y1="20" x2="4" y2="20"/>
+      <line x1="-4" y1="40" x2="4" y2="40"/>
+      <line x1="-4" y1="60" x2="4" y2="60"/>
+      <line x1="-4" y1="80" x2="4" y2="80"/>
+      <line x1="-4" y1="100" x2="4" y2="100"/>
+    </g>
+  </g>
+
+  <!-- Trees scattered -->
+  <g>
+    <ellipse cx="120" cy="470" rx="46" ry="56" fill="#3e6b4e"/>
+    <ellipse cx="105" cy="455" rx="32" ry="38" fill="#54845f"/>
+    <rect x="113" y="510" width="12" height="36" rx="3" fill="#5d4a36"/>
+  </g>
+  <g>
+    <ellipse cx="860" cy="490" rx="38" ry="48" fill="#3e6b4e"/>
+    <ellipse cx="850" cy="478" rx="26" ry="32" fill="#54845f"/>
+    <rect x="855" y="528" width="10" height="30" rx="3" fill="#5d4a36"/>
+  </g>
+  <g>
+    <ellipse cx="1450" cy="600" rx="50" ry="62" fill="#3e6b4e"/>
+    <ellipse cx="1438" cy="585" rx="34" ry="40" fill="#54845f"/>
+    <rect x="1443" y="650" width="13" height="38" rx="3" fill="#5d4a36"/>
+  </g>
+
+  <!-- River along the bottom -->
+  <path d="M0,690 Q380,665 760,685 T1536,680 V768 H0 Z" fill="url(#river)"/>
+  <!-- river highlights -->
+  <g fill="#cfe4ec" opacity="0.5">
+    <ellipse cx="220" cy="715" rx="90" ry="4"/>
+    <ellipse cx="560" cy="730" rx="120" ry="5"/>
+    <ellipse cx="940" cy="720" rx="100" ry="4"/>
+    <ellipse cx="1300" cy="735" rx="110" ry="5"/>
+  </g>
+  <!-- riverbank grass tufts -->
+  <g fill="#5d8a57">
+    <ellipse cx="60" cy="690" rx="40" ry="8"/>
+    <ellipse cx="400" cy="685" rx="50" ry="7"/>
+    <ellipse cx="900" cy="690" rx="60" ry="8"/>
+    <ellipse cx="1320" cy="688" rx="55" ry="8"/>
+  </g>
+</svg>

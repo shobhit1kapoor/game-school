@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 768" preserveAspectRatio="xMidYMid slice">
+  <!-- Ride the River — diagonal river through forested valley, salmon, heron, stones -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a9c7d6"/>
+      <stop offset="0.55" stop-color="#cadbe1"/>
+      <stop offset="1" stop-color="#e7e2c8"/>
+    </linearGradient>
+    <linearGradient id="mtnFar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7a8ea0"/>
+      <stop offset="1" stop-color="#94a5b3"/>
+    </linearGradient>
+    <linearGradient id="mtnMid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#586d6b"/>
+      <stop offset="1" stop-color="#6d8278"/>
+    </linearGradient>
+    <linearGradient id="forest" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3d6244"/>
+      <stop offset="1" stop-color="#2c4f39"/>
+    </linearGradient>
+    <linearGradient id="river" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2a93b8"/>
+      <stop offset="1" stop-color="#1f7a99"/>
+    </linearGradient>
+    <linearGradient id="bank" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7a8a5a"/>
+      <stop offset="1" stop-color="#5a6b40"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="0.3" cy="0.12" r="0.55">
+      <stop offset="0" stop-color="#f6e7b2" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#f6e7b2" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Sky and glow -->
+  <rect width="1536" height="768" fill="url(#sky)"/>
+  <rect width="1536" height="768" fill="url(#sunGlow)"/>
+
+  <!-- Far mountains -->
+  <path d="M0,340 L180,210 L320,290 L460,180 L620,280 L780,210 L940,300 L1100,220 L1260,290 L1420,230 L1536,280 V520 H0 Z" fill="url(#mtnFar)" opacity="0.85"/>
+  <!-- Mid mountains -->
+  <path d="M0,410 L150,320 L290,390 L420,310 L560,380 L720,320 L870,400 L1020,330 L1180,400 L1340,340 L1536,380 V560 H0 Z" fill="url(#mtnMid)"/>
+
+  <!-- Far forest band -->
+  <path d="M0,470 Q220,430 460,460 T940,455 Q1180,425 1380,460 T1536,455 V560 H0 Z" fill="#456e4d"/>
+
+  <!-- Diagonal river — sweeps from upper-right to lower-left across the scene -->
+  <path d="M1536,360 L1536,520 Q1200,560 900,500 Q650,455 420,520 Q200,580 0,640 L0,768 L1536,768 Z" fill="url(#river)"/>
+  <!-- River darker depth bands -->
+  <path d="M1536,420 Q1240,470 940,440 Q700,415 480,490 Q260,560 0,610 L0,640 Q220,580 440,540 Q670,475 920,505 Q1220,565 1536,520 Z" fill="#176680" opacity="0.55"/>
+
+  <!-- Far bank (right side) -->
+  <path d="M860,470 Q1020,440 1180,455 Q1340,440 1536,440 L1536,360 L860,360 Z" fill="url(#bank)"/>
+  <!-- Near bank (left/foreground) -->
+  <path d="M0,540 Q160,510 320,540 Q420,560 480,600 L480,768 L0,768 Z" fill="url(#bank)"/>
+
+  <!-- Forest framing — left bank trees -->
+  <g fill="url(#forest)">
+    <ellipse cx="60" cy="500" rx="70" ry="80"/>
+    <ellipse cx="160" cy="520" rx="60" ry="72"/>
+    <ellipse cx="260" cy="510" rx="55" ry="68"/>
+    <ellipse cx="350" cy="535" rx="48" ry="60"/>
+  </g>
+  <g fill="#4e7855">
+    <ellipse cx="100" cy="478" rx="42" ry="52"/>
+    <ellipse cx="220" cy="498" rx="38" ry="48"/>
+  </g>
+  <g fill="#5d4a36">
+    <rect x="55" y="555" width="14" height="38" rx="3"/>
+    <rect x="255" y="558" width="13" height="32" rx="3"/>
+  </g>
+
+  <!-- Forest framing — right bank trees -->
+  <g fill="url(#forest)">
+    <ellipse cx="1480" cy="400" rx="65" ry="78"/>
+    <ellipse cx="1380" cy="415" rx="55" ry="68"/>
+    <ellipse cx="1280" cy="408" rx="50" ry="62"/>
+    <ellipse cx="1190" cy="420" rx="48" ry="58"/>
+    <ellipse cx="1090" cy="418" rx="44" ry="55"/>
+    <ellipse cx="1000" cy="422" rx="40" ry="50"/>
+    <ellipse cx="920" cy="425" rx="38" ry="48"/>
+  </g>
+  <g fill="#4e7855">
+    <ellipse cx="1440" cy="382" rx="40" ry="50"/>
+    <ellipse cx="1320" cy="395" rx="35" ry="44"/>
+    <ellipse cx="1150" cy="402" rx="32" ry="40"/>
+  </g>
+
+  <!-- Foam ellipses along river crests -->
+  <g fill="#f1f7f8" opacity="0.85">
+    <ellipse cx="1300" cy="445" rx="60" ry="6"/>
+    <ellipse cx="1050" cy="465" rx="80" ry="7"/>
+    <ellipse cx="780" cy="488" rx="95" ry="8"/>
+    <ellipse cx="520" cy="520" rx="110" ry="9"/>
+    <ellipse cx="240" cy="568" rx="120" ry="10"/>
+  </g>
+  <!-- Ripple arcs -->
+  <g stroke="#d8ecf0" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.7">
+    <path d="M380,545 Q430,538 480,545"/>
+    <path d="M620,510 Q680,503 740,510"/>
+    <path d="M880,478 Q940,471 1000,478"/>
+    <path d="M1140,455 Q1190,449 1240,455"/>
+    <path d="M280,610 Q340,602 400,610"/>
+    <path d="M700,540 Q760,533 820,540"/>
+  </g>
+
+  <!-- Leaping salmon at (614, 461) -->
+  <g transform="translate(614,461)">
+    <!-- splash below -->
+    <ellipse cx="6" cy="36" rx="34" ry="5" fill="#f1f7f8" opacity="0.8"/>
+    <!-- body arc -->
+    <path d="M-38,14 Q-10,-30 22,-14 Q42,-6 46,8 Q24,18 -4,22 Q-26,24 -38,14 Z" fill="#d97757"/>
+    <!-- belly highlight -->
+    <path d="M-30,12 Q-6,-14 18,-6 Q4,8 -16,16 Q-26,18 -30,12 Z" fill="#e89878" opacity="0.85"/>
+    <!-- tail -->
+    <path d="M44,4 L66,-14 L62,8 L70,22 L46,16 Z" fill="#c46640"/>
+    <!-- eye -->
+    <circle cx="-22" cy="0" r="2.2" fill="#2a1a14"/>
+    <!-- fin -->
+    <path d="M0,16 L10,28 L-8,22 Z" fill="#b85a36"/>
+  </g>
+
+  <!-- Heron on right bank at (1152, 346) -->
+  <g transform="translate(1152,346)">
+    <!-- legs -->
+    <line x1="-4" y1="40" x2="-4" y2="100" stroke="#3a4750" stroke-width="3"/>
+    <line x1="8" y1="40" x2="8" y2="100" stroke="#3a4750" stroke-width="3"/>
+    <line x1="-4" y1="100" x2="-12" y2="104" stroke="#3a4750" stroke-width="3"/>
+    <line x1="8" y1="100" x2="16" y2="104" stroke="#3a4750" stroke-width="3"/>
+    <!-- body -->
+    <ellipse cx="2" cy="22" rx="22" ry="20" fill="#708090"/>
+    <!-- tail feathers -->
+    <path d="M20,18 Q38,22 36,34 L18,32 Z" fill="#5e6e7d"/>
+    <!-- S-neck -->
+    <path d="M0,8 Q-14,-6 -6,-26 Q4,-42 14,-46 L18,-40 Q10,-36 4,-22 Q-2,-8 8,4 Z" fill="#708090"/>
+    <!-- head -->
+    <ellipse cx="16" cy="-46" rx="9" ry="7" fill="#7a8a9a"/>
+    <!-- beak -->
+    <path d="M24,-46 L42,-44 L24,-42 Z" fill="#e8c374"/>
+    <!-- eye -->
+    <circle cx="18" cy="-47" r="1.4" fill="#1a1a1a"/>
+    <!-- crest plume -->
+    <path d="M12,-52 Q18,-58 24,-54" stroke="#3a4750" stroke-width="1.5" fill="none"/>
+  </g>
+
+  <!-- River stones lower-left at (230, 538) -->
+  <g transform="translate(230,538)">
+    <ellipse cx="0" cy="6" rx="42" ry="14" fill="#8d99a6"/>
+    <ellipse cx="-2" cy="2" rx="36" ry="10" fill="#a59781"/>
+    <ellipse cx="56" cy="10" rx="32" ry="11" fill="#8d99a6"/>
+    <ellipse cx="54" cy="6" rx="26" ry="8" fill="#b6a892"/>
+    <ellipse cx="-50" cy="14" rx="28" ry="10" fill="#a59781"/>
+    <ellipse cx="-52" cy="11" rx="22" ry="7" fill="#c2b39b"/>
+    <ellipse cx="22" cy="-4" rx="18" ry="7" fill="#9aa5a8"/>
+    <ellipse cx="80" cy="0" rx="14" ry="6" fill="#a59781"/>
+  </g>
+</svg>

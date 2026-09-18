@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 768" preserveAspectRatio="xMidYMid slice">
+  <!-- Inside a Cloud — sunlit cumulus center, wispy clouds left, geese right, tiny landscape below -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7db3d8"/>
+      <stop offset="0.55" stop-color="#a4cce0"/>
+      <stop offset="1" stop-color="#c9e6f2"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="0.5" cy="0.3" r="0.55">
+      <stop offset="0" stop-color="#f6e7b2" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#f6e7b2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cumulusBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.6" stop-color="#f1ede2"/>
+      <stop offset="1" stop-color="#c4cdd6"/>
+    </linearGradient>
+    <linearGradient id="cumulusHigh" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff8e6"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+    <linearGradient id="wispCloud" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.2"/>
+      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="distantLand" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8aa1b0"/>
+      <stop offset="1" stop-color="#a7bcc6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1536" height="768" fill="url(#sky)"/>
+  <rect width="1536" height="768" fill="url(#sunGlow)"/>
+
+  <!-- Tiny distant landscape peeking through cloud gaps at bottom -->
+  <g opacity="0.55">
+    <path d="M0,690 Q160,650 340,675 T720,665 Q920,640 1140,675 T1536,668 V768 H0 Z" fill="url(#distantLand)"/>
+    <path d="M0,720 Q220,700 460,715 T940,712 Q1180,695 1380,718 T1536,714 V768 H0 Z" fill="#6f8696" opacity="0.7"/>
+  </g>
+  <!-- Wispy haze between viewer and distant land -->
+  <ellipse cx="380" cy="710" rx="280" ry="22" fill="#ffffff" opacity="0.45"/>
+  <ellipse cx="1080" cy="700" rx="340" ry="20" fill="#ffffff" opacity="0.5"/>
+
+  <!-- Wind-swept wispy streaming clouds (~15%,55%) -->
+  <g>
+    <ellipse cx="230" cy="422" rx="260" ry="20" fill="url(#wispCloud)" opacity="0.85"/>
+    <ellipse cx="160" cy="448" rx="190" ry="14" fill="url(#wispCloud)" opacity="0.7"/>
+    <ellipse cx="300" cy="398" rx="220" ry="16" fill="url(#wispCloud)" opacity="0.8"/>
+    <ellipse cx="90" cy="468" rx="140" ry="10" fill="url(#wispCloud)" opacity="0.55"/>
+    <ellipse cx="360" cy="440" rx="160" ry="12" fill="url(#wispCloud)" opacity="0.6"/>
+  </g>
+
+  <!-- Distant smaller cumulus puffs scattered -->
+  <g opacity="0.85">
+    <ellipse cx="1340" cy="160" rx="120" ry="34" fill="#f1ede2"/>
+    <ellipse cx="1410" cy="142" rx="80" ry="28" fill="#ffffff"/>
+    <ellipse cx="60" cy="220" rx="110" ry="32" fill="#f1ede2"/>
+    <ellipse cx="1180" cy="600" rx="160" ry="28" fill="#ffffff" opacity="0.7"/>
+  </g>
+
+  <!-- Grand sunlit puffy cumulus centered (~45%,30%) -->
+  <g>
+    <!-- soft outer halo -->
+    <ellipse cx="691" cy="250" rx="430" ry="160" fill="#ffffff" opacity="0.35"/>
+    <!-- base shadow tier -->
+    <ellipse cx="691" cy="295" rx="360" ry="95" fill="#c4cdd6"/>
+    <ellipse cx="520" cy="290" rx="170" ry="70" fill="#c4cdd6"/>
+    <ellipse cx="860" cy="295" rx="180" ry="72" fill="#c4cdd6"/>
+    <!-- main body -->
+    <ellipse cx="691" cy="230" rx="340" ry="130" fill="url(#cumulusBody)"/>
+    <ellipse cx="500" cy="240" rx="170" ry="100" fill="url(#cumulusBody)"/>
+    <ellipse cx="870" cy="240" rx="190" ry="105" fill="url(#cumulusBody)"/>
+    <ellipse cx="620" cy="180" rx="180" ry="100" fill="url(#cumulusBody)"/>
+    <ellipse cx="780" cy="175" rx="170" ry="95" fill="url(#cumulusBody)"/>
+    <!-- top sunlit caps -->
+    <ellipse cx="690" cy="135" rx="200" ry="80" fill="url(#cumulusHigh)"/>
+    <ellipse cx="560" cy="160" rx="120" ry="70" fill="url(#cumulusHigh)"/>
+    <ellipse cx="820" cy="160" rx="130" ry="70" fill="url(#cumulusHigh)"/>
+    <ellipse cx="700" cy="105" rx="110" ry="55" fill="#ffffff"/>
+    <!-- bright highlight -->
+    <ellipse cx="660" cy="125" rx="70" ry="32" fill="#fff8e6" opacity="0.85"/>
+  </g>
+
+  <!-- Small flock of geese chevrons (~78%,60%) -->
+  <g fill="#3a4654" stroke="none">
+    <path d="M1198,461 l-18,-10 l-2,4 l16,8 l16,-8 l-2,-4 z"/>
+    <path d="M1158,448 l-14,-8 l-2,3 l13,7 l13,-7 l-2,-3 z"/>
+    <path d="M1232,476 l-16,-9 l-2,3 l14,8 l14,-8 l-2,-3 z"/>
+    <path d="M1180,492 l-13,-7 l-1,3 l12,6 l12,-6 l-1,-3 z"/>
+    <path d="M1248,438 l-12,-7 l-2,3 l11,6 l11,-6 l-2,-3 z"/>
+    <path d="M1140,478 l-11,-6 l-1,3 l10,5 l10,-5 l-1,-3 z"/>
+    <path d="M1212,432 l-10,-6 l-1,2 l9,5 l9,-5 l-1,-2 z"/>
+  </g>
+
+  <!-- Foreground wisp drifting across, low opacity for depth -->
+  <ellipse cx="1100" cy="380" rx="200" ry="14" fill="#ffffff" opacity="0.55"/>
+  <ellipse cx="980" cy="395" rx="140" ry="10" fill="#ffffff" opacity="0.45"/>
+</svg>

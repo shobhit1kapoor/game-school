@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 768" preserveAspectRatio="xMidYMid slice">
+  <!-- The Big Blue Ocean — turquoise sea left, golden cliffs right, gulls, whale spout -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9cd2e2"/>
+      <stop offset="0.5" stop-color="#bfe3ef"/>
+      <stop offset="1" stop-color="#e2eff2"/>
+    </linearGradient>
+    <linearGradient id="seaFar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5fc4cf"/>
+      <stop offset="1" stop-color="#2aa5b8"/>
+    </linearGradient>
+    <linearGradient id="seaNear" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2aa5b8"/>
+      <stop offset="0.6" stop-color="#1d8aa0"/>
+      <stop offset="1" stop-color="#15788c"/>
+    </linearGradient>
+    <linearGradient id="cliffFar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c29a6b"/>
+      <stop offset="1" stop-color="#a37e52"/>
+    </linearGradient>
+    <linearGradient id="cliffNear" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a37e52"/>
+      <stop offset="1" stop-color="#8a6844"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="0.18" cy="0.15" r="0.5">
+      <stop offset="0" stop-color="#fbf3d6" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#fbf3d6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1536" height="768" fill="url(#sky)"/>
+  <rect width="1536" height="768" fill="url(#sunGlow)"/>
+
+  <!-- Drifting clouds -->
+  <ellipse cx="280" cy="140" rx="120" ry="22" fill="#ffffff" opacity="0.7"/>
+  <ellipse cx="340" cy="125" rx="80" ry="16" fill="#ffffff" opacity="0.6"/>
+  <ellipse cx="720" cy="105" rx="100" ry="18" fill="#ffffff" opacity="0.55"/>
+  <ellipse cx="1080" cy="155" rx="130" ry="24" fill="#ffffff" opacity="0.55"/>
+
+  <!-- Far sea horizon -->
+  <rect x="0" y="340" width="1536" height="80" fill="url(#seaFar)"/>
+  <!-- Mid sea -->
+  <rect x="0" y="400" width="1536" height="80" fill="#3fb1c2"/>
+  <!-- Near sea -->
+  <rect x="0" y="460" width="1536" height="308" fill="url(#seaNear)"/>
+
+  <!-- Distant horizon line shimmer -->
+  <rect x="0" y="340" width="1536" height="1.5" fill="#ffffff" opacity="0.55"/>
+
+  <!-- Rolling wave bands -->
+  <g fill="#5fc4cf" opacity="0.7">
+    <path d="M0,420 Q200,408 420,420 T880,418 Q1100,408 1320,420 T1536,418 V428 H0 Z"/>
+  </g>
+  <g fill="#7fd4dc" opacity="0.55">
+    <path d="M0,478 Q220,468 460,480 T940,478 Q1180,468 1380,480 T1536,478 V488 H0 Z"/>
+  </g>
+  <g fill="#a3e1e7" opacity="0.5">
+    <path d="M0,540 Q260,528 520,540 T1040,540 Q1240,528 1420,542 T1536,540 V550 H0 Z"/>
+  </g>
+
+  <!-- Hero wave foam arcs at (461, 461) -->
+  <g transform="translate(461,461)">
+    <ellipse cx="0" cy="0" rx="160" ry="14" fill="#f1f7f8" opacity="0.9"/>
+    <ellipse cx="0" cy="-6" rx="130" ry="9" fill="#ffffff" opacity="0.85"/>
+    <path d="M-150,4 Q-110,-18 -70,2" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.85"/>
+    <path d="M-50,4 Q-10,-22 30,2" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.85"/>
+    <path d="M50,4 Q90,-18 130,2" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.85"/>
+    <!-- spray dots -->
+    <g fill="#ffffff" opacity="0.8">
+      <circle cx="-100" cy="-22" r="3"/>
+      <circle cx="-40" cy="-26" r="3.5"/>
+      <circle cx="20" cy="-24" r="3"/>
+      <circle cx="80" cy="-28" r="3"/>
+    </g>
+    <!-- secondary foam -->
+    <ellipse cx="-80" cy="30" rx="80" ry="6" fill="#ffffff" opacity="0.65"/>
+    <ellipse cx="100" cy="34" rx="70" ry="5" fill="#ffffff" opacity="0.65"/>
+  </g>
+
+  <!-- Additional foam ripples -->
+  <g fill="#ffffff" opacity="0.5">
+    <ellipse cx="180" cy="560" rx="100" ry="5"/>
+    <ellipse cx="700" cy="600" rx="120" ry="5"/>
+    <ellipse cx="320" cy="650" rx="140" ry="6"/>
+    <ellipse cx="820" cy="700" rx="160" ry="6"/>
+  </g>
+
+  <!-- Whale at (922, 269) — mid-distance, so position whale body on the sea around y=370 below sky region with spout reaching up to 269 -->
+  <g transform="translate(922,269)">
+    <!-- spout puff -->
+    <ellipse cx="0" cy="0" rx="22" ry="14" fill="#ffffff" opacity="0.9"/>
+    <ellipse cx="-10" cy="-10" rx="12" ry="9" fill="#ffffff" opacity="0.85"/>
+    <ellipse cx="12" cy="-8" rx="10" ry="8" fill="#ffffff" opacity="0.8"/>
+    <ellipse cx="0" cy="-22" rx="8" ry="6" fill="#ffffff" opacity="0.7"/>
+    <!-- spout column -->
+    <path d="M-3,14 Q-6,40 -2,70" stroke="#ffffff" stroke-width="3" fill="none" opacity="0.75"/>
+    <path d="M3,14 Q6,40 2,70" stroke="#ffffff" stroke-width="3" fill="none" opacity="0.75"/>
+    <!-- whale back at y~95 (sea ~364 absolute) -->
+    <path d="M-60,95 Q-30,78 0,82 Q40,86 70,95 Q40,100 0,98 Q-30,100 -60,95 Z" fill="#2a3a48"/>
+    <path d="M-60,95 Q-30,82 0,85 Q40,88 70,95" stroke="#3d556a" stroke-width="1.5" fill="none" opacity="0.7"/>
+    <!-- tail flick -->
+    <path d="M62,92 L84,80 L80,96 Z" fill="#2a3a48"/>
+    <!-- ripple around whale -->
+    <ellipse cx="0" cy="102" rx="80" ry="4" fill="#ffffff" opacity="0.55"/>
+  </g>
+
+  <!-- Cliffs on right at (1229, 422) — tall layered golden tan -->
+  <!-- Cliff shadow base -->
+  <path d="M1080,500 Q1140,480 1200,490 Q1280,475 1360,488 Q1460,475 1536,485 L1536,768 L1080,768 Z" fill="#8a6844"/>
+  <!-- Cliff mid layer -->
+  <path d="M1100,440 Q1160,410 1230,420 Q1320,405 1400,418 Q1480,408 1536,415 L1536,500 Q1460,475 1360,488 Q1280,475 1200,490 Q1140,480 1080,500 L1100,500 Z" fill="url(#cliffNear)"/>
+  <!-- Cliff top layer -->
+  <path d="M1120,360 Q1190,330 1260,348 Q1340,330 1420,345 Q1490,335 1536,340 L1536,420 Q1480,408 1400,418 Q1320,405 1230,420 Q1160,410 1100,440 L1120,440 Z" fill="url(#cliffFar)"/>
+  <!-- cliff striations -->
+  <g stroke="#7a5a3d" stroke-width="1.5" fill="none" opacity="0.55">
+    <path d="M1130,400 Q1240,388 1360,398 Q1450,392 1536,398"/>
+    <path d="M1140,460 Q1260,448 1380,460 Q1470,452 1536,458"/>
+    <path d="M1120,520 Q1240,510 1360,522 Q1460,512 1536,520"/>
+  </g>
+
+  <!-- Green scrub on cliff tops -->
+  <g fill="#5d7a48">
+    <ellipse cx="1180" cy="342" rx="32" ry="14"/>
+    <ellipse cx="1260" cy="334" rx="36" ry="14"/>
+    <ellipse cx="1340" cy="334" rx="30" ry="12"/>
+    <ellipse cx="1420" cy="338" rx="38" ry="14"/>
+    <ellipse cx="1500" cy="332" rx="30" ry="12"/>
+  </g>
+  <g fill="#48643a">
+    <ellipse cx="1200" cy="338" rx="20" ry="9"/>
+    <ellipse cx="1290" cy="330" rx="22" ry="9"/>
+    <ellipse cx="1380" cy="332" rx="20" ry="8"/>
+    <ellipse cx="1460" cy="334" rx="22" ry="9"/>
+  </g>
+
+  <!-- Foam at cliff base -->
+  <g fill="#ffffff" opacity="0.85">
+    <ellipse cx="1140" cy="510" rx="80" ry="8"/>
+    <ellipse cx="1280" cy="508" rx="90" ry="8"/>
+    <ellipse cx="1420" cy="510" rx="80" ry="7"/>
+    <ellipse cx="1180" cy="498" rx="40" ry="5"/>
+    <ellipse cx="1340" cy="500" rx="46" ry="5"/>
+  </g>
+  <!-- spray dots at cliff base -->
+  <g fill="#ffffff" opacity="0.8">
+    <circle cx="1160" cy="486" r="3"/>
+    <circle cx="1240" cy="480" r="3.5"/>
+    <circle cx="1320" cy="486" r="3"/>
+    <circle cx="1400" cy="482" r="3"/>
+  </g>
+
+  <!-- Gulls in sky -->
+  <g stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round">
+    <path d="M380,200 Q392,190 404,200 Q416,190 428,200"/>
+    <path d="M540,160 Q548,154 556,160 Q564,154 572,160"/>
+    <path d="M820,200 Q830,192 840,200 Q850,192 860,200"/>
+    <path d="M180,240 Q188,234 196,240 Q204,234 212,240"/>
+  </g>
+  <g stroke="#445566" stroke-width="2" fill="none" stroke-linecap="round">
+    <path d="M380,200 Q392,194 404,200 Q416,194 428,200"/>
+    <path d="M820,200 Q830,196 840,200 Q850,196 860,200"/>
+  </g>
+</svg>

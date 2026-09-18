@@ -1,0 +1,183 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 768" preserveAspectRatio="xMidYMid slice">
+  <!-- The Hidden Water Underground — cutaway cross-section -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a9cfe0"/>
+      <stop offset="1" stop-color="#dbeae3"/>
+    </linearGradient>
+    <linearGradient id="grassTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6a9a5f"/>
+      <stop offset="1" stop-color="#4a7355"/>
+    </linearGradient>
+    <linearGradient id="soil1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8d7355"/>
+      <stop offset="1" stop-color="#7a6248"/>
+    </linearGradient>
+    <linearGradient id="soil2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7a6248"/>
+      <stop offset="1" stop-color="#5d4a36"/>
+    </linearGradient>
+    <linearGradient id="soil3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5d4a36"/>
+      <stop offset="1" stop-color="#463829"/>
+    </linearGradient>
+    <linearGradient id="aquifer" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a93b8"/>
+      <stop offset="0.5" stop-color="#1f7a99"/>
+      <stop offset="1" stop-color="#155f78"/>
+    </linearGradient>
+    <radialGradient id="aquiferGlow" cx="0.55" cy="0.7" r="0.45">
+      <stop offset="0" stop-color="#7fd3eb" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#7fd3eb" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Surface sky -->
+  <rect width="1536" height="200" fill="url(#sky)"/>
+
+  <!-- Distant soft hill on horizon -->
+  <path d="M0,180 Q400,150 800,170 T1536,165 V200 H0 Z" fill="#94b09a" opacity="0.6"/>
+
+  <!-- Grass strip across surface -->
+  <path d="M0,190 Q300,180 640,188 T1280,186 Q1420,190 1536,184 V210 H0 Z" fill="url(#grassTop)"/>
+  <g stroke="#3e6b4e" stroke-width="2" stroke-linecap="round" opacity="0.7">
+    <line x1="80" y1="190" x2="78" y2="178"/>
+    <line x1="220" y1="192" x2="222" y2="180"/>
+    <line x1="420" y1="190" x2="418" y2="178"/>
+    <line x1="700" y1="191" x2="702" y2="179"/>
+    <line x1="900" y1="190" x2="898" y2="178"/>
+    <line x1="1100" y1="190" x2="1102" y2="178"/>
+    <line x1="1400" y1="187" x2="1402" y2="175"/>
+  </g>
+
+  <!-- Tree on the left, roots reach down around (538,230) -->
+  <g>
+    <!-- canopy -->
+    <ellipse cx="500" cy="105" rx="80" ry="62" fill="#2c4f39"/>
+    <ellipse cx="555" cy="115" rx="68" ry="54" fill="#3e6b4e"/>
+    <ellipse cx="470" cy="130" rx="52" ry="44" fill="#5d8a64"/>
+    <ellipse cx="540" cy="85" rx="48" ry="38" fill="#5d8a64"/>
+    <!-- trunk -->
+    <path d="M518,190 Q514,160 520,140 Q526,160 538,190 Z" fill="#5d4a36"/>
+  </g>
+
+  <!-- Underground: layered soil bands -->
+  <rect x="0" y="200" width="1536" height="130" fill="url(#soil1)"/>
+  <rect x="0" y="320" width="1536" height="120" fill="url(#soil2)"/>
+  <rect x="0" y="430" width="1536" height="80" fill="url(#soil3)"/>
+
+  <!-- Soil texture: organic wavy lines between bands -->
+  <path d="M0,205 Q200,215 420,208 T820,210 Q1080,218 1280,206 T1536,210 L1536,200 L0,200 Z" fill="#9d8567" opacity="0.5"/>
+  <path d="M0,325 Q220,335 460,322 T880,326 Q1100,335 1320,320 T1536,325 L1536,318 L0,318 Z" fill="#8d7355" opacity="0.5"/>
+  <path d="M0,435 Q260,445 540,432 T1000,437 Q1220,447 1420,430 T1536,435 L1536,428 L0,428 Z" fill="#6f573f" opacity="0.5"/>
+
+  <!-- Soil specks for texture -->
+  <g fill="#3d3022" opacity="0.5">
+    <circle cx="120" cy="250" r="3"/>
+    <circle cx="310" cy="280" r="2.5"/>
+    <circle cx="180" cy="300" r="3"/>
+    <circle cx="780" cy="240" r="3"/>
+    <circle cx="990" cy="280" r="2.5"/>
+    <circle cx="1180" cy="260" r="3"/>
+    <circle cx="1420" cy="290" r="2.5"/>
+    <circle cx="220" cy="370" r="3"/>
+    <circle cx="450" cy="395" r="2.5"/>
+    <circle cx="700" cy="380" r="3"/>
+    <circle cx="950" cy="405" r="2.5"/>
+    <circle cx="1280" cy="380" r="3"/>
+  </g>
+
+  <!-- Tree roots threading through upper soil from trunk base -->
+  <g stroke="#8a6f4f" stroke-width="6" stroke-linecap="round" fill="none">
+    <path d="M524,210 Q500,250 470,290 Q455,320 440,340"/>
+    <path d="M530,210 Q540,240 538,270 Q535,300 538,330"/>
+    <path d="M535,210 Q570,235 595,260 Q620,285 640,310"/>
+    <path d="M520,210 Q490,225 460,235 Q430,245 405,260"/>
+  </g>
+  <g stroke="#6f573f" stroke-width="3" stroke-linecap="round" fill="none">
+    <path d="M480,265 Q468,285 460,305"/>
+    <path d="M555,250 Q565,265 570,285"/>
+    <path d="M600,275 Q610,295 615,315"/>
+    <path d="M438,240 Q420,255 408,270"/>
+  </g>
+
+  <!-- Gravel/pebble layer holding aquifer water around (845,538) -->
+  <rect x="0" y="500" width="1536" height="180" fill="url(#aquifer)"/>
+  <rect x="0" y="500" width="1536" height="180" fill="url(#aquiferGlow)"/>
+
+  <!-- Shimmer highlights on aquifer water -->
+  <g fill="#9fdcef" opacity="0.6">
+    <ellipse cx="280" cy="540" rx="80" ry="3"/>
+    <ellipse cx="540" cy="555" rx="100" ry="3"/>
+    <ellipse cx="845" cy="538" rx="120" ry="4"/>
+    <ellipse cx="1180" cy="560" rx="90" ry="3"/>
+    <ellipse cx="1420" cy="545" rx="70" ry="3"/>
+    <ellipse cx="420" cy="600" rx="60" ry="2.5"/>
+    <ellipse cx="900" cy="620" rx="80" ry="2.5"/>
+    <ellipse cx="1300" cy="610" rx="60" ry="2.5"/>
+  </g>
+
+  <!-- Pebbles scattered at top of aquifer layer -->
+  <g fill="#a59781">
+    <ellipse cx="120" cy="500" rx="18" ry="10"/>
+    <ellipse cx="180" cy="505" rx="14" ry="8"/>
+    <ellipse cx="240" cy="498" rx="20" ry="11"/>
+    <ellipse cx="310" cy="504" rx="16" ry="9"/>
+    <ellipse cx="380" cy="500" rx="14" ry="8"/>
+    <ellipse cx="450" cy="505" rx="18" ry="10"/>
+    <ellipse cx="520" cy="500" rx="15" ry="9"/>
+    <ellipse cx="600" cy="504" rx="20" ry="11"/>
+    <ellipse cx="680" cy="498" rx="16" ry="9"/>
+    <ellipse cx="760" cy="502" rx="18" ry="10"/>
+    <ellipse cx="830" cy="500" rx="22" ry="12"/>
+    <ellipse cx="910" cy="504" rx="16" ry="9"/>
+    <ellipse cx="990" cy="500" rx="18" ry="10"/>
+    <ellipse cx="1060" cy="503" rx="14" ry="8"/>
+    <ellipse cx="1130" cy="500" rx="20" ry="11"/>
+    <ellipse cx="1200" cy="504" rx="16" ry="9"/>
+    <ellipse cx="1270" cy="498" rx="18" ry="10"/>
+    <ellipse cx="1340" cy="503" rx="15" ry="9"/>
+    <ellipse cx="1410" cy="500" rx="20" ry="11"/>
+    <ellipse cx="1480" cy="504" rx="14" ry="8"/>
+  </g>
+  <g fill="#8a7c68" opacity="0.7">
+    <ellipse cx="150" cy="498" rx="6" ry="4"/>
+    <ellipse cx="265" cy="500" rx="5" ry="3"/>
+    <ellipse cx="420" cy="498" rx="6" ry="4"/>
+    <ellipse cx="640" cy="498" rx="5" ry="3"/>
+    <ellipse cx="855" cy="496" rx="7" ry="4"/>
+    <ellipse cx="1085" cy="499" rx="5" ry="3"/>
+    <ellipse cx="1240" cy="498" rx="6" ry="4"/>
+    <ellipse cx="1455" cy="500" rx="5" ry="3"/>
+  </g>
+
+  <!-- Small well on the right surface around (1260,269) -->
+  <g>
+    <!-- shaft going down through soil -->
+    <rect x="1232" y="190" width="56" height="500" fill="#2a1f15" opacity="0.55"/>
+    <rect x="1240" y="190" width="40" height="310" fill="#1a120a"/>
+    <!-- stone rim on surface -->
+    <ellipse cx="1260" cy="195" rx="50" ry="10" fill="#7a7060"/>
+    <ellipse cx="1260" cy="193" rx="42" ry="6" fill="#1a120a"/>
+    <!-- well posts -->
+    <rect x="1216" y="150" width="10" height="50" fill="#5d4a36"/>
+    <rect x="1294" y="150" width="10" height="50" fill="#5d4a36"/>
+    <!-- crank bar between posts -->
+    <rect x="1216" y="155" width="88" height="6" fill="#6f573f"/>
+    <circle cx="1310" cy="158" r="6" fill="#3d3022"/>
+    <rect x="1310" y="158" width="14" height="3" fill="#3d3022"/>
+    <!-- pitched roof -->
+    <path d="M1196,155 L1260,110 L1324,155 Z" fill="#a14e30"/>
+    <path d="M1196,155 L1260,110 L1260,155 Z" fill="#8a3f23"/>
+    <!-- roof underside shadow -->
+    <rect x="1208" y="148" width="104" height="6" fill="#3d2418" opacity="0.5"/>
+  </g>
+
+  <!-- Faint droplets sinking through soil to aquifer -->
+  <g fill="#7fd3eb" opacity="0.7">
+    <ellipse cx="320" cy="360" rx="3" ry="5"/>
+    <ellipse cx="700" cy="400" rx="3" ry="5"/>
+    <ellipse cx="980" cy="440" rx="3" ry="5"/>
+    <ellipse cx="1100" cy="380" rx="3" ry="5"/>
+  </g>
+</svg>

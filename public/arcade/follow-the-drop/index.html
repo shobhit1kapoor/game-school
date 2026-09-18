@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Questwood Water Drop Journey</title>
+  <meta name="description" content="An interactive water cycle adventure for first graders. Play as a drop of water and choose your path through 20 illustrated scenes — cloud, rain, river, kitchen tap, and back again. Free, no login, no ads.">
+  <link rel="canonical" href="https://maninae.github.io/follow-the-drop/">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>💧</text></svg>">
+
+  <!-- Social unfurl -->
+  <meta property="og:title" content="Follow the Drop — Interactive Water Cycle Adventure for First Graders">
+  <meta property="og:description" content="An interactive water cycle adventure for first graders. Play as a drop of water and choose your path through 20 illustrated scenes — cloud, rain, river, kitchen tap, and back again.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://maninae.github.io/follow-the-drop/">
+  <meta property="og:image" content="https://maninae.github.io/follow-the-drop/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Follow the Drop — Interactive Water Cycle Adventure for First Graders">
+  <meta name="twitter:description" content="An interactive water cycle adventure for first graders. Play as a drop of water and choose your path through 20 illustrated scenes — cloud, rain, river, kitchen tap, and back again.">
+  <meta name="twitter:image" content="https://maninae.github.io/follow-the-drop/assets/og.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Andika:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/scene.css">
+  <link rel="stylesheet" href="css/panels.css">
+  <link rel="stylesheet" href="css/effects.css">
+  <link rel="stylesheet" href="css/journal.css">
+
+  <!-- Pre-paint: hide the first-visit intro for returning readers before it paints.
+       The intro stays visible by default so crawlers and no-JS readers see the
+       landing content (title, description, hub links) in the raw HTML. -->
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem("follow-the-drop:visited")) {
+          document.documentElement.setAttribute("data-returning", "1");
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <style>
+    html[data-returning="1"] #intro { display: none; }
+  </style>
+<script defer src="/arcade/brightpath-arcade.js"></script></head>
+<body>
+
+  <!-- The scene stage: full-bleed illustration + hotspots -->
+  <main id="stage" class="stage" aria-live="polite">
+    <div id="scene-layer-a" class="scene-layer front">
+      <img class="scene-image" src="assets/scenes/rain.png" alt="A rainy valley">
+    </div>
+    <div id="scene-layer-b" class="scene-layer">
+      <img class="scene-image" src="assets/scenes/rain.png" alt="">
+    </div>
+    <div id="effect-layer" class="effect-layer"></div>
+    <div id="overlay-layer" class="overlay-layer">
+      <div id="hotspot-layer" class="hotspot-layer"></div>
+      <div id="nav-layer" class="hotspot-layer"></div>
+    </div>
+  </main>
+
+  <!-- Trail sign header -->
+  <header class="trailhead">
+    <div class="trailhead-sign">
+      <span class="trailhead-drop">💧</span>
+      <span class="trailhead-title">Follow the Drop</span>
+      <span id="state-badge" class="state-badge" title="What form is your drop in?"></span>
+    </div>
+    <div class="trailhead-right">
+      <button id="passport-button" class="passport-button" aria-label="Open your explorer's journal">
+        <span class="passport-icon">📖</span>
+        <span id="passport-count" class="passport-count">0 / 20</span>
+        <span class="passport-label">My Journal</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Quest toast -->
+  <div id="quest-toast" class="quest-toast" hidden></div>
+
+  <!-- Story panel: title, read-aloud text, choices -->
+  <section id="story-panel" class="story-panel">
+    <div class="story-card">
+      <div class="story-heading">
+        <span id="scene-emoji" class="scene-emoji"></span>
+        <h2 id="scene-title" class="scene-title"></h2>
+        <button id="longago-chip" class="longago-chip" aria-label="A story from long ago">⏳<span class="longago-label"> Long ago…</span></button>
+        <button id="read-aloud" class="read-aloud" aria-label="Read this page out loud">🔊</button>
+      </div>
+      <p id="scene-body" class="scene-body"></p>
+      <p id="scene-prompt" class="scene-prompt"></p>
+    </div>
+  </section>
+
+  <!-- Fact card popover (one at a time) -->
+  <div id="fact-card" class="fact-card" hidden>
+    <button id="fact-close" class="fact-close" aria-label="Close">✕</button>
+    <div class="fact-eyebrow">Look closer!</div>
+    <h2 id="fact-title" class="fact-title"></h2>
+    <p id="fact-body" class="fact-body"></p>
+  </div>
+
+  <!-- Explorer's Journal: map, quests, stamps -->
+  <div id="passport-modal" class="passport-modal" hidden>
+    <div class="passport-book journal-book">
+      <button id="passport-close" class="passport-close" aria-label="Close journal">✕</button>
+      <h2 class="passport-title">My Explorer's Journal</h2>
+      <p id="odometer" class="odometer"></p>
+      <div class="journal-tabs" role="tablist">
+        <button class="journal-tab active" data-pane="map-pane">🗺️ Map</button>
+        <button class="journal-tab" data-pane="quest-pane">⭐ Quests</button>
+        <button class="journal-tab" data-pane="stamp-pane">📖 Stamps</button>
+      </div>
+      <div id="map-pane" class="journal-pane active">
+        <p class="pane-hint">The map fills in as you explore. Where do the “?” trails lead?</p>
+        <svg id="map-svg" class="map-svg" viewBox="0 0 1000 780" preserveAspectRatio="xMidYMid meet"></svg>
+      </div>
+      <div id="quest-pane" class="journal-pane">
+        <p class="pane-hint">Special journeys earn special badges!</p>
+        <ul id="quest-list" class="quest-list"></ul>
+      </div>
+      <div id="stamp-pane" class="journal-pane">
+        <p class="pane-hint">Collect a stamp from every place your drop visits!</p>
+        <div id="stamp-grid" class="stamp-grid"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- First-visit intro — also the site's static, crawlable landing for readers with JS disabled -->
+  <div id="intro" class="intro">
+    <div class="intro-card">
+      <div class="intro-drop">💧</div>
+      <h1 class="intro-title">You are a drop of water!</h1>
+      <p class="intro-subtitle">An interactive water cycle adventure for first graders — and the grown-ups reading along.</p>
+      <p class="intro-body">Today you get to ride the water cycle. Fall as rain, race down rivers, hide underground, visit a kitchen sink, and float back to the clouds. Twenty illustrated scenes, real facts on every page, a read-aloud button for pre-readers, and a journal that fills in as you wander. Tap the glowing circles to look closer, and choose where your drop goes next!</p>
+      <button id="intro-start" class="intro-start">Start my journey</button>
+      <p class="intro-credit">A project by <a href="https://maninae.github.io/">Owen Wang</a> · <a href="https://maninae.github.io/projects.html">more projects</a></p>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/narrate.js"></script>
+  <script src="js/passport.js"></script>
+  <script src="js/journal.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/transitions.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
