@@ -6,8 +6,8 @@
   document.head.append(stylesheet);
   const hud = document.createElement('aside');
   hud.className = 'brightpath-arcade-hud';
-  hud.setAttribute('aria-label', 'Brightpath arcade controls');
-  hud.innerHTML = '<span class="brightpath-arcade-hud__mark" aria-hidden="true">✦</span><span>Brightpath Arcade</span><button class="brightpath-arcade-hud__back" type="button">Back</button>';
+  hud.setAttribute('aria-label', 'Game School game controls');
+  hud.innerHTML = '<span class="brightpath-arcade-hud__mark" aria-hidden="true">✦</span><span>Game School</span><button class="brightpath-arcade-hud__back" type="button">Back</button>';
   hud.querySelector('button')?.addEventListener('click', () => { window.location.assign('/'); });
   document.body.append(hud);
   let audio;

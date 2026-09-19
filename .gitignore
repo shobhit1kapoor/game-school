@@ -9,3 +9,5 @@ public/arcade/**/.git/
 public/arcade/escape-run/.git/
 /public/arcade/escape-run/
 public/arcade/**/*.map
+
+.vercel

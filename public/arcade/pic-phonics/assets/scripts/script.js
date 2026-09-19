@@ -568,7 +568,7 @@ function showResult() {
     let totalScore = (score / questions.length * 100).toFixed();
 
     //Generates a html header element to display the users score.
-    scoreContainer.innerHTML = `<h3>You scored ${totalScore}% in Brightpath Sound & Picture</h3>`;
+    scoreContainer.innerHTML = `<h3>You scored ${totalScore}% in Game School Sound & Picture</h3>`;
 
     //Uses local storage to store the user score in percentage format
     localStorage.setItem('score', totalScore);

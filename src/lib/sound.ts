@@ -1,4 +1,4 @@
-export type BrightpathSound = 'tap' | 'correct' | 'wrong' | 'reward';
+export type GameSchoolSound = 'tap' | 'correct' | 'wrong' | 'reward';
 
 let audioContext: AudioContext | null = null;
 
@@ -9,11 +9,11 @@ function context() {
   return audioContext;
 }
 
-export function playSound(kind: BrightpathSound) {
+export function playSound(kind: GameSchoolSound) {
   const audio = context();
   if (!audio) return;
   const now = audio.currentTime;
-  const notes: Record<BrightpathSound, number[]> = {
+  const notes: Record<GameSchoolSound, number[]> = {
     tap: [440], correct: [523.25, 659.25, 783.99], wrong: [220, 174.61], reward: [523.25, 659.25, 783.99, 1046.5],
   };
   notes[kind].forEach((frequency, index) => {
@@ -30,7 +30,7 @@ export function playSound(kind: BrightpathSound) {
   });
 }
 
-export function enableBrightpathClickSounds() {
+export function enableGameSchoolClickSounds() {
   const handler = () => playSound('tap');
   document.addEventListener('click', handler, true);
   return () => document.removeEventListener('click', handler, true);

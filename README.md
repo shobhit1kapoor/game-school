@@ -1,4 +1,4 @@
-# Brightpath Academy
+# Game School
 
 A local-first K–5 learning adventure. Students choose a grade and subject, learn each concept through a short guided explanation, complete a ten-part practice level, earn stars, and explore locally packaged games.
 
