@@ -1,9 +1,9 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-export default defineConfig({
-  base: process.env.GITHUB_ACTIONS ? '/game-school/' : '/',
+export default defineConfig(({ mode }) => ({
+  base: mode === 'github-pages' ? '/game-school/' : '/',
   plugins: [react()],
   build: { sourcemap: true },
   server: { host: '127.0.0.1', port: 4173 },
-});
+}));
