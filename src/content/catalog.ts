@@ -66,10 +66,36 @@ export const STAGES: Record<SubjectId, StageSyllabus[]> = {
   social: [{ name: 'Community Square', mission: 'Learn how communities work.', skills: ['helpers', 'rules'] }, { name: 'Map Market', mission: 'Read places and maps.', skills: ['maps', 'geography'] }, { name: 'History Lane', mission: 'Explore then and now.', skills: ['timeline', 'sources'] }, { name: 'Civic Hall', mission: 'Practice being a citizen.', skills: ['government', 'responsibility'] }, { name: 'World Festival', mission: 'Connect people, cultures, and choices.', skills: ['culture', 'economics'] }],
 };
 
-const explanationFor = (title: string, subject: SubjectId) => ({
-  goal: subject === 'math' ? `We will use what we know about ${title.toLowerCase()}.` : subject === 'english' ? `We will read, think, and talk about ${title.toLowerCase()}.` : subject === 'science' ? `We will look closely, make a guess, and learn about ${title.toLowerCase()}.` : `We will explore ${title.toLowerCase()} with a simple mission.`,
-  example: subject === 'math' ? 'Look for the numbers, shapes, or clues that help you solve one small step at a time.' : subject === 'english' ? 'Read the words slowly. Use the picture, sound, or sentence to help you choose.' : subject === 'science' ? 'Scientists notice what happens first, then explain what they see.' : 'Look at the map or story clues before you make your choice.',
-});
+const explanationFor = (title: string, subject: SubjectId, grade: Grade) => {
+  const gradeLabel = grade === 'K' ? 'Kindergarten' : `Grade ${grade}`;
+  const lessons = {
+    math: {
+      goal: `In ${title}, you will use models, pictures, and number clues to make one math idea feel visible before you solve it.`,
+      example: `Try this routine: read the problem, circle the numbers or shapes that matter, choose a strategy, and check that your answer fits the story.`,
+      strategy: 'Math thinkers can draw, count on, make a group, use a number line, or explain their thinking aloud.',
+      vocabulary: 'number • model • strategy • explain',
+    },
+    english: {
+      goal: `In ${title}, you will use sounds, word parts, sentence clues, and ideas from a text to become a stronger reader and writer.`,
+      example: 'Pause at a clue. Say the word slowly, notice what the sentence is about, then choose the answer that makes the most sense.',
+      strategy: 'Readers reread, use context, and point to evidence instead of guessing quickly.',
+      vocabulary: 'sound • word • sentence • evidence',
+    },
+    science: {
+      goal: `In ${title}, you will act like a scientist: observe carefully, make a prediction, and use evidence to explain what happens.`,
+      example: 'First notice a pattern. Next make a prediction. Then compare what happened with what you thought might happen.',
+      strategy: 'Good science answers name an observation and connect it to an idea about the natural world.',
+      vocabulary: 'observe • predict • evidence • explain',
+    },
+    social: {
+      goal: `In ${title}, you will use maps, timelines, community examples, and source clues to understand how people and places connect.`,
+      example: 'Look for who, where, and when clues. Then decide which map, rule, event, or source best explains the situation.',
+      strategy: 'Social scientists ask whose point of view is shown and use evidence before making a conclusion.',
+      vocabulary: 'community • map • source • perspective',
+    },
+  }[subject];
+  return { ...lessons, gradeLabel };
+};
 
 const practicePrompts = ['Warm up', 'Try another one', 'Look for a clue', 'Think it through', 'Show what you know', 'Keep exploring', 'Use your strategy', 'Try a challenge', 'Check your idea', 'Finish strong'];
 const rotateChoices = (question: Quiz, offset: number): Quiz => {
@@ -89,11 +115,11 @@ function subjectSeeds(grade: Grade, subject: SubjectId): Seed[] {
   const titles = gradeNames[grade][subject];
   if (subject === 'math') return titles.map((title) => ({
     title, concept: `Practice ${title.toLowerCase()}`, gameType: 'answer-dash',
-    config: { ...explanationFor(title, subject), ...quiz(tenPartRound(mathQuestions[grade], title)) },
+    config: { ...explanationFor(title, subject, grade), ...quiz(tenPartRound(mathQuestions[grade], title)) },
   }));
-  if (subject === 'english') return titles.map((title) => ({ title, concept: `Explore ${title.toLowerCase()}`, gameType: 'word-forge', config: { ...explanationFor(title, subject), ...quiz(tenPartRound(wordQuestions[grade], title)) } }));
-  if (subject === 'science') return titles.map((title, index) => ({ title, concept: index === 0 ? 'Ask, test, and observe' : `Explore ${title.toLowerCase()}`, gameType: 'answer-dash', config: { ...explanationFor(title, subject), ...quiz(tenPartRound(scienceQuestions[grade], title)) } }));
-  return titles.map((title) => ({ title, concept: `Explore ${title.toLowerCase()}`, gameType: 'map-explorer', config: { ...explanationFor(title, subject), ...quiz(tenPartRound(mapQuestions[grade], title)) } }));
+  if (subject === 'english') return titles.map((title) => ({ title, concept: `Explore ${title.toLowerCase()}`, gameType: 'word-forge', config: { ...explanationFor(title, subject, grade), ...quiz(tenPartRound(wordQuestions[grade], title)) } }));
+  if (subject === 'science') return titles.map((title, index) => ({ title, concept: index === 0 ? 'Ask, test, and observe' : `Explore ${title.toLowerCase()}`, gameType: 'answer-dash', config: { ...explanationFor(title, subject, grade), ...quiz(tenPartRound(scienceQuestions[grade], title)) } }));
+  return titles.map((title) => ({ title, concept: `Explore ${title.toLowerCase()}`, gameType: 'map-explorer', config: { ...explanationFor(title, subject, grade), ...quiz(tenPartRound(mapQuestions[grade], title)) } }));
 }
 
 export function levelsFor(grade: Grade, subject: SubjectId): LevelDefinition[] {

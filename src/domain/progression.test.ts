@@ -20,8 +20,12 @@ describe('progression', () => {
         const levels = levelsFor(grade, subject);
         expect(levels).toHaveLength(10);
         for (const level of levels) {
-          const questions = level.config.questions as unknown[] | undefined;
-          if (questions) expect(questions).toHaveLength(10);
+        const questions = level.config.questions as unknown[] | undefined;
+          if (questions) {
+            expect(questions).toHaveLength(10);
+            const prompts = (questions as Array<{ prompt: string }>).map((question) => question.prompt);
+            expect(new Set(prompts).size).toBe(10);
+          }
         }
       }
     }
