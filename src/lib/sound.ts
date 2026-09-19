@@ -1,6 +1,9 @@
 export type GameSchoolSound = 'tap' | 'correct' | 'wrong' | 'reward';
+export type AmbientTheme = 'Quiet forest' | 'Mountain breeze' | 'Ocean sparkle' | 'Music off';
 
 let audioContext: AudioContext | null = null;
+let ambientTimer: number | null = null;
+let ambientOscillators: OscillatorNode[] = [];
 
 function context() {
   if (typeof window === 'undefined') return null;
@@ -34,4 +37,45 @@ export function enableGameSchoolClickSounds() {
   const handler = () => playSound('tap');
   document.addEventListener('click', handler, true);
   return () => document.removeEventListener('click', handler, true);
+}
+
+export function stopAmbientMusic() {
+  if (ambientTimer !== null) window.clearTimeout(ambientTimer);
+  ambientTimer = null;
+  ambientOscillators.forEach((oscillator) => oscillator.stop());
+  ambientOscillators = [];
+}
+
+export function setAmbientTheme(theme: AmbientTheme) {
+  stopAmbientMusic();
+  if (theme === 'Music off') return;
+  const audio = context();
+  if (!audio) return;
+  const notes: Record<Exclude<AmbientTheme, 'Music off'>, number[]> = {
+    'Quiet forest': [261.63, 329.63, 392],
+    'Mountain breeze': [293.66, 369.99, 440],
+    'Ocean sparkle': [349.23, 440, 523.25],
+  };
+  let step = 0;
+  const playPhrase = () => {
+    const now = audio.currentTime;
+    const phrase = notes[theme];
+    ambientOscillators = phrase.map((frequency, index) => {
+      const oscillator = audio.createOscillator();
+      const gain = audio.createGain();
+      const start = now + index * 0.42;
+      oscillator.type = theme === 'Mountain breeze' ? 'triangle' : 'sine';
+      oscillator.frequency.setValueAtTime(frequency * (step % 2 ? 1.004 : 1), start);
+      gain.gain.setValueAtTime(0.0001, start);
+      gain.gain.exponentialRampToValueAtTime(0.022, start + 0.08);
+      gain.gain.exponentialRampToValueAtTime(0.0001, start + 0.72);
+      oscillator.connect(gain).connect(audio.destination);
+      oscillator.start(start);
+      oscillator.stop(start + 0.76);
+      return oscillator;
+    });
+    step += 1;
+    ambientTimer = window.setTimeout(playPhrase, 3400);
+  };
+  playPhrase();
 }
