@@ -6,6 +6,7 @@ import worldMap from './assets/questwood-world-map.png';
 import arcadeScenes from './assets/arcade-subject-scenes.png';
 import mathGameCovers from './assets/math-game-covers.png';
 import arcadeGameCovers from './assets/arcade-game-covers.png';
+import socialGameCovers from './assets/social-game-covers.png';
 import mathLevelCovers from './assets/math-level-covers.png';
 import mathLessonCovers from './assets/math-lesson-covers.png';
 import englishLessonCovers from './assets/english-lesson-covers.png';
@@ -99,19 +100,19 @@ function LandingPage({ onEnter }: { onEnter: () => void }) {
   </main>;
 }
 
-const ARCADE_GAMES: Record<SubjectId, Array<{ title: string; note: string; href?: string; art?: number; cover?: 'math' | 'arcade' }>> = {
+const ARCADE_GAMES: Record<SubjectId, Array<{ title: string; note: string; href?: string; art?: number; cover?: 'math' | 'arcade' | 'social' }>> = {
   math: [{ title: 'Cannon Target', note: 'Aim at the right number', art: 0, cover: 'math' }, { title: 'Number Road', note: 'Drive to the right answer', href: '/arcade/number-road/index.html', art: 1, cover: 'math' }, { title: 'Puzzle Playground', note: 'Solve colorful math puzzles', href: '/arcade/mathivities/index.html', art: 2, cover: 'math' }, { title: 'Deep Sea Numbers', note: 'Explore number oceans', href: '/arcade/ocean-math-quest/index.html', art: 3, cover: 'math' }, { title: 'Multiply Island', note: 'A multiplication treasure trip', href: '/arcade/multiply-island/index.html', art: 4, cover: 'math' }, { title: 'Number Nest', note: 'Light stars by solving number puzzles', href: '/arcade/number-nest/index.html', art: 5, cover: 'math' }],
   science: [{ title: 'Water Workshop', note: 'Build and test tiny experiments', href: '/arcade/flowspark-kids/index.html', art: 2, cover: 'arcade' }, { title: 'Space Explorer', note: 'English version coming soon' }, { title: 'Water Drop Journey', note: 'Travel through the water cycle', href: '/arcade/follow-the-drop/index.html', art: 3, cover: 'arcade' }, { title: 'Science Mix Lab', note: 'Mix, discover, and learn', href: '/arcade/chemicraft/index.html', art: 4, cover: 'arcade' }, { title: 'Animal Safari', note: 'Meet animals from around the world' }, { title: 'Space Pals', note: 'A space science adventure' }],
-  social: [{ title: 'History Delivery', note: 'Carry important messages through time', href: '/arcade/time-travel-courier/index.html', art: 5, cover: 'arcade' }, { title: 'Community Choices', note: 'Learn how a town works' }, { title: 'World Chase', note: 'Discover places and maps', href: '/arcade/world-chase/index.html' }, { title: 'Around the World', note: 'Explore countries and landmarks' }, { title: 'Time Trail', note: 'Put history in order', href: '/arcade/time-trail/index.html' }, { title: 'Secret History Codes', note: 'Solve history puzzles', href: '/arcade/secret-history-codes/index.html' }],
+  social: [{ title: 'History Delivery', note: 'Carry important messages through time', href: '/arcade/time-travel-courier/index.html', art: 0, cover: 'social' }, { title: 'Community Choices', note: 'Learn how a town works' }, { title: 'World Chase', note: 'Discover places and maps', href: '/arcade/world-chase/index.html', art: 1, cover: 'social' }, { title: 'Around the World', note: 'Explore countries and landmarks' }, { title: 'Time Trail', note: 'Put history in order', href: '/arcade/time-trail/index.html', art: 2, cover: 'social' }, { title: 'Secret History Codes', note: 'Solve history puzzles', href: '/arcade/secret-history-codes/index.html', art: 3, cover: 'social' }],
   english: [{ title: 'Word Wizard', note: 'Spell words in magical worlds', href: '/arcade/wordquest/index.html', art: 0, cover: 'arcade' }, { title: 'Reading Trail', note: 'A phonics reading journey' }, { title: 'Sound & Picture', note: 'Match first sounds to pictures', href: '/arcade/pic-phonics/index.html', art: 1, cover: 'arcade' }, { title: 'Word Garden', note: 'Grow your vocabulary' }, { title: 'Grammar Castle', note: 'Build strong sentences' }, { title: 'Story Adventure', note: 'Read and explore stories' }],
 };
 function GamesView({ subject, onChooseSubject }: { subject: SubjectId | null; onChooseSubject: (subject: SubjectId | null) => void }) {
   if (!subject) return <div className="simple-page games-page" style={{ '--arcade-scenes': `url(${arcadeScenes})` } as React.CSSProperties}><h1>Game Arcade</h1><p className="intro">Choose a subject to see its games.</p><section className="arcade-subject-grid">{(Object.keys(SUBJECTS) as SubjectId[]).map((id) => <button className={`arcade-subject-card ${id}`} onClick={() => onChooseSubject(id)} key={id}><i className="arcade-art" /><strong>{SUBJECTS[id].subjectName}</strong><small>{SUBJECTS[id].label}</small></button>)}</section></div>;
   const info = SUBJECTS[subject];
-  return <div className="simple-page games-page" style={{ '--math-game-covers': `url(${mathGameCovers})`, '--arcade-game-covers': `url(${arcadeGameCovers})` } as React.CSSProperties}>
+  return <div className="simple-page games-page" style={{ '--math-game-covers': `url(${mathGameCovers})`, '--arcade-game-covers': `url(${arcadeGameCovers})`, '--social-game-covers': `url(${socialGameCovers})` } as React.CSSProperties}>
     <button className="link-button arcade-back" onClick={() => onChooseSubject(null)}>← All subjects</button><h1>{info.subjectName} Games</h1><p className="intro">{info.label}: choose a game to play.</p>
     <section className="game-block-grid">{ARCADE_GAMES[subject].filter((game) => game.href).map((game) => <article className={`game-block ${subject}`} key={game.title}>
-      {game.art !== undefined ? <i className={`game-cover ${game.cover === 'math' ? 'math-cover' : 'arcade-game-cover'} cover-${game.art}`} /> : <span>{info.emoji}</span>}
+      {game.art !== undefined ? <i className={`game-cover ${game.cover === 'math' ? 'math-cover' : game.cover === 'social' ? 'social-game-cover' : 'arcade-game-cover'} cover-${game.art}`} /> : <span>{info.emoji}</span>}
       <h2>{game.title}</h2><p>{game.note}</p><a className="primary-button" href={game.href}>Play game</a>
     </article>)}</section>
   </div>;
