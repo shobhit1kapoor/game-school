@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
-import { BookOpen, ChevronDown, CircleHelp, Gamepad2, Gift, Home, Map, Medal, Music2, Play, ShieldCheck, Sparkles, Star, Trophy, UsersRound } from 'lucide-react';
+import { BookOpen, ChevronDown, CircleHelp, FlaskConical, Gamepad2, Gift, Home, Landmark, Map, Medal, Mountain, Music2, Play, ShieldCheck, Sparkle, Sparkles, Star, Trophy, UsersRound, type LucideIcon } from 'lucide-react';
 import gameSchoolLogo from './assets/game-school-logo.svg';
-import worldMarkers from './assets/world-markers.png';
 import worldMap from './assets/questwood-world-map.png';
 import arcadeScenes from './assets/arcade-subject-scenes.png';
 import mathGameCovers from './assets/math-game-covers.png';
@@ -27,6 +26,13 @@ type View = 'home' | 'map' | 'subjects' | 'games' | 'collection' | 'leaderboard'
 const NAVIGATION: { id: View; label: string; icon: typeof Home }[] = [
   { id: 'home', label: 'Home', icon: Home }, { id: 'map', label: 'World Map', icon: Map }, { id: 'subjects', label: 'My Subjects', icon: BookOpen }, { id: 'games', label: 'Games', icon: Gamepad2 }, { id: 'collection', label: 'Rewards', icon: Gift }, { id: 'leaderboard', label: 'Leaderboard', icon: Medal }, { id: 'grownups', label: 'Grown-ups', icon: UsersRound },
 ];
+
+const SUBJECT_MARKERS: Record<SubjectId, { icon: LucideIcon; hint: string }> = {
+  math: { icon: Mountain, hint: 'Numbers & patterns' },
+  english: { icon: BookOpen, hint: 'Read & write' },
+  science: { icon: FlaskConical, hint: 'Test & discover' },
+  social: { icon: Landmark, hint: 'People & places' },
+};
 
 export default function App() {
   const [state, setState] = useState<QuestwoodState>(() => createInitialState());
@@ -126,7 +132,7 @@ function ProfileEditor({ profile, onClose, onSave }: { profile: QuestwoodState['
 
 function HelpPanel({ onClose }: { onClose: () => void }) { return <div className="modal-backdrop"><section className="profile-editor help-panel" role="dialog" aria-modal="true" aria-labelledby="help-title"><button className="icon-button" onClick={onClose} aria-label="Close help">×</button><div className="help-panel-icon"><CircleHelp size={28} /></div><h2 id="help-title">How Game School works</h2><p className="help-intro">Every choice is open. Pick the path that feels right today, then come back anytime.</p><ol><li><span>1</span><div><strong>Choose a grade and subject</strong><p>Use the grade menu, World Map, or My Subjects to find a learning world.</p></div></li><li><span>2</span><div><strong>Learn, then practice</strong><p>Each lesson starts with a simple explanation and example before its 10 practice parts.</p></div></li><li><span>3</span><div><strong>Earn stars and play games</strong><p>Completed lessons build your rewards. Arcade games are always open for an extra challenge.</p></div></li></ol><p className="help-note">A grown-up can view progress on this device in the Grown-ups section. Game School does not require an account.</p><button className="primary-button" onClick={onClose}>Got it—let’s explore</button></section></div>; }
 
-function SubjectMapPin({ id, onChoose }: { id: SubjectId; onChoose: (subject: SubjectId) => void }) { const info = SUBJECTS[id]; return <button className={`world-pin pin-${id}`} onClick={() => onChoose(id)}><i className={`world-marker marker-${id}`} aria-hidden="true" /><span className="world-pin-copy"><small>{info.subjectName}</small><strong>{info.label}</strong></span></button>; }
+function SubjectMapPin({ id, onChoose }: { id: SubjectId; onChoose: (subject: SubjectId) => void }) { const info = SUBJECTS[id]; const marker = SUBJECT_MARKERS[id]; const Icon = marker.icon; return <button className={`world-pin pin-${id}`} onClick={() => onChoose(id)} aria-label={`Explore ${info.subjectName}, ${info.label}`}><span className="world-pin-emblem" aria-hidden="true"><Icon size={24} /><Sparkle size={10} /></span><span className="world-pin-copy"><small>{info.subjectName}</small><strong>{info.label}</strong><em>{marker.hint}</em></span><span className="world-pin-arrow" aria-hidden="true">→</span></button>; }
 
 function HomeView({ state, grade, subject, levels, onSubject, onPlay, onMap }: { state: QuestwoodState; grade: Grade; subject: SubjectId; levels: LevelDefinition[]; onSubject: (value: SubjectId) => void; onPlay: (level: LevelDefinition) => void; onMap: () => void }) {
   const next = levels.find((level) => levelState(level, state) !== 'locked' && levelState(level, state) !== 'complete') ?? levels[0];
@@ -134,14 +140,14 @@ function HomeView({ state, grade, subject, levels, onSubject, onPlay, onMap }: {
   return <div className="home-view">
     <section className="welcome-row"><div><h1>What would you like to explore today, {state.profile.name}?</h1><p className="intro">Choose a world, follow your curiosity, and build your way through Grade {grade}.</p></div></section>
     <section className="home-atlas">
-      <section className="world-card" style={{ '--world-markers': `url(${worldMarkers})` } as React.CSSProperties}><img src={worldMap} alt="Game School world with mountains, forest, laboratory island and community town" /><div className="map-heading"><span>Grade {grade} World</span><strong>Choose a subject</strong></div><SubjectMapPin id="math" onChoose={onSubject} /><SubjectMapPin id="english" onChoose={onSubject} /><SubjectMapPin id="science" onChoose={onSubject} /><SubjectMapPin id="social" onChoose={onSubject} /><button className="map-link" onClick={onMap}>Open full map <Map size={17} /></button></section>
+      <section className="world-card"><img src={worldMap} alt="Game School world with mountains, forest, laboratory island and community town" /><div className="map-heading"><span>Grade {grade} World</span><strong>Choose a subject</strong></div><SubjectMapPin id="math" onChoose={onSubject} /><SubjectMapPin id="english" onChoose={onSubject} /><SubjectMapPin id="science" onChoose={onSubject} /><SubjectMapPin id="social" onChoose={onSubject} /><button className="map-link" onClick={onMap}>Open full map <Map size={17} /></button></section>
       <aside className="home-rail"><div className="owl-note"><span className="owl">🦉</span><div><strong>Curiosity opens new worlds.</strong><p>Pick any path that feels exciting.</p></div></div><div className="next-quest"><p className="overline">CONTINUE LEARNING</p><div className="section-title"><h2>{SUBJECTS[subject].emoji} {next.title}</h2></div><p>{next.concept}</p><button className="primary-button" onClick={() => onPlay(next)}><Play size={18} fill="currentColor" /> Start lesson</button><div className="grade-progress"><span>Grade {grade} journey</span><strong>{gradeComplete} of {allGradeLevels.length}</strong><progress max={allGradeLevels.length} value={gradeComplete} /></div></div><div className="today-card"><div className="section-title"><h2>Today’s little wins</h2><Trophy color="#e7ad24" /></div><ul><li><span>✓</span> Explore any lesson</li><li><span>○</span> Earn 3 stars</li></ul><p className="small-copy">{state.completedToday} quest{state.completedToday === 1 ? '' : 's'} completed today.</p></div></aside>
     </section>
     <section className="learning-guide" aria-labelledby="learning-guide-title"><div><h2 id="learning-guide-title">Your Grade {grade} learning guide</h2><p>Pick any subject, read the mini-lesson, answer 10 practice parts, then earn stars for completing the lesson.</p></div><ol><li><span>1</span><strong>Choose a world</strong><small>Math, English, Science, or Social Studies</small></li><li><span>2</span><strong>Learn the idea</strong><small>A clear example comes before practice</small></li><li><span>3</span><strong>Play 10 parts</strong><small>Use what you learned, at your own pace</small></li><li><span>4</span><strong>Earn stars</strong><small>Completion, accuracy, and steady speed count</small></li></ol><p className="guide-progress"><strong>{gradeComplete} / {allGradeLevels.length}</strong> Grade {grade} lessons completed</p></section>
   </div>;
 }
 
-function MapView({ grade, onSubject }: { grade: Grade; onSubject: (subject: SubjectId) => void }) { return <div className="map-page"><div className="page-title"><p className="overline">GRADE {grade} WORLD</p><h1>Every path leads to a discovery.</h1><p>Choose a subject district to see its current quests.</p></div><section className="world-card large-map" style={{ '--world-markers': `url(${worldMarkers})` } as React.CSSProperties}><img src={worldMap} alt="Game School world map" />{(Object.keys(SUBJECTS) as SubjectId[]).map((id) => <SubjectMapPin id={id} onChoose={onSubject} key={id} />)}</section></div>; }
+function MapView({ grade, onSubject }: { grade: Grade; onSubject: (subject: SubjectId) => void }) { return <div className="map-page"><div className="page-title"><p className="overline">GRADE {grade} WORLD</p><h1>Every path leads to a discovery.</h1><p>Choose a subject district to see its current quests.</p></div><section className="world-card large-map"><img src={worldMap} alt="Game School world map" />{(Object.keys(SUBJECTS) as SubjectId[]).map((id) => <SubjectMapPin id={id} onChoose={onSubject} key={id} />)}</section></div>; }
 
 function SubjectView({ subject, levels, state, onSubject, onPlay, onArcade }: { subject: SubjectId; levels: LevelDefinition[]; state: QuestwoodState; onSubject: (value: SubjectId) => void; onPlay: (level: LevelDefinition) => void; onArcade: (value: SubjectId) => void }) {
   const info = SUBJECTS[subject];
