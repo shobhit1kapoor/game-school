@@ -4,7 +4,7 @@
 
 Watch the full guided walkthrough—landing page, profile, world map, concept lesson, three live quiz questions with feedback, lesson completion, the Ocean Math challenge, Water Workshop, and the subject arcade:
 
-[▶ Watch the 5½-minute Game School product demo](docs/media/Game-School-Detailed-Demo.mp4)
+[▶ Watch the Game School demo on YouTube](https://youtu.be/CvIZOIUEjfY) · [Download the repository copy](docs/media/Game-School-Detailed-Demo.mp4)
 
 <p align="center"><strong>A local-first K–5 learning world where a lesson feels like a level and growth is celebrated through play.</strong></p>
 
