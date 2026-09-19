@@ -19,7 +19,9 @@
   <img alt="Local first" src="https://img.shields.io/badge/Learner%20data-local--first-2f855a">
 </p>
 
-<p align="center"><img src="./src/assets/brightpath-landing-hero.png" alt="Game School landing experience: children explore a colorful learning world" width="100%"></p>
+<p align="center"><img src="./docs/screenshots/game-school-home.png" alt="Live Game School landing page" width="100%"></p>
+
+<p align="center"><em>Live production capture — the Game School landing page.</em></p>
 
 ## Table of contents
 
@@ -57,8 +59,6 @@ The product design intentionally favors **free exploration** over forced unlocks
 
 ### Four subject worlds
 
-<p align="center"><img src="./src/assets/landing-subject-worlds.png" alt="Game School’s Math, English, Science, and Social Studies themed worlds" width="100%"></p>
-
 | World | Subject | Learning focus |
 | --- | --- | --- |
 | ⛰️ Math Mountain | Math | Number sense, operations, geometry, measurement, data, and reasoning |
@@ -68,7 +68,12 @@ The product design intentionally favors **free exploration** over forced unlocks
 
 ### Local game arcade
 
-<p align="center"><img src="./src/assets/arcade-game-covers.png" alt="Illustrated Game School arcade game cards" width="100%"></p>
+| Number Road | Water Drop Journey |
+| --- | --- |
+| <img src="./docs/screenshots/number-road.png" alt="Live Number Road math game with Game School HUD" width="100%"> | <img src="./docs/screenshots/water-drop-journey.png" alt="Live Water Drop Journey science game with Game School HUD" width="100%"> |
+| A three-lane math runner. | A science journey through the water cycle. |
+
+These are real captures from the production deployment, including the shared Game School HUD—not concept art or placeholder mockups.
 
 The arcade is intentionally separate from lessons. A learner can play a game at any time, while a completed stage makes the game checkpoint especially visible as a way to apply learning and pursue a personal high score.
 
@@ -197,6 +202,35 @@ flowchart TD
 | Sound | Browser-native feedback tones for tap, correct, wrong, and reward events | `src/lib/sound.ts` |
 | Arcade | Static, locally hosted game experiences and shared school HUD | `public/arcade/` |
 | Delivery | Vite production build, Vercel hosting, GitHub Actions CI | `vite.config.ts`, `.github/` |
+
+### Technical runtime flow
+
+```mermaid
+sequenceDiagram
+  autonumber
+  participant L as Learner
+  participant UI as React UI
+  participant C as Catalog
+  participant H as GameHost
+  participant M as Learning module
+  participant P as Progression domain
+  participant DB as IndexedDB
+  participant A as Arcade
+
+  L->>UI: Select grade, subject, and lesson
+  UI->>C: Resolve stage, concept, and 10-part round
+  C-->>UI: LevelDefinition
+  UI->>H: Open concept-first lesson dialog
+  L->>H: Start practice after guided check
+  H->>M: Select module by gameType
+  M-->>H: accuracy, attempts, hints, duration
+  H->>P: Commit attempt and calculate mastery / stars
+  P->>DB: Save local learner state
+  DB-->>UI: Updated profile, progress, mastery
+  UI-->>L: Reward feedback and next-step guidance
+  L->>A: Optionally open a local stage game
+  A-->>L: Same-origin game with shared Game School HUD
+```
 
 ### Local state model
 
